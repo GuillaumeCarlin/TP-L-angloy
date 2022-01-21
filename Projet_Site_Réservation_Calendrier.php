@@ -5,6 +5,7 @@
         <fieldset class="fieldsetHead">
             <img src="logoPrixy.png" class="imageLogo">
 
+            <!--
             <button type="button" class="BoutonProfil">
             <img src="profil.png" class="imageProfil">
             </button>
@@ -12,7 +13,8 @@
             <button type="button" class="BoutonParametre">
             <img src="parametre.png" class="imageParametre">
             </button>
-
+            -->
+            <a href="Projet_Site_Réservation_Page_Connexion.php" class="Deconnexion">Déconnexion</a>
         </fieldset>
     </head>
 
@@ -21,6 +23,9 @@
 
 
     <body>
+
+        <input type="week" name="week" id="week" min="2022-W1" class="Semaine">
+
         <table cellspacing=2>
             <tr>
                 <td class="ColonneUne"></td><td class="table"><texte>Lundi</texte></td>    <td class="table"><texte>Mardi</texte></td> <td class="table"><texte>Mercredi</texte></td> <td class="table"><texte>Jeudi</texte></td> <td class="table"><texte>Vendredi</texte></td> 
@@ -43,7 +48,6 @@
         </table>
         </br>
         </br>
-        <a href="Projet_Site_Réservation_Page_Connexion.php" class="login_bouton">Déconnexion</a>
 
         <a href="Projet_Site_Réservation_Page_Réservation.php">
         <button class="boutonCreation"  type="button" value="Création">Création</button>

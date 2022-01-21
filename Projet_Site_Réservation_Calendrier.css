@@ -33,7 +33,7 @@
 
 table{
     border-spacing: 0px;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: 20%;
     margin-right: 30%;
     height: 400px;
@@ -77,4 +77,15 @@ td{
     margin-left: 85%;
     border-radius: 100%;
     border-color: grey;
+}
+
+.Semaine{
+    margin-left: 30%;
+    margin-bottom: 10px;
+    margin-top: 70px;
+}
+
+.Deconnexion{
+    margin-left: 85%;
+    font-size: 20px;
 }
