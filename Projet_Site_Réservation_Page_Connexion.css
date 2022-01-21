@@ -1,0 +1,54 @@
+/* Changement de place et de couleur des fieldset */
+fieldset{
+    width: 300px;
+    height: 500px;
+    border-color: rgb(0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 12%;
+}
+
+/* Placement et redimension de l'image dans le fieldset */
+.imageLogo{
+    margin-left: 230px;
+    margin-right: 100px;
+    height: 150px;
+    width: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Placement et redimension des champs d'utilisateur et de mot de passe dans le fieldset*/
+.bouton{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+}
+/* Placement et redimension du bouton de connexion*/
+.boutonConnexion{
+    background-color: rgb(23, 57, 94);
+    margin-left: 200px;
+    margin-right: 100px;
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+/* La couleur du bouton de connexion change de couleur quands on passe la souris dessus */ 
+.boutonConnexion:hover {
+    background-color: rgb(23, 65, 97);
+}
+/* Couleur du fond */ 
+body{
+    background-color: rgb(23, 57, 94);
+}
