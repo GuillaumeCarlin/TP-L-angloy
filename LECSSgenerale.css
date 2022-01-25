@@ -1,0 +1,224 @@
+/* PRESENTATION GENERALE */
+
+/*------------------------------------------------------ */
+/* PARTIE CALENDRIER */
+
+
+.fieldsetHead{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+}
+
+.ImageLogo{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.imageParametre{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.table{
+    border-right: solid black 1px;
+    border: solid 1px;
+    border-color: black;
+    width: 150px;
+    padding: 0px;
+}
+
+
+table{
+    border-spacing: 0px;
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 30%;
+    height: 400px;
+    width: 800px;
+}
+
+
+td{
+    border: black solid 1px;
+    padding: 0px;
+    text-align: center;
+}
+
+.ColonneUne{
+    border-top: white;
+    border-left: white;
+    border-bottom: white;
+    width: 100px;
+    height: 100px;
+}
+
+.boutonCreation{
+    color: white;
+    background-color: rgb(23, 55, 94);
+    height: 50px;
+    width: 100px;
+    border-radius: 12px;
+    margin-left: 90%;
+}
+
+.boutonCreation:hover{
+    background-color: rgb(23, 65, 97);;
+}
+
+.BoutonParametre{
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonProfil{
+    margin-left: 85%;
+    border-radius: 100%;
+    border-color: grey;
+}
+
+.Semaine{
+    margin-left: 30%;
+    margin-bottom: 10px;
+    margin-top: 70px;
+}
+
+.Deconnexion{
+    margin-left: 85%;
+    font-size: 20px;
+}
+
+
+
+/*------------------------------------------------------ */
+/* PAGE RESERVATION */
+
+/* Bandeau de haut de page */
+.fieldsetHead{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+    margin-bottom: 50px;
+}
+
+.ImageLogo{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.imageParametre{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonParametre{
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonProfil{
+    margin-left: 85%;
+    border-radius: 100%;
+    border-color: grey;
+}
+
+.Date{
+    margin-top: 500px;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.Choix{
+    height: 40px;
+    width: 250px;
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.Colonne{
+    column-count: 2;
+}
+
+.FieldsetFormation{
+    margin-top: 50px;
+    height: 200px;
+    width: 450px;
+}
+
+.Question{
+    font-size: 20px;
+}
+
+.test{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fieldsetHead{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+    margin-bottom: 100px;
+}
+
+.ImageLogo{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-left: 88%;
+}
+
+.imageParametre{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.Date{
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+
+.fieldsetPrincipal{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: auto;
+    width: 1200px;
+    height: 400px;
+}
+
+
+.fieldsetSecondaire{
+    margin-top: 30px;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.NomReservation{
+    margin-bottom: 10px;
+}
+
