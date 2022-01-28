@@ -219,3 +219,55 @@ td{
     margin-top: auto;
     margin-bottom: auto;
 }
+
+/*----------------------------------------------------- Page Réservation --------------------------------------*/
+
+.fieldsetHead_Reservation{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+    margin-bottom: 100px;
+}
+
+.ImageLogo_Reservation{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil_Reservation{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-left: 88%;
+}
+
+.imageParametre_Reservation{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.Date_Reservation{
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+
+.fieldsetPrincipal_Reservation{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: auto;
+    width: 600px;
+    height: 400px;
+}
+
+
+.fieldsetSecondaire_Reservation{
+    margin-top: 30px;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.NomReservation_Reservation{
+    margin-bottom: 10px;
+}
