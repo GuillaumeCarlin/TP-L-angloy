@@ -148,3 +148,74 @@ td{
     margin-left: 85%;
     font-size: 20px;
 }
+/*---------------------------------------------- Page Création ------------------------------------------------*/
+
+.fieldsetHead_Creation{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+    margin-bottom: 50px;
+}
+
+.ImageLogo_Creation{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil_Creation{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.imageParametre_Creation{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonParametre_Creation{
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonProfil_Creation{
+    margin-left: 85%;
+    border-radius: 100%;
+    border-color: grey;
+}
+
+.Date_Creation{
+    margin-top: 500px;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.Choix_Creation{
+    height: 40px;
+    width: 250px;
+    margin-left: 40px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.Colonne_Creation{
+    column-count: 2;
+}
+
+.FieldsetFormation_Creation{
+    margin-top: 50px;
+    height: 200px;
+    width: 450px;
+}
+
+.Question_Creation{
+    font-size: 20px;
+}
+
+.test_Creation{
+    margin-top: auto;
+    margin-bottom: auto;
+}
