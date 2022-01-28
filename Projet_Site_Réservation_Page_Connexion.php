@@ -11,6 +11,6 @@
                 <input class="boutonConnexion" type="submit"  value="Connexion">
             </fieldset>
         </form>
-            test test
     </body>
+    <a href="Projet_Site_Réservation_Page_Compte.php">Créer un nouveau compte</a>
 </html>
