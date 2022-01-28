@@ -1,8 +1,8 @@
 <html>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
-    <body>
+    <body class="body">
         <form action="/Projet_Site_Réservation_Calendrier.php" method="post">
-            <fieldset >
+            <fieldset class="fieldset">
                 <img src="logoPrixy.png" class="imageLogo">
                 <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
                 </br>
@@ -11,6 +11,6 @@
                 <input class="boutonConnexion" type="submit"  value="Connexion">
             </fieldset>
         </form>
-            test test
     </body>
+    <a href="Projet_Site_Réservation_Page_Compte.php">Créer un nouveau compte</a>
 </html>

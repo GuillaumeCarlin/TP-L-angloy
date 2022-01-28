@@ -1,35 +1,35 @@
 <html>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Réservation.css">
+    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css">
     <head>
-        <fieldset class="fieldsetHead">
-            <img src="logoPrixy.png" class="imageLogo">
-            <img src="profil.png" class="imageProfil" type="button">
-            <img src="parametre.png" class="imageParametre">
+        <fieldset class="fieldsetHead_Reservation">
+            <img src="logoPrixy.png" class="imageLogo_Reservation">
+            <img src="profil.png" class="imageProfil_Reservation" type="button">
+            <img src="parametre.png" class="imageParametre_Reservation">
         </fieldset>
     </head>
 
     <body>
-        <texte class="Date">Afficher la date de la réservation</texte>
+        <texte class="Date_Reservation">Afficher la date de la réservation</texte>
         </br>
-        <fieldset class="fieldsetPrincipal">
-            <h1 class="NomReservation">Nom de la réservation</h1>
-            <texte class="TypeReservation">Type de la réservation</texte>
-            <fieldset class="fieldsetSecondaire">
-                <texte>Client</texte>
+        <fieldset class="fieldsetPrincipal_Reservation">
+            <h1 class="NomReservation_Reservation">Nom de la réservation</h1>
+            <texte class="TypeReservation_Reservation">Type de la réservation</texte>
+            <fieldset class="fieldsetSecondaire_Reservation">
+                <texte>Client : </texte>
                 </br>
-                <texte>Entreprise</texte>
+                <texte>Entreprise : </texte>
                 </br>
-                <texte>Adresse</texte>
+                <texte>Adresse : </texte>
                 </br>
-                <texte>Code Postal</texte>
+                <texte>Code Postal : </texte>
                 </br>
-                <texte>Adresse Mail</texte>
+                <texte>Adresse Mail : </texte>
                 </br>
-                <texte>Téléphone</texte>
+                <texte>Téléphone : </texte>
                 </br>
             </fieldset>
             </br>
-            <texte>Nombre de participant</texte>
+            <texte>Nombre de participant : </texte>
         </fieldset>
     </body>
 </html>
