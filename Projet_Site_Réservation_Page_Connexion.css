@@ -1,5 +1,7 @@
+/* -------------------------------------- Page de Connexion ---------------------------------------------------*/
+
 /* Changement de place et de couleur des fieldset */
-fieldset{
+.fieldset{
     width: 300px;
     height: 500px;
     border-color: rgb(0, 0, 0);
@@ -49,6 +51,100 @@ fieldset{
     background-color: rgb(23, 65, 97);
 }
 /* Couleur du fond */ 
-body{
+.body{
     background-color: rgb(23, 57, 94);
+}
+
+/*---------------------------------------- Page Calendrier --------------------------------------------------*/
+
+.fieldsetHead_Calendrier{
+    border-color: black;
+    background-color: grey;
+    height: 50px;
+}
+
+.ImageLogo_Calendrier{
+    height: 50px;
+    width: 50px;
+}
+
+.imageProfil_Calendrier{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.imageParametre_Calendrier{
+    height: 50px;
+    width: 50px;
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.table_Calendrier{
+    border-right: solid black 1px;
+    border: solid 1px;
+    border-color: black;
+    width: 150px;
+    padding: 0px;
+}
+
+
+table{
+    border-spacing: 0px;
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 30%;
+    height: 400px;
+    width: 800px;
+}
+
+
+td{
+    border: black solid 1px;
+    padding: 0px;
+    text-align: center;
+}
+
+.ColonneUne_Calendrier{
+    border-top: white;
+    border-left: white;
+    border-bottom: white;
+    width: 100px;
+    height: 100px;
+}
+
+.boutonCreation_Calendrier{
+    color: white;
+    background-color: rgb(23, 55, 94);
+    height: 50px;
+    width: 100px;
+    border-radius: 12px;
+    margin-left: 90%;
+}
+
+.boutonCreation_Calendrier:hover{
+    background-color: rgb(23, 65, 97);;
+}
+
+.BoutonParametre_Calendrier{
+    margin-left: 1%;
+    border-radius: 100%;
+}
+
+.BoutonProfil_Calendrier{
+    margin-left: 85%;
+    border-radius: 100%;
+    border-color: grey;
+}
+
+.Semaine_Calendrier{
+    margin-left: 30%;
+    margin-bottom: 10px;
+    margin-top: 70px;
+}
+
+.Deconnexion_Calendrier{
+    margin-left: 85%;
+    font-size: 20px;
 }
