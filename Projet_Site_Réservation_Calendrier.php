@@ -28,15 +28,15 @@
             echo 'Connexion au serveur réussie';
             $BDD = mysqli_select_db($connexion,'bdd_prixy');
             if ($BDD) {
-                echo '<div id="bdd">Base de données sélectionnée</div>';
+                echo 'Base de données sélectionnée';
                 
             }
             else{ 
-                    echo '<div id="bdd">Echec de la sélection de la base</div>'; 
+                    echo 'Echec de la sélection de la base'; 
             }
         } 
         else{ 
-            echo '<div id="srv">Erreur lors de la connexion</div>';
+            echo 'Erreur lors de la connexion';
         }
     
 
