@@ -2,9 +2,11 @@
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
     <script>
         function selection(valeur){
-            document.getElementById("reservationID").value = valeur;
-            location.reload();
-            return valeur;
+            if (valeur == 1){
+                document.write("c'est une formation");
+            }
+            var selection = valeur;
+            return valeur
         }
     </script>
     <head>
@@ -35,9 +37,9 @@
                 <option value="Réservation externe" onclick="$selection(3)" >Réservation externe</option>
             </select>
             -->
-            <input type="button" id="Formulaire" placeholder="Formulaire" onclick="selection(1)">
-            <input type="button" id="interne" placeholder="interne" onclick="selection(2)">
-            <input type="button" id="externe" placeholder="externe" onclick="selection(3)">
+            <input type="button" id="Formulaire" placeholder="Formulaire" onclick="$selection=selection(1)">
+            <input type="button" id="interne" placeholder="interne" onclick="$selection=selection(2)">
+            <input type="button" id="externe" placeholder="externe" onclick="$selection=selection(3)">
 
 
 
@@ -58,7 +60,7 @@
             </div>
         </form>
         <?php
-        $selection=$_POST["reservationID"];
+        /* $selection=$_POST["reservationID"]; */
         if ($selection == 1){
             echo "La reservation choisis est une formation";
         }
