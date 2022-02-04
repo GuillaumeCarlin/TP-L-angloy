@@ -180,6 +180,8 @@ td{
     height: 50px;
     width: 50px;
     border-radius: 100%;
+    margin-left: 88%;
+    cursor : pointer;
 }
 
 .imageParametre_Creation{
@@ -187,17 +189,30 @@ td{
     width: 50px;
     margin-left: 1%;
     border-radius: 100%;
+    cursor : pointer;
 }
 
-.BoutonParametre_Creation{
+/* .BoutonParametre_Creation{
     margin-left: 1%;
     border-radius: 100%;
-}
+    
+} */
 
-.BoutonProfil_Creation{
+/* .BoutonProfil_Creation{
     margin-left: 85%;
     border-radius: 100%;
     border-color: grey;
+    
+} */
+
+.ImageParametre_Creation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.ImageProfil_Creation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 .Date_Creation{
@@ -243,6 +258,7 @@ td{
     margin-bottom: 100px;
 }
 
+
 .ImageLogo_Reservation{
     height: 50px;
     width: 50px;
@@ -255,6 +271,7 @@ td{
     width: 50px;
     border-radius: 100%;
     margin-left: 88%;
+    cursor : pointer;
 }
 
 .imageParametre_Reservation{
@@ -262,6 +279,17 @@ td{
     width: 50px;
     margin-left: 1%;
     border-radius: 100%;
+    cursor : pointer;
+}
+
+.imageParametre_Reservation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.imageProfil_Reservation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 .Date_Reservation{

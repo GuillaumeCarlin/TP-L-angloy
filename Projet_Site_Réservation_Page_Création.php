@@ -14,11 +14,11 @@
         <fieldset class="fieldsetHead_Creation">
             <img src="logoPrixy.png" class="imageLogo_Creation">
 
-            <button type="button" class="BoutonProfil_Creation">
+            <!-- <button type="button" class="BoutonProfil_Creation"> -->
             <img src="profil.png" class="imageProfil_Creation">
             </button>
 
-            <button type="button" class="BoutonParametre_Creation">
+            <!-- <button type="button" class="BoutonParametre_Creation"> -->
             <img src="parametre.png" class="imageParametre_Creation">
             </button>
         </fieldset>
