@@ -1,7 +1,7 @@
 <html>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
     <head>
-        
+        <title>Création de la réservation</title>
         <fieldset class="fieldsetHead_Creation">
             <img src="logoPrixy.png" class="imageLogo_Creation">
 

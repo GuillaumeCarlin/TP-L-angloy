@@ -1,17 +1,29 @@
 <html>
-<?php include("Fonction.php");?>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+    <?php 
+        session_set_cookie_params(0);
+        session_start(); 
+        include("Fonction.php");
+    ?>
+    <head> 
+        <meta charset="utf-8">
+        <title>Prixy connexion</title>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+    </head>
+    
+    
+
     <body class="body">
     <form  method="post">
-        <!-- <form action="Projet_Site_Réservation_Calendrier.php" method="post"> -->
-            <fieldset class="fieldset">
-                <img src="logoPrixy.png" class="imageLogo">
-                <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
-                </br>
-                <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
-                </br>
-                <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
-                </br>
+        <fieldset class="fieldset">
+            <img src="logoPrixy.png" class="imageLogo">
+            <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
+            </br>
+            <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
+            </br>
+            
+            <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
+            
             <?php
 
                 
@@ -19,57 +31,37 @@
                     $utilisateur = htmlspecialchars($_POST["Utilisateur"]);
                     $mdp = htmlspecialchars($_POST["mdp"]);
                 }
-
+                
+                
+            
+            
                 if (count($_POST)==2){
-
-
-                    $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                     if ($connexion) { 
-                        echo 'Connexion au serveur réussie';
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
                         if ($BDD) {
-                            echo 'Base de données sélectionnée';
                             ///////////////////////////////////////////////////////////////////////
                             ///////////////////////////////////////////////////////////////////////
+                            $lestatutconnexion=false;
+                            $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
+                            $resultat=mysqli_fetch_array($requete);
+                            $compte=$resultat['count(*)'];
                             
-                            $requete = mysqli_query($connexion,"SELECT * FROM utilisateur;");
-                            $resultat=mysqli_fetch_row($requete);
-                            for($i=0 ; $i<mysqli_num_rows($requete) ; $i++){
-                                if($i%2==0){
-                                    if($resultat[$i]==$mdp){
-                                        echo "le nom d'utilisateur est bon";
-                                    }
-                                    else{
-                                        echo "Mauvais nom d'utilisateur";
-                                    }
-                                }
-                                else{
-                                    if($resultat[$i]==$mdp){
-                                        echo "le mdp est bon";
-                                    }
-                                    else{
-                                        echo "Mauvais mdp";
-                                    }
-                                }
+                            // md5() --> hachage
+                            if ($compte != 0){
+                                echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
+                                header('Location: Projet_Site_Réservation_Calendrier.php');
                             }
-                            
-                        
+                            else{
+                                echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";
+                                
+                            } 
                             
                         }
-                        else{ 
-                                echo 'Echec de la sélection de la base'; 
-                        }
-                    } 
-                    else{ 
-                        echo 'Erreur lors de la connexion';
-                    }
-                
-                
+                    }    
                 }
-            ?>
-                
-            </fieldset>
+                ?>
+            
+        </fieldset>
         </form>
     </body>
-    <!--  <a href="Projet_Site_Réservation_Page_Compte.php">Créer un nouveau compte</a>   -->
 </html>
