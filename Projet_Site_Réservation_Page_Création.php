@@ -1,5 +1,12 @@
 <html>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+    <head> 
+        <meta charset="utf-8">
+        <title>Prixy création</title>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+    </head> 
+
+    
     <script>
         function selection(valeur){
             if (valeur == 1){
@@ -8,6 +15,13 @@
             var selection = valeur;
             return valeur
         }
+
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', event => {
+        button.innerHTML = `Nombre de clics : ${event.detail}`;
+        });
+
     </script>
     <head>
         
@@ -18,9 +32,14 @@
             <img src="profil.png" class="imageProfil_Creation">
             </button>
 
-            <button type="button" class="BoutonParametre_Creation">
+            <button type="button" onclick=<?php test() ?> class="BoutonParametre_Creation">
             <img src="parametre.png" class="imageParametre_Creation">
             </button>
+            <?php
+                function test(){
+                    echo"test reussi";
+                }
+            ?>
         </fieldset>
     </head>
 
@@ -44,6 +63,7 @@
 
 
             </br>
+            <!--
             <div id="Colonne">
                 <fieldset class="FieldsetFormation_Creation">
                     <div id="test">
@@ -58,9 +78,11 @@
                     </div>
                 </fieldset>
             </div>
+            
         </form>
         <?php
         /* $selection=$_POST["reservationID"]; */
+        /*
         if ($selection == 1){
             echo "La reservation choisis est une formation";
         }
@@ -70,6 +92,8 @@
         else if ($selection == 3){
             echo "La reservation choisis est une réservation interne";
         }
+        */
         ?>
+        -->
     </body>
 </html>
