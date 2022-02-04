@@ -310,6 +310,7 @@ td{
     margin-left: 1%;
     border-radius: 100%;
     cursor : pointer;
+    
     transition: all 0.3s ease;
 }
 
@@ -477,9 +478,9 @@ nav ul{
 
 nav ul li{
     float: left;
-    width: 10%;
+    width: 20%;
     text-align: center;
-    position: relative;
+    position: relative;  
 }
 
 nav ul::after{
