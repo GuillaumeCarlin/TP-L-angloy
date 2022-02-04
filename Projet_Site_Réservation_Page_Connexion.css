@@ -55,6 +55,11 @@
     background-color: rgb(23, 57, 94);
 }
 
+/* Couleur du fond */
+.erreurconnexion{
+    color: red; 
+}
+
 /*---------------------------------------- Page Calendrier --------------------------------------------------*/
 
 .fieldsetHead_Calendrier{

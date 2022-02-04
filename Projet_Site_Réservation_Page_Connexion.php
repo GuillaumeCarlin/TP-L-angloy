@@ -9,8 +9,9 @@
                 </br>
                 <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
                 </br>
+
                 <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
-                </br>
+                
             <?php
 
                 
@@ -24,18 +25,34 @@
 
                     $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                     if ($connexion) { 
-                        echo 'Connexion au serveur réussie';
+                        echo '<br>Connexion au serveur réussie';
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
                         if ($BDD) {
-                            echo 'Base de données sélectionnée';
+                            echo '</br>Base de données sélectionnée';
                             ///////////////////////////////////////////////////////////////////////
                             ///////////////////////////////////////////////////////////////////////
-                            
-                            $requete = mysqli_query($connexion,"SELECT * FROM utilisateur;");
-                            $resultat=mysqli_fetch_row($requete);
+                            $lestatutconnexion=false;
+                            $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur==".$utilisateur." and UTILMotDePasse == ".$mdp.";");
+                            $resultat=mysqli_fetch_array($requete);
+                            $compte=$resultat['count(*)'];
+                            $indice=0;
+                            /*
+                            for($i=0;$i<1;$i++){
+                                echo "</br>".$resultat[0][$i];
+                                echo "</br>".$resultat[1][$i];
+                                
+                            }
+                            */
+                            if ($compteur != 0){
+                                echo"le mdp et le mot de passe sont bon";
+                            }
+                            else{
+                                echo"pb de mdp ou nom d'utilisateur";
+                            }
+                            /*
                             for($i=0 ; $i<mysqli_num_rows($requete) ; $i++){
                                 if($i%2==0){
-                                    if($resultat[$i]==$mdp){
+                                    if($resultat[$i]==$utilisateur){
                                         echo "le nom d'utilisateur est bon";
                                     }
                                     else{
@@ -51,6 +68,28 @@
                                     }
                                 }
                             }
+                            */
+                            
+                            /*
+                            for($i=0 ; $i<count($resultat) ; $i++){
+                                
+                                if($i%2==0){
+                                    echo"boucle";
+                                    if($resultat[$i]==$utilisateur && $resultat[$i+1]==$mdp){
+                                        echo"accepté";
+                                        $lestatutconnexion=true;
+                                    }
+                                    else{
+                                        echo"non";
+                                    }                                       
+                                }
+                            }
+                            */
+                            /*
+                            if($lestatutconnexion){
+                                echo "<div class=erreurconnexion> Identifiant ou mot de passe incorrecte<div>";
+                            }
+                            */
                             
                         
                             
@@ -60,7 +99,7 @@
                         }
                     } 
                     else{ 
-                        echo 'Erreur lors de la connexion';
+                        echo '</br>Erreur lors de la connexion';
                     }
                 
                 
