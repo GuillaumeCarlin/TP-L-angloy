@@ -225,19 +225,34 @@ td{
 }
 
 .FieldsetFormation_Creation{
+    margin-left: 50px;
     margin-top: 50px;
     height: 200px;
     width: 450px;
 }
 
 .FieldsetFormation_Creation_Reservation_Externe{
+    margin-left: 50px;
     margin-top: 50px;
-    height: 300px;
+    height: 320px;
     width: 450px;
+}
+
+.fieldsetFormation_Base{
+    position: absolute;
+    top: 170px;
+    margin-left: 50%;
+    height: 380px;
+    width: 500px;
 }
 
 .Question_Creation{
     font-size: 20px;
+}
+
+.Question_Creation_Base{
+    font-size: 20px;
+    margin-top: 30px;
 }
 
 .test_Creation{
@@ -245,6 +260,24 @@ td{
     margin-bottom: auto;
 }
 
+.Positionnement{
+    margin-left: 100px;
+}
+
+.BoutonValidation{
+    position: absolute;
+    right: 390px;
+    top: 80%;
+    background-color: rgb(23, 57, 94);
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.BoutonValidation:hover {
+    background-color: rgb(23, 65, 97);
+}
 /*----------------------------------------------------- Page Réservation --------------------------------------*/
 
 .fieldsetHead_Reservation{
@@ -266,7 +299,7 @@ td{
     height: 50px;
     width: 50px;
     border-radius: 100%;
-    margin-left: 88%;
+    margin-left: 50%;
     cursor : pointer;
     transition: all 0.3s ease;
 }
@@ -426,3 +459,75 @@ td{
 .boutonNvCpt_Compte:hover {
     background-color: rgb(23, 65, 97);
 }
+
+
+/* ---------------------------------------------------------- PARAMETRE -----------------------------------------*/
+
+nav{
+    font-family:'fantasy',sans-serif;
+    /*  margin: 0 auto;
+    position: sticky;
+    top: 0px;*/
+    color:rgb(23, 65, 97);
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    float: left;
+    width: 10%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: rgb(23, 65, 97);
+    border-bottom: 2px solid transparent;
+    /*  padding: 10px 0px;*/
+}
+
+nav a:hover{
+    color: white;
+    border-bottom: 2px solid rgb(23, 65, 97);
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%; 
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: block;
+}
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: rgb(23, 65, 97);
+}
+/*  
+.deroulant > a::after{
+    content:"";
+    font-size: 12px;
+}
+*/
