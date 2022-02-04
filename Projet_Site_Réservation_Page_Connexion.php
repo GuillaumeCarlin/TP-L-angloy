@@ -17,16 +17,15 @@
 
     <body class="body">
     <form  method="post">
-        <!-- <form action="Projet_Site_Réservation_Calendrier.php" method="post"> -->
-            <fieldset class="fieldset">
-                <img src="logoPrixy.png" class="imageLogo">
-                <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
-                </br>
-                <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
-                </br>
-                
-                <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
-                
+        <fieldset class="fieldset">
+            <img src="logoPrixy.png" class="imageLogo">
+            <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
+            </br>
+            <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
+            </br>
+            
+            <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
+            
             <?php
 
                 
@@ -62,10 +61,9 @@
                         }
                     }    
                 }
-            ?>
-                
-            </fieldset>
+                ?>
+            
+        </fieldset>
         </form>
     </body>
-    <!--  <a href="Projet_Site_Réservation_Page_Compte.php">Créer un nouveau compte</a>   -->
 </html>
