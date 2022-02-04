@@ -192,18 +192,6 @@ td{
     cursor : pointer;
 }
 
-/* .BoutonParametre_Creation{
-    margin-left: 1%;
-    border-radius: 100%;
-    
-} */
-
-/* .BoutonProfil_Creation{
-    margin-left: 85%;
-    border-radius: 100%;
-    border-color: grey;
-    
-} */
 
 .ImageParametre_Creation:hover {
     transform: scale(1.1);
@@ -293,7 +281,7 @@ td{
     transition: all 0.3s ease;
 }
 
-.imageProfil_Reservation:hover {
+.imageProfil_Reser vation:hover {
     transform: scale(1.1);
     transition: all 0.3s ease;
 }
