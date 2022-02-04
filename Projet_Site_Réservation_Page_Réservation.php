@@ -1,6 +1,7 @@
 <html>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css">
     <head>
+        <title>Détails de la réservation</title>
         <fieldset class="fieldsetHead_Reservation">
             <img src="logoPrixy.png" class="imageLogo_Reservation">
             <img src="profil.png" class="imageProfil_Reservation" type="button">

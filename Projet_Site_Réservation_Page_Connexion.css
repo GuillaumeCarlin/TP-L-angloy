@@ -7,7 +7,7 @@
     border-color: rgb(0, 0, 0);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 50px;
     background-color: white;
     border-radius: 12%;
@@ -20,7 +20,7 @@
     height: 150px;
     width: 150px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 /* Placement et redimension des champs d'utilisateur et de mot de passe dans le fieldset*/
@@ -57,7 +57,14 @@
 
 /* Couleur du fond */
 .erreurconnexion{
-    color: red; 
+    color: red;
+    margin-left: 140px;
+    font-family: arial,sans-serif;
+}
+
+.aligement_milieu_connexion{
+    margin-left: 220px;
+    font-family: arial,sans-serif;
 }
 
 /*---------------------------------------- Page Calendrier --------------------------------------------------*/
@@ -160,17 +167,22 @@ td{
     background-color: grey;
     height: 50px;
     margin-bottom: 50px;
+
 }
 
 .ImageLogo_Creation{
     height: 50px;
     width: 50px;
+    border-radius: 10%;
 }
 
 .imageProfil_Creation{
     height: 50px;
     width: 50px;
     border-radius: 100%;
+    margin-left: 88%;
+    cursor : pointer;
+    transition: all 0.3s ease;
 }
 
 .imageParametre_Creation{
@@ -178,17 +190,19 @@ td{
     width: 50px;
     margin-left: 1%;
     border-radius: 100%;
+    cursor : pointer;
+    transition: all 0.3s ease;
 }
 
-.BoutonParametre_Creation{
-    margin-left: 1%;
-    border-radius: 100%;
+
+.ImageParametre_Creation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
-.BoutonProfil_Creation{
-    margin-left: 85%;
-    border-radius: 100%;
-    border-color: grey;
+.ImageProfil_Creation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 .Date_Creation{
@@ -216,6 +230,12 @@ td{
     width: 450px;
 }
 
+.FieldsetFormation_Creation_Reservation_Externe{
+    margin-top: 50px;
+    height: 300px;
+    width: 450px;
+}
+
 .Question_Creation{
     font-size: 20px;
 }
@@ -234,16 +254,21 @@ td{
     margin-bottom: 100px;
 }
 
+
 .ImageLogo_Reservation{
     height: 50px;
     width: 50px;
+    border-radius: 10%;
 }
+
 
 .imageProfil_Reservation{
     height: 50px;
     width: 50px;
     border-radius: 100%;
     margin-left: 88%;
+    cursor : pointer;
+    transition: all 0.3s ease;
 }
 
 .imageParametre_Reservation{
@@ -251,6 +276,18 @@ td{
     width: 50px;
     margin-left: 1%;
     border-radius: 100%;
+    cursor : pointer;
+    transition: all 0.3s ease;
+}
+
+.imageParametre_Reservation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.imageProfil_Reser vation:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 .Date_Reservation{
