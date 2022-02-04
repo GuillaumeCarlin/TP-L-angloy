@@ -11,8 +11,9 @@
             <img src="logoPrixy.png" class="imageLogo_Creation">
             
             <img src="profil.png" class="imageProfil_Creation">
-
-            <img src="parametre.png" class="imageParametre_Creation">
+            <nav>
+                <ul>
+                    <img src="parametre.png" class="imageParametre_Creation">
     </fieldset>
     
     <body>
