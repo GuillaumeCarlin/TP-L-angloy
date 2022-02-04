@@ -49,7 +49,7 @@
                             // md5() --> hachage
                             if ($compte != 0){
                                 echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
-                                header('Location: Projet_Site_Réservation_Calendrier.php');
+                                header('Location: calendrier.html');
                             }
                             else{
                                 echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";

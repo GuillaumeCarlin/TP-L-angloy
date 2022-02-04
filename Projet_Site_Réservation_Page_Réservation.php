@@ -1,14 +1,24 @@
 <html>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css">
+    
     <head>
         <title>Détails de la réservation</title>
-        <fieldset class="fieldsetHead_Reservation">
-            <img src="logoPrixy.png" class="imageLogo_Reservation">
-            <img src="profil.png" class="imageProfil_Reservation" type="button">
-            <img src="parametre.png" class="imageParametre_Reservation">
-        </fieldset>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
 
+    
+    <fieldset class="fieldsetHead_Reservation">
+            <img src="logoPrixy.png" class="imageLogo_Reservation">
+            <img src="profil.png" class="imageProfil_Reservation" type="button">
+            <!-- ------------------------------------------------------------------------------------ -->
+            <!-- ------------------------------------------------------------------------------------ -->
+            <!-- ------------------------------------------------------------------------------------ -->
+
+            <img src="parametre.png" onclick=parametre() class="imageParametre_Reservation">
+            
+    </fieldset>
+    
     <body>
         <texte class="Date_Reservation">Afficher la date de la réservation</texte>
         </br>
@@ -32,5 +42,11 @@
             </br>
             <texte>Nombre de participant : </texte>
         </fieldset>
+        <?php 
+            
+            if ($parametre){
+                echo"ca marhce";
+            }
+        ?>
     </body>
 </html>
