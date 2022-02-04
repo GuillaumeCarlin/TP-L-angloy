@@ -9,11 +9,7 @@
             <img src="profil.png" class="imageProfil_Creation">
             </button>
 
-<<<<<<< HEAD
             <button type="button" onclick=<?php test() ?> class="BoutonParametre_Creation">
-=======
-            <!-- <button type="button" class="BoutonParametre_Creation"> -->
->>>>>>> 10d205e70c02737a9fe9d4fd65341adbfb20f550
             <img src="parametre.png" class="imageParametre_Creation">
             </button>
             <?php
