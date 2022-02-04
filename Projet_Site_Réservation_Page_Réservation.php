@@ -9,14 +9,22 @@
 
     
     <fieldset class="fieldsetHead_Reservation">
-            <img src="logoPrixy.png" class="imageLogo_Reservation">
-            <img src="profil.png" class="imageProfil_Reservation" type="button">
-            <!-- ------------------------------------------------------------------------------------ -->
-            <!-- ------------------------------------------------------------------------------------ -->
-            <!-- ------------------------------------------------------------------------------------ -->
+        <img src="logoPrixy.png" class="imageLogo_Reservation">
+        <img src="profil.png" class="imageProfil_Reservation" type="button">
+        <!-- ------------------------------------------------------------------------------------ -->
+        <!-- ------------------------------------------------------------------------------------ -->
+        <!-- ------------------------------------------------------------------------------------ -->
 
-            <img src="parametre.png" onclick=parametre() class="imageParametre_Reservation">
-            
+        <nav>
+            <ul>
+                
+                <li class="deroulant"><a href="#"><img src="parametre.png" class="imageParametre_Reservation"></a>
+                    <ul class="sous">
+                        <li><a href="#">Deconnexion</a></li>
+                        <li><a href="#">Creation de compte</a></li>
+            </ul>
+        </nav>
+
     </fieldset>
     
     <body>
@@ -42,11 +50,6 @@
             </br>
             <texte>Nombre de participant : </texte>
         </fieldset>
-        <?php 
-            
-            if ($parametre){
-                echo"ca marhce";
-            }
-        ?>
+        
     </body>
 </html>
