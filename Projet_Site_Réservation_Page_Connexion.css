@@ -160,11 +160,13 @@ td{
     background-color: grey;
     height: 50px;
     margin-bottom: 50px;
+
 }
 
 .ImageLogo_Creation{
     height: 50px;
     width: 50px;
+    border-radius: 10%;
 }
 
 .imageProfil_Creation{
