@@ -1,4 +1,5 @@
 <html>
+    <title>Création d'un nouveau compte</title>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css">
     <body class="body">
         <form method="POST" action="/Traitement_Compte">

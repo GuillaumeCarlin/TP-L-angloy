@@ -246,7 +246,9 @@ td{
 .ImageLogo_Reservation{
     height: 50px;
     width: 50px;
+    border-radius: 10%;
 }
+
 
 .imageProfil_Reservation{
     height: 50px;

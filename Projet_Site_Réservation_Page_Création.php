@@ -10,7 +10,7 @@
         }
     </script>
     <head>
-        
+        <title>Création de la réservation</title>
         <fieldset class="fieldsetHead_Creation">
             <img src="logoPrixy.png" class="imageLogo_Creation">
 
