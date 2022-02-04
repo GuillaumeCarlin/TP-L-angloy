@@ -1,6 +1,20 @@
 <html>
-<?php include("Fonction.php");?>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+<?php 
+    session_set_cookie_params(0);
+    session_start(); 
+    include("Fonction.php");
+    
+
+?>
+    <head> 
+        <meta charset="utf-8">
+        <title>Prixy connexion</title>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+    </head>
+    
+    
+
     <body class="body">
     <form  method="post">
         <!-- <form action="Projet_Site_Réservation_Calendrier.php" method="post"> -->
@@ -10,7 +24,7 @@
                 </br>
                 <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
                 </br>
-
+                
                 <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
                 
             <?php
@@ -20,90 +34,33 @@
                     $utilisateur = htmlspecialchars($_POST["Utilisateur"]);
                     $mdp = htmlspecialchars($_POST["mdp"]);
                 }
-
+                
+                
+            
+            
                 if (count($_POST)==2){
-
-
-                    $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                     if ($connexion) { 
-                        echo '<br>Connexion au serveur réussie';
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
                         if ($BDD) {
-                            echo '</br>Base de données sélectionnée';
                             ///////////////////////////////////////////////////////////////////////
                             ///////////////////////////////////////////////////////////////////////
                             $lestatutconnexion=false;
-                            $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur==".$utilisateur." and UTILMotDePasse == ".$mdp.";");
+                            $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
                             $resultat=mysqli_fetch_array($requete);
                             $compte=$resultat['count(*)'];
-                            $indice=0;
-                            /*
-                            for($i=0;$i<1;$i++){
-                                echo "</br>".$resultat[0][$i];
-                                echo "</br>".$resultat[1][$i];
-                                
-                            }
-                            */
-                            if ($compteur != 0){
-                                echo"le mdp et le mot de passe sont bon";
+                            
+                            // md5() --> hachage
+                            if ($compte != 0){
+                                echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
+                                header('Location: Projet_Site_Réservation_Calendrier.php');
                             }
                             else{
-                                echo"pb de mdp ou nom d'utilisateur";
-                            }
-                            /*
-                            for($i=0 ; $i<mysqli_num_rows($requete) ; $i++){
-                                if($i%2==0){
-                                    if($resultat[$i]==$utilisateur){
-                                        echo "le nom d'utilisateur est bon";
-                                    }
-                                    else{
-                                        echo "Mauvais nom d'utilisateur";
-                                    }
-                                }
-                                else{
-                                    if($resultat[$i]==$mdp){
-                                        echo "le mdp est bon";
-                                    }
-                                    else{
-                                        echo "Mauvais mdp";
-                                    }
-                                }
-                            }
-                            */
-                            
-                            /*
-                            for($i=0 ; $i<count($resultat) ; $i++){
+                                echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";
                                 
-                                if($i%2==0){
-                                    echo"boucle";
-                                    if($resultat[$i]==$utilisateur && $resultat[$i+1]==$mdp){
-                                        echo"accepté";
-                                        $lestatutconnexion=true;
-                                    }
-                                    else{
-                                        echo"non";
-                                    }                                       
-                                }
-                            }
-                            */
-                            /*
-                            if($lestatutconnexion){
-                                echo "<div class=erreurconnexion> Identifiant ou mot de passe incorrecte<div>";
-                            }
-                            */
-                            
-                        
+                            } 
                             
                         }
-                        else{ 
-                                echo 'Echec de la sélection de la base'; 
-                        }
-                    } 
-                    else{ 
-                        echo '</br>Erreur lors de la connexion';
-                    }
-                
-                
+                    }    
                 }
             ?>
                 
