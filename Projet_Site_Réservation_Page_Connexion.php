@@ -1,11 +1,9 @@
 <html>
-<?php 
-    session_set_cookie_params(0);
-    session_start(); 
-    include("Fonction.php");
-    
-
-?>
+    <?php 
+        session_set_cookie_params(0);
+        session_start(); 
+        include("Fonction.php");
+    ?>
     <head> 
         <meta charset="utf-8">
         <title>Prixy connexion</title>
