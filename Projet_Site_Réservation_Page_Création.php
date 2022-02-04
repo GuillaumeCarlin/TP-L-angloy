@@ -4,19 +4,17 @@
         <title>Prixy création</title>
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
-        <fieldset class="fieldsetHead_Creation">
+    </head>
+    
+    <fieldset class="fieldsetHead_Creation">
+            
             <img src="logoPrixy.png" class="imageLogo_Creation">
-
             
             <img src="profil.png" class="imageProfil_Creation">
 
             <img src="parametre.png" class="imageParametre_Creation">
-            
-
-            
-        </fieldset>
-    </head>
-
+    </fieldset>
+    
     <body>
         </br>
         <texte class="Date">Afficher la date de la réservation</texte>
