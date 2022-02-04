@@ -2,7 +2,7 @@
 include("Projet_Site_Réservation_Page_Création.php");
 
 $choix=$_POST['choix'];
-
+/*
 if($choix=="Formation"){
     echo "La formation à été choisis";
 }
@@ -12,6 +12,7 @@ if($choix=="Reservation_interne"){
 if($choix=="Reservation_externe"){
    echo "La reservation externe à été choisis";
 }
+*/
 ?>
 
 <html>
@@ -76,7 +77,7 @@ if($choix=="Reservation_externe"){
                     </br>
                     </br>
                     <texte class='Question_Creation'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
-                    
+                    </br>
                 </div>
             </fieldset>
             ";
