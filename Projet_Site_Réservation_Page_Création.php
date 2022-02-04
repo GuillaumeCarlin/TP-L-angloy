@@ -1,30 +1,7 @@
 <html>
-    <head> 
-        <meta charset="utf-8">
-        <title>Prixy création</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
-    </head> 
-
-    
-    <script>
-        function selection(valeur){
-            if (valeur == 1){
-                document.write("c'est une formation");
-            }
-            var selection = valeur;
-            return valeur
-        }
-
-        const button = document.querySelector('button');
-
-        button.addEventListener('click', event => {
-        button.innerHTML = `Nombre de clics : ${event.detail}`;
-        });
-
-    </script>
+    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
     <head>
-        
+        <title>Création de la réservation</title>
         <fieldset class="fieldsetHead_Creation">
             <img src="logoPrixy.png" class="imageLogo_Creation">
 
@@ -48,52 +25,13 @@
         <texte class="Date">Afficher la date de la réservation</texte>
         </br>
 
-        <form action="ton_script.php" method="post" id ="formulaire">
-            <!--
-            <select name="reservationID" id="reservationID" class="Choix_Creation">
-                <option value="Formation" onclick="$selection=1">Formation</option>
-                <option value="Réservation Interne" onclick="$selection=2">Réservation Interne</option>
-                <option value="Réservation externe" onclick="$selection(3)" >Réservation externe</option>
-            </select>
-            -->
-            <input type="button" id="Formulaire" placeholder="Formulaire" onclick="$selection=selection(1)">
-            <input type="button" id="interne" placeholder="interne" onclick="$selection=selection(2)">
-            <input type="button" id="externe" placeholder="externe" onclick="$selection=selection(3)">
-
-
-
-            </br>
-            <!--
-            <div id="Colonne">
-                <fieldset class="FieldsetFormation_Creation">
-                    <div id="test">
-                        </br>
-                        <texte class="Question_Creation">Formateur : <input type="text" id="Formateur" name="Formateur" placeholder="Nom du Formateur"></texte>
-                        </br>
-                        </br>
-                        <texte class="Question_Creation">Adresse Mail : <input type="text" id="AdresseMail" name="AdresseMail" placeholder="Adresse Mail"></texte>
-                        </br>
-                        </br>
-                        <texte class="Question_Creation">Téléphone : <input type="text" id="Telephone" name="Telephone" placeholder="Numéros de Téléphone"></texte>
-                    </div>
-                </fieldset>
-            </div>
+        <form action="Traitement_Creation.php" method="post" name ="formulaire">
             
+        <input type="radio" name = "choix"  id="Formation" value="Formation"> Formation </br> 
+        <input type="radio" name = "choix"  id="Reservation_interne" value="Reservation_interne"  > Reservation_interne </br>
+        <input type="radio" name = "choix"  id="Reservation_externe" value="Reservation_externe"  > Reservation_externe </br>
+        <input type="submit" value="Envoyer">
         </form>
-        <?php
-        /* $selection=$_POST["reservationID"]; */
-        /*
-        if ($selection == 1){
-            echo "La reservation choisis est une formation";
-        }
-        else if ($selection == 2){
-            echo "La reservation choisis est une réservation externe";
-        }
-        else if ($selection == 3){
-            echo "La reservation choisis est une réservation interne";
-        }
-        */
-        ?>
-        -->
+        </br>
     </body>
 </html>
