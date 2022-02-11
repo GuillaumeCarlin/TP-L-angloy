@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
+<<<<<<< HEAD
 -- Généré le :  ven. 11 fév. 2022 à 09:10
+=======
+-- Généré le :  ven. 11 fév. 2022 à 08:46
+>>>>>>> 6bed0544961ab7e480281aa81015b14b52a961e2
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -165,9 +169,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
+<<<<<<< HEAD
 INSERT INTO `utilisateur` (`UTILNomUtilisateur`, `UTILMotDePasse`, `UTILAdmin`) VALUES
 ('admin', 'admin', NULL),
 ('root', 'root', NULL);
+=======
+INSERT INTO `utilisateur` (`UTILNomUtilisateur`, `UTILMotDePasse`) VALUES
+('', ''),
+('admin', 'admin'),
+('root', 'root');
+>>>>>>> 6bed0544961ab7e480281aa81015b14b52a961e2
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

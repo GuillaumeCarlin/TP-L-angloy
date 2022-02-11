@@ -225,10 +225,13 @@ td{
 }
 
 .FieldsetFormation_Creation{
-    margin-left: 50px;
-    margin-top: 50px;
-    height: 200px;
-    width: 450px;
+    margin-left: 70px;
+    height: 550px;
+    width: 500px;
+    border-radius: 12%;
+    background-color: rgba(255, 255, 255, 0.918);
+    border-color: black;
+    border-width: 3px;
 }
 
 .FieldsetFormation_Creation_Reservation_Externe{
@@ -236,6 +239,10 @@ td{
     margin-top: 50px;
     height: 320px;
     width: 450px;
+    border-radius: 12%;
+    background-color: white;
+    border-color: black;
+    border-width: 3px;
 }
 
 .fieldsetFormation_Base{
@@ -244,6 +251,21 @@ td{
     margin-left: 50%;
     height: 380px;
     width: 500px;
+    border-radius: 12%;
+    background-color: white;
+    border-color: black;
+    border-width: 3px;
+}
+
+.fieldsetChoix{
+    border-radius: 12%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 300px;
+    background-color: white;
+    border-color: black;
+    border-width: 3px;
 }
 
 .Question_Creation{
@@ -253,6 +275,8 @@ td{
 .Question_Creation_Base{
     font-size: 20px;
     margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 .test_Creation{
@@ -266,7 +290,7 @@ td{
 
 .BoutonValidation{
     position: absolute;
-    right: 390px;
+    right: 310px;
     top: 80%;
     background-color: rgb(23, 57, 94);
     height: 50px;
@@ -278,6 +302,21 @@ td{
 .BoutonValidation:hover {
     background-color: rgb(23, 65, 97);
 }
+
+.Descriptif{
+    margin-left: 30px;
+    height: 190px;
+    width: 440px;
+}
+
+textarea{
+    resize: none;
+}
+
+.colonne {
+    column-count: 2;
+}
+
 /*----------------------------------------------------- Page Réservation --------------------------------------*/
 
 .fieldsetHead_Reservation{
@@ -526,3 +565,55 @@ td{
 #menu-accordeon nav a:hover{
     border-bottom: 2px solid rgb(23, 65, 97);
 }
+<<<<<<< HEAD
+=======
+
+nav a:hover{
+    color: white;
+    /* border-bottom: 2px solid rgb(23, 65, 97); */
+}
+
+.sous{
+    /* display: none; */
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    /* position: absolute;
+    width: 100%;  */
+    /* z-index: 1000; */
+}
+nav > ul li:hover .sous{
+    /* display: block; */
+}
+.sous li{
+    /* float: none; */
+    width: 100%;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: rgb(23, 65, 97);
+}
+/*  
+.deroulant > a::after{
+    content:"";
+    font-size: 12px;
+}
+*/
+
+.choixBouton{
+    background-color: rgb(23, 57, 94);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+>>>>>>> 6bed0544961ab7e480281aa81015b14b52a961e2
