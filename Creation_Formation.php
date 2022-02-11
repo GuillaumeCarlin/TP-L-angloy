@@ -1,9 +1,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Prixy création</title>
+        <title> Prixy création Formation </title>
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+        <script src = 'lib/main.js'></script>
     </head>
 
     <fieldset class="fieldsetHead_Creation">
@@ -17,6 +18,7 @@
 
     <body class="body">
         <form action="Calendrier.html" method="post" name ="formulaire">
+
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
@@ -26,9 +28,19 @@
                     </br>
                     </br>
                     </br>
+                    <texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='time' id='Reservation_Heure' name='Reservation_Heure' min='8:00' max='18:00' step='' required></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Durée de la formation</texte>
+                    </br>
+                    </br>
                     </br>
                     <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Nom' name='Reservation_Nom' min="0" max="30" required>  / 30</texte>
-                    </br>
                     </br>
                     </br>
                     </br>
@@ -52,7 +64,9 @@
                     <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation">
+            <!--<input type="submit" value="Envoyer" class="BoutonValidation">-->
+            <bouton class='BoutonValidation' onclick = 'nouveau();' placeholder = 'Je suis la'> </bouton>
         </form>
     </body>
+    
 </html>
