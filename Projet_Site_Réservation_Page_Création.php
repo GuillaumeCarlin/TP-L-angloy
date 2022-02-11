@@ -20,6 +20,7 @@
             </br>
             <texte class="Date">Afficher la date de la réservation</texte>
             </br>
+            
             <form action="Traitement_Creation.php" method="post" name ="formulaire">
             <fieldset class="fieldsetChoix">
                 </br>
