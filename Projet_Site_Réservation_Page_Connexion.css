@@ -322,8 +322,8 @@ textarea{
 .fieldsetHead_Reservation{
     border-color: black;
     background-color: grey;
-    height: 60px;
-    margin-bottom: 100px; 
+    height: 50px;
+    margin-bottom: 50px; 
 }
 
 
@@ -502,75 +502,59 @@ textarea{
 
 /* ---------------------------------------------------------- PARAMETRE -----------------------------------------*/
 
-.menu_deroulant{
+.divparametre{
+    position: absolute;
+    margin-top: -3.5%;
+    margin-left: 86%;
+}
+
+#menu-accordeon {
     font-family:'fantasy',sans-serif;
-    /*  margin: 0 auto;
-    position: sticky;
-    top: 0px;*/
-    color:rgb(23, 65, 97);
-    position: relative;
-    height: 60px;
-    width:90%;
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-align: center;
+    width: 180px;
 }
-
-nav ul{
-    /*list-style-type: none;*/
+#menu-accordeon ul {
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-align: center;
 }
-
-nav ul li{
-    /* float: left;*/
-    /*width: 20%;*/
-    /* text-align: center; */
-    /* position: relative;   
-    
+#menu-accordeon li { 
+    margin-bottom:2px;
 }
-
-nav ul::after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-nav a{
-    display: block;
-    text-decoration: none;
-    color: rgb(23, 65, 97);
-    border-bottom: 2px solid transparent;
-    /*  padding: 10px 0px;*/
-}
-
-nav a:hover{
-    color: white;
-    /* border-bottom: 2px solid rgb(23, 65, 97); */
-}
-
-.sous{
-    /* display: none; */
-    box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
-    /* position: absolute;
-    width: 100%;  */
-    /* z-index: 1000; */
-}
-nav > ul li:hover .sous{
-    /* display: block; */
-}
-.sous li{
-    /* float: none; */
-    width: 100%;
-    text-align: left;
-}
-.sous a{
-    padding: 10px;
-    border-bottom: none;
-}
-.sous a:hover{
-    border-bottom: none;
+#menu-accordeon li li {
+    max-height:0;
+    overflow: hidden;
+    transition: all .5s;
     background-color: rgb(23, 65, 97);
+    color:white;
+    box-shadow: none;
+    border:none;
+    margin:0
 }
-/*  
-.deroulant > a::after{
-    content:"";
-    font-size: 12px;
+#menu-accordeon a {
+    display:block;
+    text-decoration: none;
+    color: white;
+    padding: 8px 0;
 }
-*/
+#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+    font-size:1em
+}
+#menu-accordeon li li:hover {
+    text-decoration:none;
+    background-color: rgb(17, 47, 70);
+}
+#menu-accordeon ul li:last-child {
+    border-radius: 0 0 6px 6px;
+    border:none;
+}
+#menu-accordeon li:hover li {
+    max-height: 15em;
+}
+#menu-accordeon nav a:hover{
+    border-bottom: 2px solid rgb(23, 65, 97);
+}

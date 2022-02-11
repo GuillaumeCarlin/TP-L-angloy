@@ -17,7 +17,8 @@
     </fieldset>
 
     <body class="body">
-        <form action="" method="post" name = "formulaire">
+        <form action="Calendrier.html" method="post" name ="formulaire">
+
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
