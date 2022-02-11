@@ -1,7 +1,7 @@
 <?php
 include("Projet_Site_Réservation_Page_Création.php");
 
-$choix=$_POST['choix'];
+$choix=isset($_POST['choix']);
 /*
 if($choix=="Formation"){
     echo "La formation à été choisis";
