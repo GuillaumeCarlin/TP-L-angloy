@@ -17,7 +17,7 @@
             
             <ul>
                 
-                <li class="deroulant"><a href="#"><img src="parametre.png" class="imageParametre_Reservation"></a>
+                <li class="deroulant"><a href="#"><img src="parametre.png" class="imageParametre_Reservation" ></a>
                     <ul class="sous">
                         <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                         <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
