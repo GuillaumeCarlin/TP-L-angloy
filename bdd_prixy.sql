@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 28 jan. 2022 à 09:31
+-- Généré le :  ven. 11 fév. 2022 à 08:46
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -52,7 +52,23 @@ CREATE TABLE IF NOT EXISTS `formateur` (
   `IDFormateur` int(11) NOT NULL AUTO_INCREMENT,
   `NOMFormateur` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `EMAILFormateur` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `TELFormateur` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`IDFormateur`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reservantinterne`
+--
+
+DROP TABLE IF EXISTS `reservantinterne`;
+CREATE TABLE IF NOT EXISTS `reservantinterne` (
+  `IDResponsable` int(11) NOT NULL AUTO_INCREMENT,
+  `NOMReservant` varchar(20) NOT NULL,
+  `EMAILReservant` varchar(50) NOT NULL,
+  `TELReservant` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`IDResponsable`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -98,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `reservation_externe` (
 DROP TABLE IF EXISTS `reservation_interne`;
 CREATE TABLE IF NOT EXISTS `reservation_interne` (
   `RESERVIntID` int(11) NOT NULL AUTO_INCREMENT,
-  `RESERVNomResponsable` varchar(35) NOT NULL,
   `NUMReservation` int(11) NOT NULL,
+  `IDResponsable` int(11) NOT NULL,
   PRIMARY KEY (`RESERVIntID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -143,6 +159,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `UTILMotDePasse` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`UTILNomUtilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`UTILNomUtilisateur`, `UTILMotDePasse`) VALUES
+('', ''),
+('admin', 'admin'),
+('root', 'root');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
