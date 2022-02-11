@@ -36,7 +36,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation</texte>
+                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='time' id='Reservation_Duree' name='' </texte>
                     </br>
                     </br>
                     </br>
@@ -64,8 +64,8 @@
                     <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
-            <!--<input type="submit" value="Envoyer" class="BoutonValidation">-->
-            <bouton class='BoutonValidation' onclick = 'nouveau();' placeholder = 'Je suis la'> </bouton>
+            <input type="submit" value="Envoyer" class="BoutonValidation" >
+            <!--<button class='BoutonValidation' onclick = 'nouveau1()' value = 'Je suis la'> </button>-->
         </form>
     </body>
     
