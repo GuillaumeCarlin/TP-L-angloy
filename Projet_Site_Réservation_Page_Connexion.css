@@ -322,8 +322,8 @@ textarea{
 .fieldsetHead_Reservation{
     border-color: black;
     background-color: grey;
-    height: 60px;
-    margin-bottom: 100px; 
+    height: 50px;
+    margin-bottom: 50px; 
 }
 
 
@@ -505,7 +505,7 @@ textarea{
 .divparametre{
     position: absolute;
     margin-top: -3.5%;
-    margin-left: 87%;
+    margin-left: 86%;
 }
 
 #menu-accordeon {
@@ -523,16 +523,12 @@ textarea{
     text-align: center;
 }
 #menu-accordeon li { 
-    /* border-radius: 6px; */
     margin-bottom:2px;
-    /* box-shadow: 3px 3px 3px #999;
-    border:solid 1px #333A40 */
 }
 #menu-accordeon li li {
     max-height:0;
     overflow: hidden;
     transition: all .5s;
-    /* border-radius:0; */
     background-color: rgb(23, 65, 97);
     color:white;
     box-shadow: none;
@@ -551,8 +547,6 @@ textarea{
 #menu-accordeon li li:hover {
     text-decoration:none;
     background-color: rgb(17, 47, 70);
-    
-    
 }
 #menu-accordeon ul li:last-child {
     border-radius: 0 0 6px 6px;
@@ -561,59 +555,6 @@ textarea{
 #menu-accordeon li:hover li {
     max-height: 15em;
 }
-
 #menu-accordeon nav a:hover{
     border-bottom: 2px solid rgb(23, 65, 97);
 }
-<<<<<<< HEAD
-=======
-
-nav a:hover{
-    color: white;
-    /* border-bottom: 2px solid rgb(23, 65, 97); */
-}
-
-.sous{
-    /* display: none; */
-    box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
-    /* position: absolute;
-    width: 100%;  */
-    /* z-index: 1000; */
-}
-nav > ul li:hover .sous{
-    /* display: block; */
-}
-.sous li{
-    /* float: none; */
-    width: 100%;
-    text-align: left;
-}
-.sous a{
-    padding: 10px;
-    border-bottom: none;
-}
-.sous a:hover{
-    border-bottom: none;
-    background-color: rgb(23, 65, 97);
-}
-/*  
-.deroulant > a::after{
-    content:"";
-    font-size: 12px;
-}
-*/
-
-.choixBouton{
-    background-color: rgb(23, 57, 94);
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 20px;
-    height: 50px;
-    width: 200px;
-    color: white;
-    font-size: 20px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-}
->>>>>>> 6bed0544961ab7e480281aa81015b14b52a961e2
