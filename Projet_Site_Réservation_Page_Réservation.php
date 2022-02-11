@@ -8,7 +8,7 @@
     </head>
 
     
-    <div class="fieldsetHead_Reservation">   
+    <fieldset class="fieldsetHead_Reservation">   
         <img src="logoPrixy.png" class="imageLogo_Reservation">
         <!-- <img src="profil.png" class="imageProfil_Reservation" type="button"> -->
         <div class="divparametre">
@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </fieldset>
     
     <body>
         <texte class="Date_Reservation">Afficher la date de la réservation</texte>
