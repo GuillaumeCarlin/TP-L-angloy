@@ -9,7 +9,7 @@
 
     
     <fieldset class="fieldsetHead_Reservation">   
-        <img src="logoPrixy.png" class="imageLogo_Reservation">
+        <img src="logoPrixy_sf.png" class="imageLogo_Reservation">
         <!-- <img src="profil.png" class="imageProfil_Reservation" type="button"> -->
         <div class="divparametre">
             <ul id="menu-accordeon">
