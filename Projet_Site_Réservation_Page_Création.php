@@ -1,4 +1,25 @@
 <html>
+    <?php
+        function affichage($a) {
+            if ($a == 1)
+            echo "<div id='Colonne'>
+                    <form action='Traitement_Creation.php' method='post' name ='formulaire2'>
+                        <fieldset class='FieldsetFormation_Creation'>
+                            <div id='test'>
+                                </br>
+                                <texte class='Question_Creation'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur' required></texte>
+                                </br>
+                                </br>
+                                <texte class='Question_Creation'>Adresse Mail : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail'></texte>
+                                </br>
+                                </br>
+                                <texte class='Question_Creation'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>";
+        }
+    ?>
     <head>
         <meta charset="utf-8">
         <title>Prixy création</title>
@@ -23,9 +44,9 @@
             <form action="Traitement_Creation.php" method="post" name ="formulaire">
             <fieldset class="fieldsetChoix">
                 </br>
-                <input type="radio" name = "choix"  id="Formation" value="Formation" onchange="this.form.submit();" required> Formation </br> 
-                <input type="radio" name = "choix"  id="Reservation_interne" value="Reservation_interne" onchange="this.form.submit();" required> Reservation_interne </br>
-                <input type="radio" name = "choix"  id="Reservation_externe" value="Reservation_externe" onchange="this.form.submit();" required> Reservation_externe </br>
+                <input type="radio" name = "choix"  id="Formation" value="Formation" onclick="<?php affichage(4); ?>" required> Formation </br> 
+                <input type="radio" name = "choix"  id="Reservation_interne" value="Reservation_interne" onclick="<?php affichage(4); ?>" required> Reservation_interne </br>
+                <input type="radio" name = "choix"  id="Reservation_externe" value="Reservation_externe" onclick="<?php affichage(4); ?>" required> Reservation_externe </br>
             </fieldset>
         </div>
 
@@ -39,7 +60,7 @@
         </br>
         <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Nom' name='Reservation_Nom' placeholder='Nom de la Reservation' ></textarea></texte>
         </fieldset>
-        <input type="submit" value="Envoyer" class="BoutonValidation">
+        <!--<input type="submit" value="Envoyer" class="BoutonValidation"> -->
         </form>
         </br>
     </body>
