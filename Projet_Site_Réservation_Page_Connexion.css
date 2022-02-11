@@ -225,12 +225,11 @@ td{
 }
 
 .FieldsetFormation_Creation{
-    margin-left: 50px;
-    margin-top: 50px;
-    height: 200px;
-    width: 450px;
+    margin-left: 70px;
+    height: 550px;
+    width: 500px;
     border-radius: 12%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.918);
     border-color: black;
     border-width: 3px;
 }
@@ -276,6 +275,8 @@ td{
 .Question_Creation_Base{
     font-size: 20px;
     margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 .test_Creation{
@@ -289,7 +290,7 @@ td{
 
 .BoutonValidation{
     position: absolute;
-    right: 390px;
+    right: 310px;
     top: 80%;
     background-color: rgb(23, 57, 94);
     height: 50px;
@@ -310,6 +311,10 @@ td{
 
 textarea{
     resize: none;
+}
+
+.colonne {
+    column-count: 2;
 }
 
 /*----------------------------------------------------- Page Réservation --------------------------------------*/
