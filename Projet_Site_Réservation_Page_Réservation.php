@@ -1,14 +1,33 @@
 <html>
-    <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css">
+    
     <head>
         <title>Détails de la réservation</title>
-        <fieldset class="fieldsetHead_Reservation">
-            <img src="logoPrixy.png" class="imageLogo_Reservation">
-            <img src="profil.png" class="imageProfil_Reservation" type="button">
-            <img src="parametre.png" class="imageParametre_Reservation">
-        </fieldset>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
 
+    
+    <fieldset class="fieldsetHead_Reservation">
+        
+        <img src="logoPrixy.png" class="imageLogo_Reservation">
+        <!-- <img src="profil.png" class="imageProfil_Reservation" type="button"> -->
+        
+        <nav class="menu_deroulant">
+            
+            <ul>
+                
+                <li class="deroulant"><a href="#"><img src="parametre.png" class="imageParametre_Reservation" ></a>
+                    <ul class="sous">
+                        <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                        <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </fieldset>
+    
     <body>
         <texte class="Date_Reservation">Afficher la date de la réservation</texte>
         </br>
@@ -32,5 +51,6 @@
             </br>
             <texte>Nombre de participant : </texte>
         </fieldset>
+        
     </body>
 </html>
