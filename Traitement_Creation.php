@@ -14,7 +14,6 @@ if($choix=="Reservation_externe"){
 }
 */
 ?>
-
 <html>
     <body>
         <?php 
@@ -24,7 +23,7 @@ if($choix=="Reservation_externe"){
                     <fieldset class='FieldsetFormation_Creation'>
                         <div id='test'>
                             </br>
-                            <texte class='Question_Creation'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur'></texte>
+                            <texte class='Question_Creation'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur' required></texte>
                             </br>
                             </br>
                             <texte class='Question_Creation'>Adresse Mail : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail'></texte>
