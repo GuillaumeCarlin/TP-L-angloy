@@ -16,8 +16,6 @@
 
 </style>
 <script>
-
-
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
@@ -48,6 +46,40 @@
     calendar.render();
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        center: 'addEventButton'
+      },
+      customButtons: {
+        addEventButton: {
+          text: 'nouveau',
+          click: function() {
+            var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+            var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+
+            if (!isNaN(date.valueOf())) { // valid?
+              calendar.addEvent({
+                title: 'dynamic event',
+                start: date,
+                
+                allDay: true
+              });
+              alert('Great. Now, update your database...');
+            } else {
+              alert('Invalid date.');
+            }
+          }
+        }
+      }
+    });
+
+    calendar.render();
+  });
+
 
 </script>
 <style>
@@ -65,12 +97,15 @@
   }
 
 </style>
+
 </head>
+
 <body>
 
   <div id='calendar'></div>
   <form action="Choix_Bouton.php">
     <button id="creer" type="submit" >Nouveau</button>
-</form>
+  </form>
+
 </body>
 </html>
