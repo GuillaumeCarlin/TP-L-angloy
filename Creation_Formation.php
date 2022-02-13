@@ -32,11 +32,11 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='time' id='Reservation_Heure' name='Reservation_Heure' min='8:00' max='18:00' step='' required></texte>
+                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='time' id='Reservation_Heure' name='Reservation_Heure' min='8:00' max='18:00' step='3600' required></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation</texte>
+                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='time' id='Reservation_Duree' name='Reservation_Duree' min='1:00' step='216000' max='5:00' > </texte>
                     </br>
                     </br>
                     </br>
@@ -44,7 +44,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Nom' name='Reservation_Nom' placeholder='Nom de la Reservation' required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Nom' name='Reservation_Nom' placeholder='Description de la Reservation' required></textarea></texte>
                 </fieldset>
 
                 <fieldset class="FieldsetFormation_Creation">
@@ -64,8 +64,8 @@
                     <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
-            <!--<input type="submit" value="Envoyer" class="BoutonValidation">-->
-            <bouton class='BoutonValidation' onclick = 'nouveau();' placeholder = 'Je suis la'> </bouton>
+           <!-- <input type="submit" value="Envoyer" class="BoutonValidation" >-->
+            <button class='BoutonValidation' onclick = 'nouveau()' value = 'Je suis la'> </button>
         </form>
     </body>
     
