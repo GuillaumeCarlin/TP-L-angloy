@@ -17,7 +17,7 @@
     </fieldset>
 
     <body class="body">
-        <form action="Calendrier.html" method="post" name ="formulaire">
+        <form action="Traitement_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -36,7 +36,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='time' id='Reservation_Duree' name='Reservation_Duree' min='1:00' step='216000' max='5:00' > </texte>
+                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='time' id='Reservation_Duree' name='Reservation_Duree' min='1:00' step='3600' max='5:00' > </texte>
                     </br>
                     </br>
                     </br>
@@ -64,8 +64,7 @@
                     <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
-           <!-- <input type="submit" value="Envoyer" class="BoutonValidation" >-->
-            <button class='BoutonValidation' onclick = 'nouveau()' value = 'Je suis la'> </button>
+            <input type="submit" value="Envoyer" class="BoutonValidation" >
         </form>
     </body>
     
