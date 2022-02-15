@@ -5,16 +5,21 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>
+    
+        <fieldset class="fieldsetHead">   
+            <img src="logoPrixy_sf.png" class="imageLogo_Reservation">
+            <div class="divparametre">
+                <ul id="menu-accordeon">
+                    <li><a href="#"><img src="parametre.png" class="imageParametre_Reservation" ></a>
+                        <ul>
+                            <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                            <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </fieldset>
     </head>
-
-    <fieldset class="fieldsetHead_Creation">
-            
-            <img src="logoPrixy.png" class="imageLogo_Creation">
-            
-            <img src="profil.png" class="imageProfil_Creation">
-            
-            <img src="parametre.png" class="imageParametre_Creation">
-    </fieldset>
 
     <body class="body">
         <form action="Traitement_Formation.php" method="post" name ="formulaire">
