@@ -3,6 +3,11 @@
 include("Fonction.php");
 include("Projet_Site_Reservation_Page_Compte.php");
 
+if(connexion()) {
+    echo 'ca marche';
+}
+
+
 $Reservation_Nom = $_POST["Reservation_Nom"];
 $Reservation_Date = $_POST["Reservation_Date"];
 $Reservation_Heure = $_POST["Reservation_Heure"];

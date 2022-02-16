@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
   <head>
   <meta charset='utf-8' />
   <link href='lib/main.css' rel='stylesheet' />
@@ -21,7 +22,12 @@
         </ul>
     </div>
   </fieldset> -->
+<?php
 
+
+
+
+?>
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -37,9 +43,11 @@
     },
 
     dateClick: function(info) {
-      document.location.href="Choix_Bouton.php"
-      //info.dayEl.style.backgroundColor = 'red';
-    
+        document.location.href="Choix_Bouton.php"
+        //info.dayEl.style.backgroundColor = 'red';
+        if(connexion()) {
+            
+        } 
       
       calendar.addEvent({
       title: '',
@@ -53,6 +61,7 @@
     calendar.render();
   });
 
+  
 
 
 </script>
@@ -80,4 +89,4 @@
   <div id='calendar'></div>
 
 </body>
-
+</html>
