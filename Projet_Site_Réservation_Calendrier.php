@@ -1,20 +1,18 @@
 <html>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
     <head>
-        
-        <fieldset class="fieldsetHead_Calendrier">
-            <img src="logoPrixy.png" class="imageLogo_Calendrier">
-
-            <!--
-            <button type="button" class="BoutonProfil">
-            <img src="profil.png" class="imageProfil">
-            </button>
-
-            <button type="button" class="BoutonParametre">
-            <img src="parametre.png" class="imageParametre">
-            </button>
-            -->
-            <a href="Projet_Site_Réservation_Page_Connexion.php" class="Deconnexion_Calendrier">Déconnexion</a>
+        <fieldset class="fieldsetHead">   
+            <img src="logoPrixy_sf.png" class="logo_prixy_head">
+            <div class="divparametre">
+                <ul id="menu-accordeon">
+                    <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
+                        <ul>
+                            <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                            <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </fieldset>
     </head>
 
