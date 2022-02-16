@@ -3,9 +3,7 @@
 include("Fonction.php");
 include("Projet_Site_Reservation_Page_Compte.php");
 
-if(connexion()) {
-    echo 'ca marche';
-}
+
 
 
 $Reservation_Nom = $_POST["Reservation_Nom"];
@@ -18,6 +16,20 @@ $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
 
-$requete = "INSERT INTO reservation(RESERVDate,HeureDebut,'Description',Intitule,NBparticipant)"
 
+$con = mysqli_connect('localhost','root','');
+if ($con) {
+    $connectdb = mysqli_select_db($con, 'bdd_prixy');
+    if ($connectdb) {
+        $requete = "INSERT INTO `reservation` (`NUMReservation`, `RESERVDate`, `HeureDebut`, `HeureFIN`, `Description`, `Intitule`, `NBparticipant`, `IDSalle`, `UTILNomUtilisateur`) 
+        VALUES (NULL, DATE('2022-02-17'), '17:54:56', '18:54:56', 'test2', 'Discret', '12', '205', 'Nathan');";
+        $insertion = mysqli_query($con, $requete);
+    }
+    else {
+        echo 'Erreur de connexion à la base de donnée';
+    }
+}
+else {
+    echo 'Erreur de connexion au serveur';
+}
 ?>
