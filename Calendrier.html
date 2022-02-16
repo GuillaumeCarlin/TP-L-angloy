@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <head>
   <meta charset='utf-8' />
   <link href='lib/main.css' rel='stylesheet' />
   <script src='lib/main.js'></script>
@@ -21,11 +22,8 @@
         </ul>
     </div>
   </fieldset> -->
-</html>
-
 
 <script>
-
 
   document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
@@ -33,28 +31,25 @@
     initialView: 'dayGridMonth',
     selectable: true,
 
-    dateClick: function(info) {
-      alert('Clicked on: ' + info.dateStr);
-      alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-      alert('Current view: ' + info.view.type);
-      // change the day's background color just for fun
-      info.dayEl.style.backgroundColor = 'red';
-    }
-  });
-    var dateStr = "2022-02-12";
-    var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
 
-    if (!isNaN(date.valueOf())) { // valid?
+    dateClick: function(info) {
+      document.location.href="Choix_Bouton.php"
+      //info.dayEl.style.backgroundColor = 'red';
+
+      
       calendar.addEvent({
-      title: 'titre',
-      start: date,
+      title: '',
+      start: info.dateStr,
       
       allDay: true
       });
-    } 
-    else {
-        alert('Invalid date.');
     }
+  });
 
     calendar.render();
   });
@@ -62,6 +57,7 @@
 
 
 </script>
+</head>
 <style>
 
   body {
