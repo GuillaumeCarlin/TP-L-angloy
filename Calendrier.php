@@ -5,11 +5,11 @@
   <link href='lib/main.css' rel='stylesheet' />
   <script src='lib/main.js'></script>
   <meta charset="utf-8">
-  <title> Prixy création Formation </title>
+  <!-- <title> Prixy création Formation </title>
   <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png"> 
   
-  <!-- <fieldset class="fieldsetHead">   
+  <fieldset class="fieldsetHead">   
     <img src="logoPrixy_sf.png" class="logo_prixy_head">
     <div class="divparametre">
         <ul id="menu-accordeon">
