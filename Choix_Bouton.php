@@ -25,7 +25,7 @@
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
         
-        $query = "SELECT Intitule, IDSalle FROM reservation";
+        $query = "SELECT * FROM reservation";
         
         $result = mysqli_query($mysqli, $query);
         

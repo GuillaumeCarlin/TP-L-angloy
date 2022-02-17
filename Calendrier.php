@@ -31,34 +31,21 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    selectable: true,
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      selectable: true,
 
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay'
-    },
-
-    dateClick: function(info) {
-        document.location.href="Choix_Bouton.php"
-        //info.dayEl.style.backgroundColor = 'red';
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      }
       
-      calendar.addEvent({
-      title: '',
-      start: info.dateStr,
-      
-      allDay: true
-      });
-    },
+    });
 
-    
-      });
-
-        calendar.render();
-      });
+    calendar.render();
+  });
 
   
 
