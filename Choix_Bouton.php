@@ -21,18 +21,5 @@
                 </form>
             </fieldset>
         </div> 
-    <?php
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-        $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
-        
-        $query = "SELECT * FROM reservation";
-        
-        $result = mysqli_query($mysqli, $query);
-        
-        /* fetch associative array */
-        while ($row = mysqli_fetch_assoc($result)) {
-            printf("%s (%s)\n", $row["Intitule"], $row["IDSalle"]);
-        }
-    ?>
     </body>
 </html>

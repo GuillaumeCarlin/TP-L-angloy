@@ -24,7 +24,9 @@
   </fieldset> -->
 
 <script>
-var montableau = [];
+var js_date_reservation = [];
+var js_nom_reservation = [];
+var js_id_reservation = [];
 </script>
 <?php
 
@@ -39,68 +41,81 @@ $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
 $query = "SELECT * FROM reservation";
 $result = mysqli_query($mysqli, $query);
 
-while ($row = mysqli_fetch_assoc($result)) {
-  array_push($nom_reservation, $row["Intitule"]);
-}
 // Remplissage des dates
 $date_reservation = array();
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+$query = "SELECT * FROM reservation";
+$result = mysqli_query($mysqli, $query);
+
+// 
+$id_reservation = array();
 
 $query = "SELECT * FROM reservation";
 $result = mysqli_query($mysqli, $query);
 
 while ($row = mysqli_fetch_assoc($result)) {
-  array_push($date_reservation, $row["RESERVDate"]);
   $ligne++;
   ?>
-  <script>montableau.push('<?php echo $row["RESERVDate"]; ?>')</script>
+  <script>
+  js_date_reservation.push('<?php echo $row["RESERVDate"]; ?>');
+  js_nom_reservation.push('<?php echo $row["Intitule"]; ?>');
+  js_id_reservation.push('<?php echo $row["NUMReservation"]; ?>');
+
+</script>
   <?php
 }
-
-$a = 3;
-$b = 2;
-
-if ($a > $b)
-{
-  ?>
-  <script> alert('test'); </script>
-  <?php
-}
+$con = mysqli_connect('localhost','root','');
+$connectdb = mysqli_select_db($con, 'bdd_prixy');
 ?>
 
 <script>
-  for (i = 0; i < 12; i++) {
-    alert(montableau[i]);
-  }
-  
-
+  var ligne = '<?php echo $ligne?>';
   document.addEventListener('DOMContentLoaded', function() {
+    var initialLocaleCode = 'fr';
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      selectable: true,
-
       headerToolbar: {
-        left: 'prev,next today',
+        left: 'prev,next today ajouter',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
 
-      dateClick: function(info) {
-        for (i = 0; i < 12; i++) {
-          calendar.addEvent({ title: 'test', start: montableau[i], allDay: true });
-        }
-      }
-  
-      
-    });
+      initialView: 'dayGridMonth',
+      locale: 'fr',
+      navLinks: true, 
+      selectable: true,
+      selectMirror: true,
 
+      customButtons: {
+        ajouter: {
+          text: 'Nouveau',
+          click: function() {
+            document.location.href="Choix_Bouton.php"
+          }
+        }
+      },
+      eventClick: function(arg) {
+        if (confirm('Etes-vous sur de supprimer cet évenement ?')) {
+          
+          arg.event.remove()
+          <?php
+          $requete_suppr = "DELETE FROM `reservation` WHERE `reservation`.`NUMReservation` = 18";
+          $suppression_reservation = mysqli_query($con, $requete_suppr);
+          ?>
+        }
+      },
+
+    });
+    for (i = 0; i < ligne; i++) {
+      calendar.addEvent({ 
+        id: js_id_reservation[i],
+        title: js_nom_reservation[i], 
+        start: js_date_reservation[i], 
+        allDay: true 
+      });
+    }
     calendar.render();
   });
-
-
 
 
 </script>
