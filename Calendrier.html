@@ -95,3 +95,33 @@
   //   allDay: true
   //   });
   // },
+
+
+
+
+
+
+  var nb_ligne = '<?php echo $ligne; ?>';
+var montableau = [];
+<?php $i = 0; ?>
+for (i = 0; i < nb_ligne; i++) {
+  montableau.push('<?php echo $nom_reservation[$i]; ?>')
+}
+
+montableau.push('<?php echo $nom_reservation[0]; ?>')
+montableau.push('<?php echo $nom_reservation[1]; ?>')
+montableau.push('<?php echo $nom_reservation[2]; ?>')
+montableau.push('<?php echo $nom_reservation[3]; ?>')
+montableau.push('<?php echo $nom_reservation[4]; ?>')
+montableau.push('<?php echo $nom_reservation[5]; ?>')
+montableau.push('<?php echo $nom_reservation[6]; ?>')
+montableau.push('<?php echo $nom_reservation[7]; ?>')
+montableau.push('<?php echo $nom_reservation[8]; ?>')
+montableau.push('<?php echo $nom_reservation[9]; ?>')
+montableau.push('<?php echo $nom_reservation[10];?>')
+montableau.push('<?php echo $nom_reservation[11];?>')
+
+
+dateClick: function(info) {
+  calendar.addEvent({ title: '<?php echo $nom_reservation[0]; ?>', start: '<?php echo $date_reservation[0]; ?>', allDay: true });
+}

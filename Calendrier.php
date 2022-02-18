@@ -23,42 +23,59 @@
     </div>
   </fieldset> -->
 
-
-<?php
-$mar_var_php = "baxterbax";
-
-$nom_reservation = array();
-  $test = "test";
-  mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-  $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
-  
-  $query = "SELECT * FROM reservation";
-  $ligne = 0;
-  $result = mysqli_query($mysqli, $query);
-  
-  /* fetch associative array */
-  while ($row = mysqli_fetch_assoc($result)) {
-    array_push($nom_reservation, $row["Intitule"]);
-    $ligne++;
-  }
-?>
 <script>
-
-
-var nb_ligne = '<?php echo $ligne; ?>';
 var montableau = [];
-<?php $i = 0; ?>
-for (i = 0; i < nb_ligne; i++) {
-  montableau.push('<?php echo $nom_reservation[$i]; ?>')
+</script>
+<?php
+
+
+
+// Remplissage des noms
+$nom_reservation = array();
+$ligne = 0;
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+
+$query = "SELECT * FROM reservation";
+$result = mysqli_query($mysqli, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+  array_push($nom_reservation, $row["Intitule"]);
+}
+// Remplissage des dates
+$date_reservation = array();
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+
+$query = "SELECT * FROM reservation";
+$result = mysqli_query($mysqli, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+  array_push($date_reservation, $row["RESERVDate"]);
+  $ligne++;
+  ?>
+  <script>montableau.push('<?php echo $row["RESERVDate"]; ?>')</script>
+  <?php
 }
 
+$a = 3;
+$b = 2;
 
-
-
-</script>
+if ($a > $b)
+{
+  ?>
+  <script> alert('test'); </script>
+  <?php
+}
+?>
 
 <script>
-  alert(montableau[7]);
+  for (i = 0; i < 12; i++) {
+    alert(montableau[i]);
+  }
+  
+
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -69,7 +86,14 @@ for (i = 0; i < nb_ligne; i++) {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+
+      dateClick: function(info) {
+        for (i = 0; i < 12; i++) {
+          calendar.addEvent({ title: 'test', start: montableau[i], allDay: true });
+        }
       }
+  
       
     });
 
