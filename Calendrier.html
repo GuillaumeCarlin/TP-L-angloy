@@ -125,3 +125,11 @@ montableau.push('<?php echo $nom_reservation[11];?>')
 dateClick: function(info) {
   calendar.addEvent({ title: '<?php echo $nom_reservation[0]; ?>', start: '<?php echo $date_reservation[0]; ?>', allDay: true });
 }
+
+
+
+<?php
+          $test = '<script> document.write(id); </script>';
+          $requete_suppr = "DELETE FROM `reservation` WHERE `reservation`.`NUMReservation` = 5";
+          $insertion_reservation = mysqli_query($con, $requete_suppr);
+          ?>

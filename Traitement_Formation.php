@@ -37,5 +37,9 @@ else {
     echo 'Erreur de connexion au serveur';
 }
 
+function suppr_event($id) {
+    echo 'test';
+}
+
 header('Location: Calendrier.php');
 ?>
