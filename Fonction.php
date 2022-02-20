@@ -1,17 +1,19 @@
 <?php
-    $connexion = mysqli_connect("localhost","root","");
-    if ($connexion) { 
-        echo 'Connexion au serveur réussie';
-        $BDD = mysqli_select_db($connexion,'bdd_prixy');
-        if ($BDD) {
-            echo '</br>Base de données sélectionnée';
-            
+    function connexion() {
+        $con = mysqli_connect('localhost','root','');
+        if ($con) {
+            $connectdb = mysqli_select_db($con, 'bdd_prixy');
+            if ($connectdb) {
+                return true;
+            }
+            else {
+                echo 'Erreur de connexion à la base de donnée';
+                return false;
+            }
         }
-        else{ 
-            echo '</br>Echec de la sélection de la base'; 
+        else {
+            echo 'Erreur de connexion au serveur';
+            return false;
         }
-    } 
-    else{ 
-        echo 'Erreur lors de la connexion';
     }
 ?>

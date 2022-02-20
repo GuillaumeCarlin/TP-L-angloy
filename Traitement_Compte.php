@@ -12,6 +12,25 @@ if ($_POST['declare_admin']){
     $declare_admin = $_POST['declare_admin'];
 }
 
+/////////////////////////////////////////
+$connexion = mysqli_connect("localhost","root","");
+    if ($connexion) { 
+        echo 'Connexion au serveur réussie';
+        $BDD = mysqli_select_db($connexion,'bdd_prixy');
+        if ($BDD) {
+            echo '</br>Base de données sélectionnée';
+            
+        }
+        else{ 
+            echo '</br>Echec de la sélection de la base'; 
+        }
+    } 
+    else{ 
+        echo 'Erreur lors de la connexion';
+    }
+////////////////////////////////////////////
+
+
 
 $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$NomUtilisateur."';");
 $resultat=mysqli_fetch_array($requete);
@@ -47,3 +66,4 @@ else{
     }
 }
 
+?>

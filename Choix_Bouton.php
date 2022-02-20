@@ -20,6 +20,6 @@
                     <button type="submit" class = "boutonConnexion" >Reservation interne</button>
                 </form>
             </fieldset>
-        </div>   
+        </div> 
     </body>
 </html>

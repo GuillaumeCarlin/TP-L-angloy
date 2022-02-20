@@ -22,7 +22,7 @@
     </head>
 
     <body class="body">
-        <form action="Calendrier.html" method="post" name ="formulaire">
+        <form action="Traitement_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -37,19 +37,19 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='time' id='Reservation_Heure' name='Reservation_Heure' min='8:00' max='18:00' step='3600' required></texte>
+                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='time' id='Reservation_Duree' name='Reservation_Duree' min='1:00' step='216000' max='5:00' > </texte>
+                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Nom' name='Reservation_Nom' min="0" max="30" required>  / 30</texte>
+                    <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" required>  / 30</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Nom' name='Reservation_Nom' placeholder='Description de la Reservation' required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
                 </fieldset>
 
                 <fieldset class="FieldsetFormation_Creation">
@@ -61,16 +61,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
-           <!-- <input type="submit" value="Envoyer" class="BoutonValidation" >-->
-            <button class='BoutonValidation' onclick = 'nouveau()' value = 'Je suis la'> </button>
+            <input type="submit" value="Envoyer" class="BoutonValidation" >
         </form>
     </body>
     
