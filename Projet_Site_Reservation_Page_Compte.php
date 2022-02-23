@@ -24,7 +24,7 @@
                 </br>
                 </br>
                 <div class="check">
-                <text class="admin_Compte">Administrateur </text> <input type="checkbox" id="test3"/><label for="test3"><span class="ui"></span>
+                <text class="admin_Compte">Administrateur </text> <input type="checkbox" id="adminID" name='admin' value='True'><label for="adminID"><span class="ui"></span>
                 </div>
                 <input type="submit" class="boutonNvCpt_Compte" value="Créer un compte">
             </fieldset>
