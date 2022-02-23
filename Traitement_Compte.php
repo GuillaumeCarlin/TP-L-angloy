@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("Fonction.php");
 include("Projet_Site_Reservation_Page_Compte.php");
 
@@ -8,9 +8,17 @@ $access=0;
 $NomUtilisateur = $_POST["Utilisateur"];
 $mdp = $_POST['mdp'];
 $mdpC = $_POST['mdpC'];
+<<<<<<< HEAD
 if ($_POST['declare_admin']){
     $declare_admin = $_POST['declare_admin'];
 }
+=======
+/*$admin = $_POST['admin'];*/
+$admin=isset($_POST['admin']) ? $_POST['admin'] : NULL;
+$admin=!empty($_POST['admin']) ? $_POST['admin'] : NULL;
+
+echo $admin;
+>>>>>>> 27aebe59a451a38aa8603fdab057f6426b058605
 
 /////////////////////////////////////////
 $connexion = mysqli_connect("localhost","root","");
@@ -43,6 +51,7 @@ if($compte){
 
 else{
 /*Vérification du mot de passe */
+<<<<<<< HEAD
     if ($mdp == $mdpC){
         /* Si le mot de passe est bon le compte est créer
             Vérifie si le compte est déclaré comme administrateur */
@@ -60,10 +69,28 @@ else{
         else{
             echo "Echec de l'insertion";
         }*/
+=======
+if ($mdp == $mdpC){
+    /* Si le mot de passe est bon le compte est créer*/
+    $requete = "INSERT INTO utilisateur(UTILNomUtilisateur, UTILMotDePasse, UTILAdmin) VALUES('$NomUtilisateur', '$mdp', '$admin')";
+    $resultat = mysqli_query($connexion,$requete) or die(mysqli_error($connexion)); 
+    /*if ($resultat) {
+        echo "Insertion réussie";
+>>>>>>> 27aebe59a451a38aa8603fdab057f6426b058605
     }
     else{
         echo"<div class=erreur_crea_mdp><strong> Le Nom d'utilisateur existe déja </strong></div>";
     }
 }
+<<<<<<< HEAD
 
 ?>
+=======
+else{
+    
+}
+?>
+<html>
+    <meta http-equiv="Refresh" content="0; Calendrier.html" />
+</html>
+>>>>>>> 27aebe59a451a38aa8603fdab057f6426b058605
