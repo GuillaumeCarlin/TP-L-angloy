@@ -8,7 +8,7 @@
 
     
     <body class="body">
-        <form method="POST" action="/Traitement_Compte">
+        <form method="POST" action="Traitement_Compte.php">
             <fieldset class="fieldset">
                 </br>
                 </br>
@@ -24,7 +24,11 @@
                 </br>
                 </br>
                 <div class="check">
-                <text class="admin_Compte">Administrateur </text> <input type="checkbox" id="test3"/><label for="test3"><span class="ui"></span>
+<<<<<<< HEAD
+                    <text class="admin_Compte">Administrateur </text> <input type="checkbox" name="declare_admin" id="declare_admin"/><label for="declare_admin"><span class="ui"></span>
+=======
+                <text class="admin_Compte">Administrateur </text> <input type="checkbox" id="adminID" name='admin' value='True'><label for="adminID"><span class="ui"></span>
+>>>>>>> 27aebe59a451a38aa8603fdab057f6426b058605
                 </div>
                 <input type="submit" class="boutonNvCpt_Compte" value="Créer un compte">
             </fieldset>

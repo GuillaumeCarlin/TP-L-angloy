@@ -384,10 +384,10 @@ textarea{
   top: .12em; left: .24em;
 }
 [type="checkbox"]:checked + label:before {
-    background:#34495E; 
+    background:rgb(23, 65, 97); 
   }
   [type="checkbox"]:checked + label:after {
-    background: #39D2B4;
+    background: white;
     left: 2.4em;
   }
   
@@ -423,6 +423,7 @@ textarea{
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 30px;
+
   }
   .bouton_Compte{
     margin-left: 150px;
@@ -442,6 +443,7 @@ textarea{
 .admin_Compte{
     font-size: 20px;
     margin-right: 15px;
+    font-family:'fantasy',sans-serif;
 }
 
 .boutonNvCpt_Compte{
@@ -461,7 +463,18 @@ textarea{
     background-color: rgb(23, 65, 97);
 }
 
+.erreur_crea_nomutilisateur{
+    color: red;
+    margin-left: 140px;
+    font-family: arial,sans-serif;
 
+}
+
+.erreur_crea_mdp{
+    color: red;
+    margin-left: 140px;
+    font-family: arial,sans-serif;
+}
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
     
     /* BARRE MENU */
