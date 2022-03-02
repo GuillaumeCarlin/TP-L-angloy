@@ -492,8 +492,9 @@ textarea{
 }
 
 .erreur_crea_mdp{
+    position : relative;
     color: red;
-    margin-left: 140px;
+    margin: 0 auto;
     font-family: arial,sans-serif;
 }
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
