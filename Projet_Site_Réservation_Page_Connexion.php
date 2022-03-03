@@ -29,7 +29,6 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST
                     $utilisateur = htmlspecialchars($_POST["Utilisateur"]);
                     $mdp = htmlspecialchars($_POST["mdp"]);
-                    $mdp=md5($mdp);
                 }
                 
                 
