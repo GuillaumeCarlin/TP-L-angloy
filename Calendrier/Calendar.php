@@ -1,5 +1,7 @@
 <?php
-//index.php
+session_start();
+$utilisateur = $_SESSION["utilisateur"];
+$administrateur = $_SESSION["administrateur"];
 
 ?>
 <!DOCTYPE html>
@@ -129,9 +131,13 @@
     <ul id="menu-accordeon">
         <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
             <ul>
-                <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
-                <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
-            </ul>
+                <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                <?php
+                if ($administrateur==1){
+                  echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                }
+                ?>
+              </ul>
         </li>
     </ul>
     </div>
