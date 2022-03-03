@@ -4,7 +4,8 @@
 .fieldset{
     width: 300px;
     height: 500px;
-    border-color: rgb(0, 0, 0);
+    border-color: white;
+    border:solid 2px white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
@@ -178,8 +179,9 @@ td{
 
 .Fieldset_Choix_Bouton{
     width: 300px;
-    height: 500px;
+    height: 450px;
     border-color: rgb(0, 0, 0);
+    border: solid 2px white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 130px;
@@ -484,16 +486,12 @@ textarea{
     background-color: rgb(23, 65, 97);
 }
 
-.erreur_crea_nomutilisateur{
-    color: red;
-    margin-left: 140px;
-    font-family: arial,sans-serif;
 
-}
 
 .erreur_crea_mdp{
+    position : relative;
     color: red;
-    margin-left: 140px;
+    margin-left: 12em;
     font-family: arial,sans-serif;
 }
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
@@ -503,6 +501,7 @@ textarea{
             border-color: black;
             background-color: rgb(179, 178, 178);
             height: 50px;
+            border :solid 2px rgb(179, 178, 178);
             margin-bottom: 50px; 
             border-radius: 20px;
         }
@@ -530,7 +529,7 @@ textarea{
     /* PARAMETRE */
         .divparametre{
             position: absolute;
-            margin-top: -3.5%;
+            margin-top: -3.7%;
             margin-left: 86%;
         }
 

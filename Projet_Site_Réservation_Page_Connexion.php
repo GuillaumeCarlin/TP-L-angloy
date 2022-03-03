@@ -1,7 +1,6 @@
 <html>
     <?php 
-        session_set_cookie_params(0);
-        session_start(); 
+        
         include("Fonction.php");
     ?>
     <head> 
@@ -30,11 +29,12 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST
                     $utilisateur = htmlspecialchars($_POST["Utilisateur"]);
                     $mdp = htmlspecialchars($_POST["mdp"]);
+                    $mdp=md5($mdp);
                 }
                 
                 
             
-                $connexion = mysqli_connect("localhost","root","");
+                $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                 if (count($_POST)==2){
                     if ($connexion) { 
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
@@ -49,7 +49,20 @@
                             // md5() --> hachage
                             if ($compte != 0){
                                 echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
-                                header('Location: calendrier.html');
+                                
+                                session_start();
+                                
+                                $_SESSION["utilisateur"]=$utilisateur;
+                                $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");
+                                $resultatrequete=mysqli_fetch_array($requete);
+                                $comptage=$resultatrequete['count(*)'];
+                                if($comptage != 0){
+                                    $_SESSION["administrateur"]=1;
+                                }
+                                else{
+                                    $_SESSION["administrateur"]=0;
+                                }
+                                header('Location: Calendrier/Calendar.php');
                             }
                             else{
                                 echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";

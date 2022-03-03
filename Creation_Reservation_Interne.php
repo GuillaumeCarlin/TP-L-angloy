@@ -5,6 +5,11 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     
+        <?php
+        session_start();
+        $utilisateur = $_SESSION["utilisateur"];
+        $administrateur = $_SESSION["administrateur"];
+        ?>
 
         <fieldset class="fieldsetHead">   
                 <img src="logoPrixy_sf.png" class="logo_prixy_head">
@@ -13,7 +18,11 @@
                         <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                             <ul>
                                 <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
-                                <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+                                <?php
+                                    if ($administrateur==1){
+                                        echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                    }
+                                ?>
                             </ul>
                         </li>
                     </ul>
@@ -23,7 +32,7 @@
     <body class="body">
         <form action="Traitement_Reservation_Interne.php" method="post" name = "formulaire">
             <div class="colonne">
-                <fieldset class="FieldsetFormation_Creation">
+            <fieldset class="FieldsetFormation_Creation">
                     </br>
                     </br>
                     </br>
@@ -35,19 +44,19 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' required> heures</texte>
+                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' required> heures</texte>
+                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Nom' name='Reservation_Nom' min="0" max="30" required>  / 30</texte>
+                    <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" required>  / 30</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Nom' name='Reservation_Nom' placeholder='Description de la Reservation' required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
                 </fieldset>
 
                 <fieldset class="FieldsetFormation_Creation">
