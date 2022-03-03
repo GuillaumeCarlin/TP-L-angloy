@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `descriptionEvent` varchar(255) NOT NULL,
   `participant` int NOT NULL,
   `IDSalle` varchar(255) NOT NULL,
-  `UTILNomUtilisateur` varchar(255)
+  `UTILNomUtilisateur` varchar(255),
+  `type` varchar(32)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -38,6 +39,3 @@ ALTER TABLE `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-
-ALTER TABLE `events` ADD `type` INT NOT NULL AFTER `UTILNomUtilisateur`;
