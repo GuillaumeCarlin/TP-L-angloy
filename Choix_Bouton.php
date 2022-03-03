@@ -5,6 +5,13 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
+
+    <?php
+        session_start();
+        $utilisateur = $_SESSION["utilisateur"];
+        $administrateur = $_SESSION["administrateur"];
+    ?>
+
     <body class = "body">
         <div id = "ajout" class = "troisBouton">
             <fieldset class = "Fieldset_Choix_Bouton">

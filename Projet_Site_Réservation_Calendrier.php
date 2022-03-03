@@ -1,11 +1,11 @@
 <html>
     <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
     <head>
-        <?php
-        session_start();
-        $utilisateur = $_SESSION["utilisateur"];
-        $administrateur = $_SESSION["administrateur"];
-        ?>
+    <?php
+    session_start();
+    $utilisateur = $_SESSION["utilisateur"];
+    $administrateur = $_SESSION["administrateur"];
+    ?>
         
         <fieldset class="fieldsetHead">   
             <img src="logoPrixy_sf.png" class="logo_prixy_head">
