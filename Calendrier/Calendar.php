@@ -22,9 +22,19 @@
     editable:true,
     header:{
      left:'prev,next today',
-     center:'title',
+     center:'title ajt',
      right:'month,agendaWeek,agendaDay'
     },
+
+    customButtons: {
+    ajt: {
+      text: 'Ajouter',
+      click: function() {
+        window.location.replace("../Choix_Bouton.php");
+      }
+    }
+  },
+
     events: 'load.php',
     selectable:true,
     selectHelper:true,
