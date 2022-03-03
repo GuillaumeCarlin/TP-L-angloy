@@ -484,17 +484,12 @@ textarea{
     background-color: rgb(23, 65, 97);
 }
 
-.erreur_crea_nomutilisateur{
-    color: red;
-    margin-left: 140px;
-    font-family: arial,sans-serif;
 
-}
 
 .erreur_crea_mdp{
     position : relative;
     color: red;
-    margin: 0 auto;
+    margin-left: 12em;
     font-family: arial,sans-serif;
 }
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
