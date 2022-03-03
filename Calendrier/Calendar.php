@@ -110,20 +110,8 @@
 
     eventClick:function(event)
     {
-     if(confirm("Are you sure you want to remove it?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"delete.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Event Removed");
-       }
-      })
-     }
+        var id = event.id;
+        window.location.replace("../Projet_Site_Réservation_Page_Réservation.php");
     },
 
    });
