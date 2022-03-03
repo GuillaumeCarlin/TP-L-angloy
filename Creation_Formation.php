@@ -7,10 +7,10 @@
         <script src = 'lib/main.js'></script>
     
         <fieldset class="fieldsetHead">   
-            <img src="logoPrixy_sf.png" class="imageLogo_Reservation">
+            <img src="logoPrixy_sf.png" class="logo_prixy_head">
             <div class="divparametre">
                 <ul id="menu-accordeon">
-                    <li><a href="#"><img src="parametre.png" class="imageParametre_Reservation" ></a>
+                    <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                         <ul>
                             <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                             <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>

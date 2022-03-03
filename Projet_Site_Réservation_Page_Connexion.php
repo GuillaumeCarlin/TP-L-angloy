@@ -34,7 +34,7 @@
                 
                 
             
-            
+                $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                 if (count($_POST)==2){
                     if ($connexion) { 
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
@@ -63,5 +63,6 @@
             
         </fieldset>
         </form>
+        
     </body>
 </html>
