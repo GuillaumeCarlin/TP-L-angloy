@@ -17,8 +17,12 @@ $end_event = $Reservation_Date .' '.$heure_fin.':00:00';
 
 /* Table Formateur */
 
-$Formateur = $_POST["Formateur"];
-$AdresseMail = $_POST["AdresseMail"];
+$Client = $_POST["NomClient"];
+$RaisonSociale = $_POST["Entreprise"];
+$Adresse = $_POST["Adresse"];
+$CodePostal = $_POST["CodePostal"];
+$Ville = $_POST["Ville"];
+$Email = $_POST["Mail"];
 $Telephone = $_POST["Telephone"];
 
 
@@ -30,9 +34,9 @@ if ($con) {
         VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation');";
         $insertion_reservation = mysqli_query($con, $test);
         
-        $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
-        VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
-        $insertion_formateur = mysqli_query($con, $requete_formateur);
+        $requete_client = "INSERT INTO `client` (`IDCLient`, `CLIRaisonSociale`, `CLIAdresseComplete`, `CLICodePostale`, `CLITelFixe`, `CLITelMobile`, `CLIEmail`, `CLIVille`) 
+        VALUES (NULL, '$Client', '$Adresse', '$CodePostal', '$Telephone', '1212121212', '$Email', '$Ville');";
+        $insertion_client = mysqli_query($con, $requete_client);
 
     }
     else {
