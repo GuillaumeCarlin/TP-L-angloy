@@ -5,7 +5,6 @@ include("Projet_Site_Reservation_Page_Compte.php");
 $access=0;
 
 session_start();
-session_set_cookie_params(0);
 echo $_SESSION["utilisateur"]
 /*
 /////////////////////////////////////////

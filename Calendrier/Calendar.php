@@ -4,7 +4,13 @@
 ?>
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
+  <meta charset="utf-8">
+  <title>Prixy calendrier</title>
+  <link rel="stylesheet" href="lelogoparametre.css"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -119,6 +125,16 @@
    
   </script>
  </head>
+ <div class="divparametre">
+    <ul id="menu-accordeon">
+        <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
+            <ul>
+                <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+            </ul>
+        </li>
+    </ul>
+    </div>
  <body>
   <br />
   <br />
