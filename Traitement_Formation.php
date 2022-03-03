@@ -1,16 +1,18 @@
 <?php
 
 //include("Calendrier.php");
-//include("Calendrier.php");
 
 /* Table reservation */
 $Reservation_Nom = $_POST["Reservation_Nom"];
 $Reservation_Date = $_POST["Reservation_Date"];
 $Reservation_Heure = $_POST["Reservation_Heure"];
+$Reservation_Duree = $_POST["Reservation_Duree"];
 $Reservation_Participant = $_POST["Reservation_Participant"];
 $Reservation_Descriptif = $_POST["Reservation_Descriptif"];
-$start_event = $Reservation_Date
-$Reservation_Duree = $_POST["Reservation_Duree"];
+$start_event = $Reservation_Date .' '.$Reservation_Heure.':00:00';
+$heure_fin = $Reservation_Heure + $Reservation_Duree;
+$end_event = $Reservation_Date .' '.$heure_fin.':00:00';
+
 
 /* Table Formateur */
 
@@ -35,7 +37,7 @@ if ($con) {
         VALUES (NULL, '$Reservation_Nom', DATE('$Reservation_Date'), '2022-02-13', '$Reservation_Descriptif', '$Reservation_Participant', '205';";
         
         $test = "INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`) 
-        VALUES (NULL, '$Reservation_Nom', '2022-03-04 13:22:47', '2022-03-04 13:22:47', 'tze', '12', 'fz', 'dsq');";
+        VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin');";
         $insertion_reservation = mysqli_query($con, $test);
         
         $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
