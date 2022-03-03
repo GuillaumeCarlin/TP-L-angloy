@@ -29,7 +29,7 @@
                 </div>
                 <input type="submit" class="boutonNvCpt_Compte" value="Créer un compte">
                 <?php
-                // ini_set("display_errors","off");
+                ini_set("display_errors","off");
                 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST si la methode est la bonne
                     $NomUtilisateur = $_POST["Utilisateur"];
