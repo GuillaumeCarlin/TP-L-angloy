@@ -1,7 +1,7 @@
+
 <html>
     <?php 
-        session_set_cookie_params(0);
-        session_start(); 
+        
         include("Fonction.php");
     ?>
     <head> 
@@ -49,6 +49,12 @@
                             // md5() --> hachage
                             if ($compte != 0){
                                 echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
+                                
+                                session_start();
+                                session_set_cookie_params(0);
+                                $_SESSION["utilisateur"]=$utilisateur;
+                                if()
+
                                 header('Location: Calendrier/Calendar.php');
                             }
                             else{
