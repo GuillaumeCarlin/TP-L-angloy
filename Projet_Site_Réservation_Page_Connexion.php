@@ -34,7 +34,7 @@
                 
                 
             
-                $connexion = mysqli_connect("localhost","root","","bdd_formulaire");
+                $connexion = mysqli_connect("localhost","root","");
                 if (count($_POST)==2){
                     if ($connexion) { 
                         $BDD = mysqli_select_db($connexion,'bdd_prixy');
