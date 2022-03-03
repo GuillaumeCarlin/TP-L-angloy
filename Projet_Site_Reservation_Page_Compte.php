@@ -34,7 +34,11 @@
                     $NomUtilisateur = $_POST["Utilisateur"];
                     $mdp = $_POST['mdp'];
                     $mdpC = $_POST['mdpC'];
-                   
+                    $mdp=md5($mdp);
+                    $mdpC=md5($mdpC);
+
+
+
                     if ($_POST['admin']==True){
                         $declare_admin=1;
                     }
