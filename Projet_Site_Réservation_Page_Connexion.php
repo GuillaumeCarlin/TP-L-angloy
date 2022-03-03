@@ -1,4 +1,3 @@
-
 <html>
     <?php 
         
@@ -51,10 +50,17 @@
                                 echo "<div class=aligement_milieu_connexion> <strong> Connexion en cours ... </strong></div>";
                                 
                                 session_start();
-                                session_set_cookie_params(0);
+                                
                                 $_SESSION["utilisateur"]=$utilisateur;
-                                if()
-
+                                $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");
+                                $resultatrequete=mysqli_fetch_array($requete);
+                                $comptage=$resultatrequete['count(*)'];
+                                if($comptage != 0){
+                                    $_SESSION["administrateur"]=1;
+                                }
+                                else{
+                                    $_SESSION["administrateur"]=0;
+                                }
                                 header('Location: Calendrier/Calendar.php');
                             }
                             else{
