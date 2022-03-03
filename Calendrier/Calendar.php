@@ -107,7 +107,23 @@
       }
      });
     },
-
+    // eventClick:function(event)
+    // {
+    //  if(confirm("Are you sure you want to remove it?"))
+    //  {
+    //   var id = event.id;
+    //   $.ajax({
+    //    url:"delete.php",
+    //    type:"POST",
+    //    data:{id:id},
+    //    success:function()
+    //    {
+    //     calendar.fullCalendar('refetchEvents');
+    //     alert("Event Removed");
+    //    }
+    //   })
+    //  }
+    // },
     eventClick:function(event)
     {
         var id = event.id;

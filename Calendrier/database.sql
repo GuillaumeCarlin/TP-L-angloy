@@ -38,3 +38,6 @@ ALTER TABLE `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `events` ADD `type` INT NOT NULL AFTER `UTILNomUtilisateur`;
