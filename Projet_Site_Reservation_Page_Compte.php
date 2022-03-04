@@ -66,7 +66,7 @@
                                     $larequete = mysqli_query($connexion,$requete);
                                     echo"utilisateur crée";
                                 }
-                                header('Location: calendrier.html');
+                                header('Location: Calendrier/Calendar.php');
                                 
                             } 
                             else{
