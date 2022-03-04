@@ -11,7 +11,7 @@ $administrateur = $_SESSION["administrateur"];
   <meta charset="utf-8">
   <title>Prixy calendrier</title>
   <link rel="stylesheet" href="lelogoparametre.css"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
