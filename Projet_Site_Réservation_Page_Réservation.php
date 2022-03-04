@@ -20,10 +20,6 @@
     $client = [] ;
 
 
-
-
-
-
     ?>
     
     <fieldset class="fieldsetHead">   
