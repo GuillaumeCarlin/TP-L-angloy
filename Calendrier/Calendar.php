@@ -135,7 +135,7 @@ $administrateur = $_SESSION["administrateur"];
     eventClick:function(event)
     {
       alert("Numéro de l'évenement : " + event.id);
-      document.location.href="Creation_Formation_test.php";
+      document.location.href="../Creation_Formation_test.php";
         
       // $.ajax({
         

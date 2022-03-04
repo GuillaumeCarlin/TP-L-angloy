@@ -62,6 +62,28 @@
                     </br>
                     </br>
                     <?php 
+                    $id = 1; 
+                    $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+                    $query = "SELECT * FROM events WHERE id = 1;";
+                    $result = mysqli_query($mysqli, $query);
+                    
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $ID = isset($_POST['']);
+                        $NomReservation = $row["title"];
+                        $DateReservation = $row["start_event"];
+                        $DateReservation = substr($DateReservation,0,-9);
+                        $HeureReservation = $row["start_event"];
+                        $HeureReservation = substr($HeureReservation,12,-6);
+                        
+                        $DureeReservation = $row["end_event"];
+                        $DureeReservation = substr($DureeReservation,12,-6);
+                        $DureeReservation = $DureeReservation - $HeureReservation;
+                        $NbParticipant = $row["participant"];
+                        $Formateur = "";
+                        $AdresseMail = "";
+                        $Telephone = "";
+                    
+
                     if ($cpt == 1){
                         echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
                     }
@@ -113,6 +135,7 @@
                     else{
                         echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
                     }
+                }
                     ?>
                     <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" required>  / 30</texte>
                     </br>
