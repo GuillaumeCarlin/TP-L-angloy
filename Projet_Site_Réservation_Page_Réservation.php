@@ -7,6 +7,18 @@
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
 
+    <?php
+    if (isset($_POST["id"])) {
+        echo ('test');
+    }
+   
+    session_start();
+    $utilisateur = $_SESSION["utilisateur"];
+    $administrateur = $_SESSION["administrateur"];
+
+
+
+    ?>
     
     <fieldset class="fieldsetHead">   
         <img src="logoPrixy_sf.png" class="logo_prixy_head">
@@ -14,8 +26,13 @@
             <ul id="menu-accordeon">
                 <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                     <ul>
+                        <li><a href="Calendrier/Calendar.php">Accueil</a></li>
                         <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
-                        <li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>
+                        <?php
+                            if ($administrateur==1){
+                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
             </ul>

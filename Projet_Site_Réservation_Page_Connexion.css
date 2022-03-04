@@ -4,13 +4,13 @@
 .fieldset{
     width: 300px;
     height: 500px;
-    border-color: rgb(0, 0, 0);
+    border:solid 2px white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
     margin-bottom: 50px;
     background-color: white;
-    border-radius: 12%;
+    border-radius: 8%;
 } 
 
 /* Placement et redimension de l'image dans le fieldset */
@@ -178,14 +178,14 @@ td{
 
 .Fieldset_Choix_Bouton{
     width: 300px;
-    height: 500px;
-    border-color: rgb(0, 0, 0);
+    height: 450px;
+    border: solid 2px white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 130px;
     margin-bottom: 50px;
     background-color: white;
-    border-radius: 12%;
+    border-radius: 8%;
 } 
 /*
 */
@@ -247,9 +247,9 @@ td{
     margin-left: 70px;
     height: 550px;
     width: 500px;
-    border-radius: 12%;
+    border-radius: 8%;
+    border: solid 3px white;
     background-color: rgba(255, 255, 255, 0.918);
-    border-color: black;
     border-width: 3px;
 }
 
@@ -258,9 +258,9 @@ td{
     margin-top: 50px;
     height: 320px;
     width: 450px;
-    border-radius: 12%;
+    border-radius: 8%;
+    border: solid 3px white;
     background-color: white;
-    border-color: black;
     border-width: 3px;
 }
 
@@ -270,9 +270,9 @@ td{
     margin-left: 50%;
     height: 380px;
     width: 500px;
-    border-radius: 12%;
+    border-radius: 8%;
+    border: solid 3px white;
     background-color: white;
-    border-color: black;
     border-width: 3px;
 }
 
@@ -283,7 +283,7 @@ td{
     height: 100px;
     width: 300px;
     background-color: white;
-    border-color: black;
+    border: solid 3px white;
     border-width: 3px;
 }
 
@@ -484,17 +484,12 @@ textarea{
     background-color: rgb(23, 65, 97);
 }
 
-.erreur_crea_nomutilisateur{
-    color: red;
-    margin-left: 140px;
-    font-family: arial,sans-serif;
 
-}
 
 .erreur_crea_mdp{
     position : relative;
     color: red;
-    margin: 0 auto;
+    margin-left: 12em;
     font-family: arial,sans-serif;
 }
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
@@ -502,8 +497,9 @@ textarea{
     /* BARRE MENU */
         .fieldsetHead{
             border-color: black;
-            background-color: rgb(179, 178, 178);
+            background-color: rgb(192, 192, 192);
             height: 50px;
+            border :solid 2px rgb(192, 192, 192);
             margin-bottom: 50px; 
             border-radius: 20px;
         }
@@ -529,9 +525,15 @@ textarea{
         }
 
     /* PARAMETRE */
+        .divlautreparametre{
+            margin-top: -8%;
+            position: absolute;
+            margin-left: 87%;
+        }
+    
         .divparametre{
             position: absolute;
-            margin-top: -3.5%;
+            margin-top: -3.7%;
             margin-left: 86%;
         }
 
@@ -585,3 +587,4 @@ textarea{
         #menu-accordeon nav a:hover{
             border-bottom: 2px solid rgb(23, 65, 97);
         }
+

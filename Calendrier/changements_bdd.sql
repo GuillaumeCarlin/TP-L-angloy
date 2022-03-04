@@ -7,7 +7,7 @@
 --
 -- Table structure for table `events`
 --
-
+DROP TABLE IF EXISTS `events`;
 CREATE TABLE IF NOT EXISTS `events` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -16,7 +16,9 @@ CREATE TABLE IF NOT EXISTS `events` (
   `descriptionEvent` varchar(255) NOT NULL,
   `participant` int NOT NULL,
   `IDSalle` varchar(255) NOT NULL,
-  `UTILNomUtilisateur` varchar(255)
+  `UTILNomUtilisateur` varchar(255),
+  `type` varchar(32),
+  `horodatage` datetime
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

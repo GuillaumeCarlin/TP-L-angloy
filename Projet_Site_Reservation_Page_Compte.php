@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
-
     
     <body class="body">
     <form method="POST">
@@ -25,7 +24,7 @@
                 </br>
                 </br>
                 <div class="check">
-                <text class="admin_Compte">Administrateur </text> <input type="checkbox" id="adminID" name='admin' value='True'><label for="adminID"><span class="ui"></span>
+                <text class="admin_Compte">Administrateur</text> <input type="checkbox" id="adminID" name='admin' value='True'><label for="adminID"><span class="ui"></span>
                 </div>
                 <input type="submit" class="boutonNvCpt_Compte" value="Créer un compte">
                 <?php
@@ -35,7 +34,9 @@
                     $NomUtilisateur = $_POST["Utilisateur"];
                     $mdp = $_POST['mdp'];
                     $mdpC = $_POST['mdpC'];
-                   
+
+
+
                     if ($_POST['admin']==True){
                         $declare_admin=1;
                     }
@@ -65,7 +66,7 @@
                                     $larequete = mysqli_query($connexion,$requete);
                                     echo"utilisateur crée";
                                 }
-                                header('Location: calendrier.html');
+                                header('Location: Calendrier/Calendar.php');
                                 
                             } 
                             else{
@@ -74,9 +75,7 @@
                         }
                     }
                 }
-                
 
-                
                 ?>
             </fieldset>
         </form>
