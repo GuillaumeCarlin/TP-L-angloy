@@ -29,6 +29,70 @@
                     </ul>
                 </div>
             </fieldset>
+
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script>
+        $(document).ready(function(){
+            $(document).on('keydown', '.nom', function() {
+                var id = this.id;
+                var splitid = id.split('_');
+                var index = splitid[1];
+
+                // Initialize jQuery UI autocomplete
+                $( '#'+id ).autocomplete({
+                    source: function( request, response ) {
+                        $.ajax({
+                            url: "z_getDetails.php",
+                            type: 'post',
+                            dataType: "json",
+                            data: {
+                            search: request.term,request:'ri1'
+                            },
+                            success: function( data ) {
+                            response( data );
+                            }
+                        });
+                    },
+            select: function (event, ui) {
+            $(this).val(ui.item.label); // display the selected text
+            var userid = ui.item.value; // selected value
+
+            // AJAX
+            $.ajax({
+                url: 'z_getDetails.php',
+                type: 'post',
+                data: {userid:userid,request:'ri2'},
+                dataType: 'json',
+                success:function(response){
+
+                var len = response.length;
+
+                if(len > 0){
+                var id = response[0]['id'];
+                var nom = response[0]['nom'];
+                var email = response[0]['email'];
+                var telephone = response[0]['telephone'];
+                
+                // Set value to textboxes
+                document.getElementById('nom').value = nom;
+                document.getElementById('telephone').value = telephone;
+                document.getElementById('email').value = email;
+
+
+                }
+
+                }
+            });
+
+            return false;
+            }
+            });
+            });
+        });
+        </script>
     </head>
     <body class="body">
         <form action="Traitement_Reservation_Interne.php" method="post" name = "formulaire">
@@ -64,15 +128,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Réservant : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur'></texte>
+                    <texte class='Question_Creation_Base'>Réservant : <input type='text' class="nom" id='nom' name='Formateur' placeholder='Nom du Formateur'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='AdresseMail' placeholder='Adresse Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                     </br>                
