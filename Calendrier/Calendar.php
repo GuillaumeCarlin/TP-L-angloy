@@ -167,12 +167,12 @@ $administrateur = $_SESSION["administrateur"];
               </ul>
         </li>
     </ul>
-    </div>
+  </div>
  <body>
   <br />
   <br />
   <div class="container">
-   <div id="calendar"></div>
+  <div id="calendar"></div>
   </div>
  </body>
 </html>

@@ -525,6 +525,12 @@ textarea{
         }
 
     /* PARAMETRE */
+        .divlautreparametre{
+            margin-top: -8%;
+            position: absolute;
+            margin-left: 87%;
+        }
+    
         .divparametre{
             position: absolute;
             margin-top: -3.7%;
@@ -581,3 +587,4 @@ textarea{
         #menu-accordeon nav a:hover{
             border-bottom: 2px solid rgb(23, 65, 97);
         }
+
