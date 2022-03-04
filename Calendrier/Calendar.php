@@ -134,6 +134,8 @@ $administrateur = $_SESSION["administrateur"];
     // },
     eventClick:function(event)
     {
+     if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
+     {
       var id = event.id;
       $.ajax({
        url:"delete.php",
@@ -147,6 +149,7 @@ $administrateur = $_SESSION["administrateur"];
        }
       })
      }
+    }
     
 
    });

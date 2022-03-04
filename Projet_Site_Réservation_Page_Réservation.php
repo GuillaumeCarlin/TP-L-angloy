@@ -15,6 +15,15 @@
     session_start();
     $utilisateur = $_SESSION["utilisateur"];
     $administrateur = $_SESSION["administrateur"];
+
+    $NomReservation = ()
+    $client = [] 
+
+
+
+
+
+
     ?>
     
     <fieldset class="fieldsetHead">   
