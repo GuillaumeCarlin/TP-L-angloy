@@ -497,9 +497,9 @@ textarea{
     /* BARRE MENU */
         .fieldsetHead{
             border-color: black;
-            background-color: rgb(179, 178, 178);
+            background-color: rgb(192, 192, 192);
             height: 50px;
-            border :solid 2px rgb(179, 178, 178);
+            border :solid 2px rgb(192, 192, 192);
             margin-bottom: 50px; 
             border-radius: 20px;
         }
