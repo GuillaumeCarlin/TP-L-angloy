@@ -1,16 +1,31 @@
 <?php
 
-//delete.php
+$date = date('d-m-y h:i:s');
+$query = "UPDATE `events` SET `horodatage` = '04-03-22 07:57:14' WHERE `events`.`id` = 1;";
+$result = mysqli_query($mysqli, $query);
 
-if(isset($_POST["id"]))
-{
- echo 'test';
+$con = mysqli_connect('localhost','root','');
+if ($con) {
+    $connectdb = mysqli_select_db($con, 'bdd_prixy');
+    if ($connectdb) {
+        $query = "UPDATE `events` SET `horodatage` = '$date' WHERE `events`.`id` = 1;";
+        $result = mysqli_query($mysqli, $query);
+    }
+    else {
+        echo 'Erreur de connexion à la base de donnée';
+    }
 }
+else {
+    echo 'Erreur de connexion au serveur';
+}
+
+
+
 
 ?>
 
 
-eventClick:function(event)
+<!-- eventClick:function(event)
     {
      if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
      {
@@ -27,4 +42,4 @@ eventClick:function(event)
        }
       })
      }
-    }
+    } -->
