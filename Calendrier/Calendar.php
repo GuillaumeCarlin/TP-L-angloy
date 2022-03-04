@@ -49,29 +49,29 @@ $administrateur = $_SESSION["administrateur"];
     locale: 'fr',
     selectMirror: true,
     dayMaxEvents: true,
-    select: function(start, end, allDay)
-    {
-     var title = prompt("Enter Event Title");
-     var descriptionEvent = prompt("Enter Event description");
-     var participant = prompt("Enter Event participant");
-     var IDSalle = prompt("Enter Event IDSalle");
-     var UTILNomUtilisateur = prompt("Enter Event NomUtilisateur");
-     if(title)
-     {
-      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-      $.ajax({
-       url:"insert.php",
-       type:"POST",
-       data:{title:title, start:start, end:end, descriptionEvent:descriptionEvent, participant:participant, IDSalle:IDSalle, UTILNomUtilisateur:UTILNomUtilisateur},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
-       }
-      })
-     }
-    },
+    // select: function(start, end, allDay)
+    // {
+    //  var title = prompt("Enter Event Title");
+    //  var descriptionEvent = prompt("Enter Event description");
+    //  var participant = prompt("Enter Event participant");
+    //  var IDSalle = prompt("Enter Event IDSalle");
+    //  var UTILNomUtilisateur = prompt("Enter Event NomUtilisateur");
+    //  if(title)
+    //  {
+    //   var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+    //   var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+    //   $.ajax({
+    //    url:"insert.php",
+    //    type:"POST",
+    //    data:{title:title, start:start, end:end, descriptionEvent:descriptionEvent, participant:participant, IDSalle:IDSalle, UTILNomUtilisateur:UTILNomUtilisateur},
+    //    success:function()
+    //    {
+    //     calendar.fullCalendar('refetchEvents');
+    //     alert("Added Successfully");
+    //    }
+    //   })
+    //  }
+    // },
     editable:true,
     eventResize:function(event)
     {
@@ -89,7 +89,7 @@ $administrateur = $_SESSION["administrateur"];
       data:{title:title, start:start, end:end, id:id, descriptionEvent:descriptionEvent, participant:participant, IDSalle:IDSalle, UTILNomUtilisateur:UTILNomUtilisateur},
       success:function(){
        calendar.fullCalendar('refetchEvents');
-       alert('Event Update');
+       alert('Evenement mis à jour');
       }
      })
     },
@@ -111,7 +111,7 @@ $administrateur = $_SESSION["administrateur"];
       success:function()
       {
        calendar.fullCalendar('refetchEvents');
-       alert("Event Updated");
+       alert("Evenement mis à jour");
       }
      });
     },
@@ -134,9 +134,20 @@ $administrateur = $_SESSION["administrateur"];
     // },
     eventClick:function(event)
     {
-        var id = event.id;
-        window.location.replace("../Projet_Site_Réservation_Page_Réservation.php");
-    },
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        window.location.replace("../Choix_Bouton.php");
+        calendar.fullCalendar('refetchEvents');
+        alert("Evenement supprimé");
+       }
+      })
+     }
+    
 
    });
   });
