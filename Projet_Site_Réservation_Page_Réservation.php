@@ -8,6 +8,10 @@
     </head>
 
     <?php
+    if (isset($_POST["id"])) {
+        echo ('test');
+    }
+   
     session_start();
     $utilisateur = $_SESSION["utilisateur"];
     $administrateur = $_SESSION["administrateur"];
