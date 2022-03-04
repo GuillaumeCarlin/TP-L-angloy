@@ -134,19 +134,21 @@ $administrateur = $_SESSION["administrateur"];
     // },
     eventClick:function(event)
     {
-     if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
-     {     
-      $.ajax({
-       url:"delete.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Evenement supprimé");
-       }
-      })
-     }
+      alert("Numéro de l'évenement : " + event.id);
+      document.location.href="Creation_Formation_test.php";
+        
+      // $.ajax({
+        
+      //  url:"delete.php",
+      //  type:"POST",
+      //  data:{id:id},
+      //  success:function()
+      //  {
+      //   calendar.fullCalendar('refetchEvents');
+      //   alert("Evenement supprimé");
+      //  }
+      // })
+     
     }
     
 
