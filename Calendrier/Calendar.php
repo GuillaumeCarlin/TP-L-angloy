@@ -135,15 +135,13 @@ $administrateur = $_SESSION["administrateur"];
     eventClick:function(event)
     {
      if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
-     {
-      var id = event.id;
+     {     
       $.ajax({
        url:"delete.php",
        type:"POST",
        data:{id:id},
        success:function()
        {
-        window.location.replace("../Choix_Bouton.php");
         calendar.fullCalendar('refetchEvents');
         alert("Evenement supprimé");
        }
@@ -164,18 +162,18 @@ $administrateur = $_SESSION["administrateur"];
                 <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                 <?php
                 if ($administrateur==1){
-                  echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                  echo'<li><a href="../Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
                 }
                 ?>
               </ul>
         </li>
     </ul>
-    </div>
+  </div>
  <body>
   <br />
   <br />
   <div class="container">
-   <div id="calendar"></div>
+  <div id="calendar"></div>
   </div>
  </body>
 </html>

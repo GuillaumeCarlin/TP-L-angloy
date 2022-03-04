@@ -22,7 +22,6 @@
 
 
 
-
     ?>
     
     <fieldset class="fieldsetHead">   
@@ -31,6 +30,7 @@
             <ul id="menu-accordeon">
                 <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                     <ul>
+                        <li><a href="Calendrier/Calendar.php">Accueil</a></li>
                         <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                         <?php
                             if ($administrateur==1){

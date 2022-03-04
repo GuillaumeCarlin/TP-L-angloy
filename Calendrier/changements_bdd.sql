@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `participant` int NOT NULL,
   `IDSalle` varchar(255) NOT NULL,
   `UTILNomUtilisateur` varchar(255),
-  `type` varchar(32)
+  `type` varchar(32),
+  `horodatage` datetime
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
