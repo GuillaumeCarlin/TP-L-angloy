@@ -63,81 +63,84 @@
                     </br>
                     </br>
                     </br>
-                    <?php 
-                    $id = 1; 
-                    $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
-                    $query = "SELECT * FROM events WHERE id = 1;";
-                    $result = mysqli_query($mysqli, $query);
+                
                     
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $ID = isset($_POST['']);
-                        $NomReservation = $row["title"];
-                        $DateReservation = $row["start_event"];
-                        $DateReservation = substr($DateReservation,0,-9);
-                        $HeureReservation = $row["start_event"];
-                        $HeureReservation = substr($HeureReservation,12,-6);
+                    <?php 
+                        $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+                        $query = "SELECT * FROM events WHERE id = 1;";
+                        $result = mysqli_query($mysqli, $query);
                         
-                        $DureeReservation = $row["end_event"];
-                        $DureeReservation = substr($DureeReservation,12,-6);
-                        $DureeReservation = $DureeReservation - $HeureReservation;
-                        $NbParticipant = $row["participant"];
-                        $Formateur = "";
-                        $AdresseMail = "";
-                        $Telephone = "";
-                    
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $ID = isset($_POST['']);
+                            $NomReservation = $row["title"];
+                            $DateReservation = $row["start_event"];
+                            $DateReservation = substr($DateReservation,0,-9);
+                            $HeureReservation = $row["start_event"];
+                            $HeureReservation = substr($HeureReservation,12,-6);
+                            
+                            $DureeReservation = $row["end_event"];
+                            $DureeReservation = substr($DureeReservation,12,-6);
+                            $DureeReservation = $DureeReservation - $HeureReservation;
+                            $NbParticipant = $row["participant"];
+                            $Description = $row["descriptionEvent"];
+                            $Formateur = "";
+                            $AdresseMail = "";
+                            $Telephone = "";
+                        
 
-                    if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
+                        if ($cpt == 1){
+                            echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
+                        }
+                        else{
+                            echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  placeholder='Nom de la Réservation'  required></texte>";
+                        }
+                        ?>
+                        
+                        </br>
+                        </br>
+                        </br>
+                        <?php 
+                        if ($cpt == 1){
+                            echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
+                        }
+                        else{
+                            echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>";
+                        }
+                        ?>
+                        </br>
+                        </br>
+                        </br>
+                        <?php
+                        if ($cpt == 1){
+                            echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required> heures</texte>";
+                        }
+                        else{
+                            echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' required> heures</texte>";
+                        }
+                        ?>
+                        </br>
+                        </br>
+                        </br>
+                        <?php
+                        if ($cpt == 1){
+                            echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'> heures</texte>";
+                        }
+                        else{
+                            echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4'> heures</texte>";
+                        }
+                        ?>
+                        </br>
+                        </br>
+                        </br>
+                        <?php
+                        if ($cpt == 1){
+                            echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";
+                        }
+                        else{
+                            echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
+                        }
                     }
-                    else{
-                        echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  placeholder='Nom de la Réservation'  required></texte>";
-                    }
-                    ?>
-                    
-                    </br>
-                    </br>
-                    </br>
-                    <?php 
-                    if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>";
-                    }
-                    ?>
-                    </br>
-                    </br>
-                    </br>
-                    <?php
-                    if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required> heures</texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' required> heures</texte>";
-                    }
-                    ?>
-                    </br>
-                    </br>
-                    </br>
-                    <?php
-                    if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'> heures</texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4'> heures</texte>";
-                    }
-                    ?>
-                    </br>
-                    </br>
-                    </br>
-                    <?php
-                    if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
-                    }
-                }
+                
                     ?>
                     </br>
                     </br>
