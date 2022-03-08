@@ -1,6 +1,5 @@
 <?php
 
-//include("Calendrier.php");
 
 /* Table reservation */
 
@@ -25,19 +24,22 @@ $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
 
-$requete = "INSERT INTO reservation(RESERVDate,HeureDebut,HeureFin,'Description',Intitule,NBparticipant) VALUES ($Reservation_Date,$Reservation_Heure,$Reservation_Heure+$Reservation_Duree,'$Reservation_Descriptif','$Reservation_Nom',$Reservation_Participants)";
 
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
-    if ($connectdb) {        
-        $test = "INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
-        VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation');";
-        $insertion_reservation = mysqli_query($con, $test);
-        
+    if ($connectdb) {     
         $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
         VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
         $insertion_formateur = mysqli_query($con, $requete_formateur);
+
+        $id_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = 'azer' ;";
+        
+        $requete_reservation = "INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`, `IDFormateur`) 
+        VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation', (SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail'));";
+        $insertion_reservation = mysqli_query($con, $requete_reservation);
+        
+        
 
     }
     else {
