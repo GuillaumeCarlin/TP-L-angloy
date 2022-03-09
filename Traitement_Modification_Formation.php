@@ -26,8 +26,8 @@ $Telephone = $_POST["Telephone"];
 // $suppr = "DELETE FROM events WHERE id = $id;";
 // $result2 = mysqli_query($mysqli, $suppr);
 
-$requete_id_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
-$result = $mysqli->query($requete_id_formateur);
+// $requete_id_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
+// $result = $mysqli->query($requete_id_formateur);
 
 $con = mysqli_connect('localhost','root','');
 if ($con) {
