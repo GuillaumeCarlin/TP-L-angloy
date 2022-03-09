@@ -56,7 +56,7 @@
     </head>
 
     <body class="body">
-        <form action="Traitement_Formation.php" method="post" name ="formulaire">
+        <form action="Traitement_Modification_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -70,10 +70,8 @@
                             $id = $_GET["id"];
                         }
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
-                        $query = "SELECT * FROM events WHERE id = $id;";
+                        $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
                         $result = mysqli_query($mysqli, $query);
-                        $suppr = "DELETE FROM events WHERE id = $id;";
-                        $result2 = mysqli_query($mysqli, $suppr);
 
                         while ($row = mysqli_fetch_assoc($result)) {
                             $NomReservation = $row["title"];
@@ -87,9 +85,9 @@
                             $DureeReservation = $DureeReservation - $HeureReservation;
                             $NbParticipant = $row["participant"];
                             $Description = $row["descriptionEvent"];
-                            $Formateur = "";
-                            $AdresseMail = "";
-                            $Telephone = "";
+                            $Formateur = $row["NOMFormateur"];
+                            $AdresseMail = $row["EMAILFormateur"];
+                            $Telephone = $row["TELFormateur"];
                         
 
                         if ($cpt == 1){
@@ -156,7 +154,7 @@
                     else{
                         echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder = 'Description de la Reservation' required></textarea></texte>";
                     }
-                }
+                
                     ?>
                 </fieldset>
 
@@ -195,6 +193,7 @@
                     else{
                         echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>";
                     }
+                }
                     ?>
                 </fieldset>
             </div>
