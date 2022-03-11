@@ -70,7 +70,7 @@
                             /*Vérification du mot de passe */
                             if ($mdp == $mdpC){
                                 /* Si le mot de passe est bon le compte est créer*/
-                                
+                                $mdp = hash('sha256',$mdp);
                                 
                                 
                                 if($declare_admin==1){
