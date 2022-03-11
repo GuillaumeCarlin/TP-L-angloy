@@ -31,6 +31,64 @@
                 </ul>
             </div>
         </fieldset>
+    
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).on('keydown', '.nom', function() {
+                    var id = this.id;
+                    var splitid = id.split('_');
+                    var index = splitid[1];
+
+                    // Initialize jQuery UI autocomplete
+                    $( '#'+id ).autocomplete({
+                        source: function( request, response ) {
+                            $.ajax({
+                                url: "z_getDetails.php",
+                                type: 'post',
+                                dataType: "json",
+                                data: {
+                                    search: request.term,request:'f1'
+                                },
+                                success: function( data ) {response( data );}
+                            });
+                        },
+                        select: function (event, ui) {
+                            $(this).val(ui.item.label); // display the selected text
+                            var userid = ui.item.value; // selected value
+
+                            // AJAX
+                            $.ajax({
+                                url: 'z_getDetails.php',
+                                type: 'post',
+                                data: {userid:userid,request:'f2'},
+                                dataType: 'json',
+                                success:function(response){
+                                    var len = response.length;
+
+                                    if(len > 0){
+                                        var id = response[0]['id'];
+                                        var nom = response[0]['nom'];
+                                        var email = response[0]['email'];
+                                        var telephone = response[0]['telephone'];
+                
+                                        // Set value to textboxes
+                                        document.getElementById('nom_'+index).value = nom;
+                                        document.getElementById('telephone_'+index).value = telephone;
+                                        document.getElementById('email_'+index).value = email;
+                                    }
+                                }
+                            });
+                            return false;
+                               
+                        }
+                    });
+                });
+            });
+        </script>
     </head>
 
     <body class="body">
@@ -68,17 +126,17 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur' required></texte>
+                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class='nom' id='nom_1' name='Formateur' placeholder='Nom du Formateur' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' class='email' id='email_1' name='AdresseMail' placeholder='Adresse Mail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' class='telephone' id='telephone_1' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
             <input type="submit" value="Envoyer" class="BoutonValidation" >

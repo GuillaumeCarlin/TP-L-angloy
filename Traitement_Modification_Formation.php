@@ -23,11 +23,18 @@ $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
 
+// $suppr = "DELETE FROM events WHERE id = $id;";
+// $result2 = mysqli_query($mysqli, $suppr);
+
+// $requete_id_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
+// $result = $mysqli->query($requete_id_formateur);
 
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
-    if ($connectdb) {     
+    if ($connectdb) {   
+        $modif_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = 80;";  
+        
         $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
         VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
         $insertion_formateur = mysqli_query($con, $requete_formateur);
