@@ -1,5 +1,6 @@
 <?php
 
+
 /* Table reservation */
 
 $Reservation_Nom = $_POST["Reservation_Nom"];
@@ -21,18 +22,24 @@ $end_event = $Reservation_Date .' '.$heure_fin.':00:00';
 $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
-$id = $_GET["id"];
+
+
+session_start();
+$utilisateur = $_SESSION["utilisateur"];
+$administrateur = $_SESSION["administrateur"];
+$id = $_SESSION["idevent"];
+echo ($id);
+
+
+
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
-    if ($connectdb) {   
-        
-        $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
-        VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
+    if ($connectdb) {     
+        $requete_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = (SELECT IDFormateur FROM events WHERE id=$id);";
         $insertion_formateur = mysqli_query($con, $requete_formateur);
         
-        $requete_reservation = "INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`, `IDFormateur`) 
-        VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation', (SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail'));";
+        $requete_reservation = "UPDATE `events` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE `events`.`id` = $id;";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
         
         
