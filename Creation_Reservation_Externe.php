@@ -5,86 +5,13 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
 
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-        <script>
-        $(document).ready(function(){
+        <?php
+        session_start();
+        $utilisateur = $_SESSION["utilisateur"];
+        $administrateur = $_SESSION["administrateur"];
+        ?>
 
-            $(document).on('keydown', '.nom', function() {
-
-            var id = this.id;
-            var splitid = id.split('_');
-            var index = splitid[1];
-
-            // Initialize jQuery UI autocomplete
-            $( '#'+id ).autocomplete({
-            source: function( request, response ) {
-            $.ajax({
-                url: "z_getDetails.php",
-                type: 'post',
-                dataType: "json",
-                data: {
-                search: request.term,request:'re1'
-                },
-                success: function( data ) {
-                response( data );
-                }
-            });
-            },
-            select: function (event, ui) {
-            $(this).val(ui.item.label); // display the selected text
-            var userid = ui.item.value; // selected value
-
-            // AJAX
-            $.ajax({
-                url: 'z_getDetails.php',
-                type: 'post',
-                data: {userid:userid,request:'re2'},
-                dataType: 'json',
-                success:function(response){
-
-                var len = response.length;
-
-                if(len > 0){
-                var id = response[0]['id'];
-                var nom = response[0]['nom'];
-                var entreprise = response[0]['entreprise']
-                var email = response[0]['email'];
-                var telephone = response[0]['telephone'];
-                var adresse = response[0]['adresse'];
-                var cp = response[0]['cp'];
-                var ville = response[0]['ville'];
-                
-                // Set value to textboxes
-                document.getElementById('nom_1').value = nom;
-                document.getElementById('telephone').value = telephone;
-                document.getElementById('entreprise').value = entreprise;
-                document.getElementById('email').value = email;
-                document.getElementById('adresse').value = adresse;
-                document.getElementById('cp').value = cp;
-                document.getElementById('ville').value = ville;
-                }
-
-                }
-            });
-
-            return false;
-            }
-            });
-            });
-        });
-        </script>
-    </head>
-
-    <?php
-    session_start();
-    $utilisateur = $_SESSION["utilisateur"];
-    $administrateur = $_SESSION["administrateur"];
-    ?>
-
-    <fieldset class="fieldsetHead">   
+        <fieldset class="fieldsetHead">   
             <img src="logoPrixy_sf.png" class="logo_prixy_head">
             <div class="divparametre">
                 <ul id="menu-accordeon">
@@ -94,7 +21,7 @@
                             <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                             <?php
                                 if ($administrateur==1){
-                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                                 }
                             ?>
                         </ul>
@@ -102,6 +29,74 @@
                 </ul>
             </div>
         </fieldset>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).on('keydown', '.nom', function() {
+                    var id = this.id;
+                    var splitid = id.split('_');
+                    var index = splitid[1];
+
+                    // Initialize jQuery UI autocomplete
+                    $( '#'+id ).autocomplete({
+                        source: function( request, response ) {
+                            $.ajax({
+                                url: "z_getDetails.php",
+                                type: 'post',
+                                dataType: "json",
+                                data: {
+                                    search: request.term,request:'re1'
+                                },
+                                success: function( data ) {response( data );}
+                            });
+                        },
+                        select: function (event, ui) {
+                            $(this).val(ui.item.label); // display the selected text
+                            var userid = ui.item.value; // selected value
+
+                            // AJAX
+                            $.ajax({
+                                url: 'z_getDetails.php',
+                                type: 'post',
+                                data: {userid:userid,request:'re2'},
+                                dataType: 'json',
+                                success:function(response){
+
+                                    var len = response.length;
+
+                                    if(len > 0){
+                                        var id = response[0]['id'];
+                                        var nom = response[0]['nom'];
+                                        var entreprise = response[0]['entreprise']
+                                        var email = response[0]['email'];
+                                        var telephone = response[0]['telephone'];
+                                        var adresse = response[0]['adresse'];
+                                        var cp = response[0]['cp'];
+                                        var ville = response[0]['ville'];
+                                        
+                                        // Set value to textboxes
+                                        document.getElementById('nom').value = nom;
+                                        document.getElementById('telephone').value = telephone;
+                                        document.getElementById('entreprise').value = entreprise;
+                                        document.getElementById('email').value = email;
+                                        document.getElementById('adresse').value = adresse;
+                                        document.getElementById('cp').value = cp;
+                                        document.getElementById('ville').value = ville;
+                                    }
+                                }
+                            });
+
+                        return false;
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
 
     <body class="body">
         <form action="Traitement_Reservation_Externe.php" method="post" name = "formulaire">
@@ -137,7 +132,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du client : <input type='text' classe='nom' id='nom_1' name='NomClient' placeholder='Nom du Client'></texte>
+                    <texte class='Question_Creation_Base'>Nom du client : <input type='text' class='nom' id='nom' name='NomClient' placeholder='Nom du Client'></texte>
                     </br>
                     </br>
                     </br>

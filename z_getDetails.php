@@ -5,7 +5,6 @@
 
     // Get formateur list
     if($request == 'f1'){
-        
         $search = $_POST['search'];
         $query = "SELECT * FROM formateur WHERE NOMFormateur like'%".$search."%'";
         $result = mysqli_query($con,$query);
@@ -47,11 +46,10 @@
     // Get reservant externe list
     if($request == 're1'){
         $search = $_POST['search'];
-
         $query = "SELECT * FROM client WHERE CLINom like'%".$search."%'";
         $result = mysqli_query($con,$query);
         while($row = mysqli_fetch_array($result) ){
-            $response[] = array("value"=>$row['IDClient'],"label"=>$row['CLINom']);
+            $response[] = array("value"=>$row['IDCLient'],"label"=>$row['CLINom']);
         }
 
         // encoding array to json format
@@ -62,7 +60,7 @@
     // Get details
     if($request == 're2'){
         $userid = $_POST['userid'];
-        $sql = "SELECT * FROM client WHERE IDClient=".$userid;
+        $sql = "SELECT * FROM client WHERE IDCLient=".$userid;
         /*$sql = "SELECT * FROM users WHERE id=".$userid;*/
 
         $result = mysqli_query($con,$sql); 
