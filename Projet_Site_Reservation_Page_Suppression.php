@@ -37,11 +37,22 @@
                     $mdp = $_POST['mdp'];
                 }
 
+
+                
+
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                 if ($connexion) { 
                     $BDD = mysqli_select_db($connexion,'bdd_prixy');
                     if ($BDD) {
-                        /*$Compte = "SELECT UTILNum FROM utilisateur WHERE UTILNomUtilisateur == $NomUtilisateur;";*/
+
+                        //Vérification si l'utilisateur est un admin
+                        $Admin ="SELECT UTILAdmin FROM utilisateur WHERE UTILNom == $NomUtilisateur";
+                        $requete = mysqli_query($connexion,$Admin);
+                        if ($requete){
+                            
+                        }
+
+
                         $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
                         /*header('Location: Calendrier/Calendar.php');*/
                         if ($larequete){
