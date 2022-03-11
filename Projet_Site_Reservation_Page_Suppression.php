@@ -57,19 +57,30 @@
                     if ($BDD) {
 
                         //Vérification si l'utilisateur est un admin
-                        $Admin ="SELECT UTILAdmin FROM utilisateur WHERE UTILNom == $NomUtilisateur";
-                        $requete = mysqli_query($connexion,$Admin);
-                        if ($requete){
-                            
+                        $Admin = mysqli_query($connexion,"SELECT UTILAdmin FROM utilisateur WHERE UTILNomUtilisateur == '$utilisateur' ;");
+                        echo "$Admin";
+                        $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");
+                        $resultatrequete=mysqli_fetch_array($requete);
+                        $comptage=$resultatrequete['count(*)'];
+                        if ($comptage == 1){
+                            $requete2 = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
+                            $resultat=mysqli_fetch_array($requete2);
+                            $comptemdp=$resultat['count(*)'];
+                            $mdpAdmin = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur WHERE UTILNomUtilisateur = $utilisateur;");
+                            if ($comptemdp == $mdpAdmin){
+                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
+                            }
+                            else{
+                                echo "Mauvais Mot de Passe";
+                            }
+                        }
+                        else{
+                            echo "L'utilisateur n'est pas Admin";
                         }
 
 
-                        $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
-                        /*header('Location: Calendrier/Calendar.php');*/
-                        if ($larequete){
-                            echo "Base de donnée mise à jour";
-                        }
                         
+                        /*header('Location: Calendrier/Calendar.php');*/
                     }
                 }
 
