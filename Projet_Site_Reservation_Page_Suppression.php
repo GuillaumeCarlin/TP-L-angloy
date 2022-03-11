@@ -45,7 +45,7 @@
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST si la methode est la bonne
                     $NomUtilisateur = $_POST["Utilisateur"];
-                    $mdp = $_POST['mdp'];
+                    $mdp = $_POST['mdpC'];
                 }
 
 
@@ -57,21 +57,22 @@
                     if ($BDD) {
 
                         //Vérification si l'utilisateur est un admin
-                        $Admin = mysqli_query($connexion,"SELECT UTILAdmin FROM utilisateur WHERE UTILNomUtilisateur == '$utilisateur' ;");
-                        echo "$Admin";
                         $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");
                         $resultatrequete=mysqli_fetch_array($requete);
                         $comptage=$resultatrequete['count(*)'];
                         if ($comptage == 1){
-                            $requete2 = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
-                            $resultat=mysqli_fetch_array($requete2);
-                            $comptemdp=$resultat['count(*)'];
-                            $mdpAdmin = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur WHERE UTILNomUtilisateur = $utilisateur;");
-                            if ($comptemdp == $mdpAdmin){
-                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
+                            $requete = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur where UTILNomUtilisateur = $utilisateur ;");
+                            $mdp = hash('sha256',$mdp);
+                            if ($requete == $mdp){
+                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur'");
                             }
                             else{
-                                echo "Mauvais Mot de Passe";
+                                echo"<div class=erreur_crea_mdp><strong>Erreur dans le mot de passe</strong></div>";
+                                echo $mdpAdmin;
+                                echo $comptemdp;
+                                echo "---";
+                                echo $mdp;
+                                echo $comptemdp;
                             }
                         }
                         else{
