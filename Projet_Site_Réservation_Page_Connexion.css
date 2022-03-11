@@ -547,7 +547,13 @@ textarea{
             position: absolute;
             margin-left: 87%;
         }
-    
+        
+        .parametre_supression_creation{
+            margin-top: -4%;
+            position: absolute;
+            margin-left: 87%;
+        }
+
         .divparametre{
             position: absolute;
             margin-top: -3.7%;
