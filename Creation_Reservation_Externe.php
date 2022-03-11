@@ -50,6 +50,7 @@
                 if(len > 0){
                 var id = response[0]['id'];
                 var nom = response[0]['nom'];
+                var entreprise = response[0]['entreprise']
                 var email = response[0]['email'];
                 var telephone = response[0]['telephone'];
                 var adresse = response[0]['adresse'];
@@ -59,6 +60,7 @@
                 // Set value to textboxes
                 document.getElementById('nom_1').value = nom;
                 document.getElementById('telephone').value = telephone;
+                document.getElementById('entreprise').value = entreprise;
                 document.getElementById('email').value = email;
                 document.getElementById('adresse').value = adresse;
                 document.getElementById('cp').value = cp;
@@ -92,7 +94,7 @@
                             <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                             <?php
                                 if ($administrateur==1){
-                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                                 }
                             ?>
                         </ul>

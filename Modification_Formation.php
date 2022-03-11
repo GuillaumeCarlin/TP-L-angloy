@@ -44,7 +44,7 @@
                             
                             <?php
                                 if ($administrateur==1){
-                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                                 }
                             ?>
                         </ul>
@@ -74,22 +74,12 @@
                         $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
                         $result = mysqli_query($mysqli, $query);
 
-                        $suppr = "DELETE FROM events WHERE id = $id;";
-                        $result2 = mysqli_query($mysqli, $suppr);
-
                         $id_formateur = "SELECT 'IDFormateur' 
                         FROM 'events'
                         WHERE 'id' = $id ;";
                         $result3 = mysqli_query($mysqli, $id_formateur);
 
-                        if($result3) {
-                            while ($row = mysqli_fetch_assoc($result3)) {
-                                $IDForm = $row["IDFormateur"];
-                                
-                                // $suppr_formateur = "DELETE FROM 'formateur' WHERE IDFormateur = $IDForm;";
-                                // $result4 = mysqli_query($mysqli, $suppr_formateur);
-                            }
-                        }
+                        
                         while ($row = mysqli_fetch_assoc($result)) {
                             $NomReservation = $row["title"];
                             $DateReservation = $row["start_event"];

@@ -164,20 +164,11 @@
                 $id = $_GET["id"];
             }
     
-            $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
-            $suppr_formateur = "DELETE FROM formateur WHERE IDFormateur = (SELECT IDFormateur FROM events WHERE id = $id);";
-            $result4 = mysqli_query($mysqli, $suppr_formateur);
-
+            $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");   
+            
             $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
             $result = mysqli_query($mysqli, $query);
-    
-            $suppr = "DELETE FROM events WHERE id = $id;";
-            $result2 = mysqli_query($mysqli, $suppr);
-    
-
             
-
-
             while ($row = mysqli_fetch_assoc($result)) {
                 $NomReservation = $row["title"];
                 $DateReservation = $row["start_event"];
@@ -303,6 +294,11 @@
             echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>";
         }
     }
+    // $suppr_formateur = "DELETE FROM formateur WHERE IDFormateur = (SELECT IDFormateur FROM events WHERE id=$id;);";
+    // $result4 = mysqli_query($mysqli, $suppr_formateur);
+
+    // $suppr = "DELETE FROM events WHERE id = $id;";
+    // $result2 = mysqli_query($mysqli, $suppr);
         ?>
     </fieldset>
 </div>
