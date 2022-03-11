@@ -14,6 +14,12 @@
                 </br>
                 <texte class="titre_Compte">Nouveau compte</texte>
                 </br>
+
+                
+                <a href="Projet_Site_Réservation_Page_Connexion.php"><img src="image_corbeille.png" class="imagecorbeille" ></a>
+                
+                
+                
                 <label for="Utilisateur">
                 <input type="texte" class="bouton_Compte" placeholder="Utilisateur" id="Utilisateur" name="Utilisateur" required></label>
                 </br>

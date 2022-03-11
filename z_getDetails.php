@@ -48,11 +48,10 @@
     if($request == 're1'){
         $search = $_POST['search'];
 
-        $query = "SELECT * FROM client WHERE CLIRaisonSociale like'%".$search."%'";
+        $query = "SELECT * FROM client WHERE CLINom like'%".$search."%'";
         $result = mysqli_query($con,$query);
-        
         while($row = mysqli_fetch_array($result) ){
-            $response[] = array("value"=>$row['IDClient'],"label"=>$row['CLIRaisonSociale']);
+            $response[] = array("value"=>$row['IDClient'],"label"=>$row['CLINom']);
         }
 
         // encoding array to json format
@@ -72,7 +71,8 @@
 
         while( $row = mysqli_fetch_array($result) ){
             $clientid = $row['IDCLient'];
-            $clientname = $row['CLIRaisonSociale'];
+            $clientnom = $row['CLINom'];
+            $cliententreprise = $row['CLIEntreprise'];
             $clientadresse = $row['CLIAdresseComplete'];
             $clientcodepostal = $row['CLICodePostale'];
             $clientville = $row['CLIVille'];
@@ -80,7 +80,7 @@
             $clienttelephone = $row['CLITelMobile'];
             
 
-        $client_arr[] = array("id" => $clientid, "nom" => $clientname, "email" => $clientemail, "telephone" => $clienttelephone, "adresse" => $clientadresse, "cp" => $clientcodepostal, "ville" => $clientville);
+        $client_arr[] = array("id" => $clientid, "nom" => $clientnom, "entreprise" => $cliententreprise, "email" => $clientemail, "telephone" => $clienttelephone, "adresse" => $clientadresse, "cp" => $clientcodepostal, "ville" => $clientville);
         }
 
         // encoding array to json format
@@ -109,11 +109,10 @@
     // Get details
     if($request == 'ri2'){
         $userid = $_POST['userid'];
-        $sql = "SELECT * FROM reservantinterne WHERE IDFormateur=".$userid;
+        $sql = "SELECT * FROM reservantinterne WHERE IDResponsable=".$userid;
         /*$sql = "SELECT * FROM users WHERE id=".$userid;*/
 
         $result = mysqli_query($con,$sql); 
-
         $resi_arr = array();
 
         while( $row = mysqli_fetch_array($result) ){

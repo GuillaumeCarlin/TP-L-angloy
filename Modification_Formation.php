@@ -56,7 +56,7 @@
     </head>
 
     <body class="body">
-        <form action="Traitement_Formation.php" method="post" name ="formulaire">
+        <form action="Traitement_Modification_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -66,26 +66,28 @@
                 
                     
                     <?php 
+                        if (isset($_GET["id"])) {
+                            $id = $_GET["id"];
+                        }
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
-                        $query = "SELECT * FROM events WHERE id = 1;";
+                        $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
                         $result = mysqli_query($mysqli, $query);
-                        
+
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $ID = isset($_POST['']);
                             $NomReservation = $row["title"];
                             $DateReservation = $row["start_event"];
                             $DateReservation = substr($DateReservation,0,-9);
                             $HeureReservation = $row["start_event"];
-                            $HeureReservation = substr($HeureReservation,12,-6);
+                            $HeureReservation = substr($HeureReservation,11,-6);
                             
                             $DureeReservation = $row["end_event"];
-                            $DureeReservation = substr($DureeReservation,12,-6);
+                            $DureeReservation = substr($DureeReservation,11,-6);
                             $DureeReservation = $DureeReservation - $HeureReservation;
                             $NbParticipant = $row["participant"];
                             $Description = $row["descriptionEvent"];
-                            $Formateur = "";
-                            $AdresseMail = "";
-                            $Telephone = "";
+                            $Formateur = $row["NOMFormateur"];
+                            $AdresseMail = $row["EMAILFormateur"];
+                            $Telephone = $row["TELFormateur"];
                         
                         
 
@@ -140,7 +142,7 @@
                         else{
                             echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
                         }
-                    }
+                    
                 
                     ?>
                     </br>
@@ -148,11 +150,12 @@
                     </br>
                     <?php
                     if ($cpt == 1){
-                        echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' value='$Description' required></textarea></texte>";
+                        echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' required>$Description</textarea></texte>";
                     }
                     else{
                         echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder = 'Description de la Reservation' required></textarea></texte>";
                     }
+                
                     ?>
                 </fieldset>
 
@@ -191,10 +194,11 @@
                     else{
                         echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>";
                     }
+                }
                     ?>
                 </fieldset>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation" >
+            <input type="submit" value="Enregistrer" class="BoutonValidation" >
         </form>
     </body>
     

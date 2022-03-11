@@ -134,20 +134,23 @@ $administrateur = $_SESSION["administrateur"];
     // },
     eventClick:function(event)
     {
-     if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"delete.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Evenement supprimé");
-       }
-      })
-     }
+
+    //  if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
+    //  {
+    //   var id = event.id;
+    //   $.ajax({
+    //    url:"delete.php",
+    //    type:"POST",
+    //    data:{id:id},
+    //    success:function()
+    //    {
+    //     calendar.fullCalendar('refetchEvents');
+    //     alert("Evenement supprimé");
+    //    }
+    //   })
+    //  }
+    var id = event.id;
+    window.location.href = "../Modification_Formation.php?id=" + id;
     }
     
 
@@ -170,7 +173,7 @@ $administrateur = $_SESSION["administrateur"];
         </li>
     </ul>
   </div>
- <body>
+  <body>
   <br />
   <br />
   <div class="container">
