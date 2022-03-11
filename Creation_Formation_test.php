@@ -87,6 +87,7 @@
                             $AdresseMail = "";
                             $Telephone = "";
                         
+                        
 
                         if ($cpt == 1){
                             echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";

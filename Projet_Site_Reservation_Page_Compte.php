@@ -39,8 +39,7 @@
 
                     if ($_POST['admin']==True){
                         $declare_admin=1;
-                    }
-                    
+                    } 
                 }
 
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
