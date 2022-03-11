@@ -2,7 +2,7 @@
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
-$dbname = "base_prixy"; /* Database name */
+$dbname = "bdd_prixy"; /* Database name */
 
 $con = mysqli_connect($host, $user, $password,$dbname);
 // Check connection
