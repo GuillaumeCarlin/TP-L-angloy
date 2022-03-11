@@ -492,6 +492,23 @@ textarea{
     margin-left: 12em;
     font-family: arial,sans-serif;
 }
+
+.imagecorbeille{
+    height: 50px;
+    width: 50px;
+    margin-top: -4%;
+    position: absolute;
+    margin-left: 35%;
+}
+
+.imagecorbeille:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.leboutoncorbeille{
+    color: white;
+}
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
     
     /* BARRE MENU */
