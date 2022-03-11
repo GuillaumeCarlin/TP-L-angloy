@@ -76,9 +76,9 @@
                                         var telephone = response[0]['telephone'];
                 
                                         // Set value to textboxes
-                                        document.getElementById('nom_'+index).value = nom;
-                                        document.getElementById('telephone_'+index).value = telephone;
-                                        document.getElementById('email_'+index).value = email;
+                                        document.getElementById('nom').value = nom;
+                                        document.getElementById('telephone').value = telephone;
+                                        document.getElementById('email').value = email;
                                     }
                                 }
                             });
@@ -142,17 +142,17 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class='nom' id='nom_1' name='Formateur' placeholder='Nom du Formateur' required></texte>
+                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class='nom' id='nom' name='Formateur' placeholder='Nom du Formateur' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' class='email' id='email_1' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='email' name='AdresseMail' placeholder='Adresse Mail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' class='telephone' id='telephone_1' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             </div>
             <input type="submit" value="Envoyer" class="BoutonValidation" >

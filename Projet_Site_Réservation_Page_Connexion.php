@@ -24,8 +24,7 @@
             <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
             
             <?php
-
-                
+               
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST
                     $utilisateur = htmlspecialchars($_POST["Utilisateur"]);
                     $mdp = htmlspecialchars($_POST["mdp"]);
@@ -40,6 +39,7 @@
                         if ($BDD) {
                             ///////////////////////////////////////////////////////////////////////
                             ///////////////////////////////////////////////////////////////////////
+                            $mdp=hash('sha256',$mdp);
                             $lestatutconnexion=false;
                             $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
                             $resultat=mysqli_fetch_array($requete);
