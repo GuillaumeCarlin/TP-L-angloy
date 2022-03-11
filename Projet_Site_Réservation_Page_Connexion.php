@@ -12,7 +12,7 @@
     
     
 
-    <body class="body">
+    <body class="body_connexion">
     <form  method="post">
         <fieldset class="fieldset">
             <img src="logoPrixy.png" class="imageLogo">
