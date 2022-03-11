@@ -439,8 +439,7 @@ textarea{
   }
 
   .titre_Compte{
-    margin-left: 200px;
-    margin-right: 150px;
+    margin-left: 30%;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 30px;
@@ -492,6 +491,23 @@ textarea{
     margin-left: 12em;
     font-family: arial,sans-serif;
 }
+
+.imagecorbeille{
+    height: 50px;
+    width: 50px;
+    margin-top: -4%;
+    position: absolute;
+    margin-left: 35%;
+}
+
+.imagecorbeille:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.leboutoncorbeille{
+    color: white;
+}
 /* ---------------------------------------------------------- GENERALE -----------------------------------------*/
     
     /* BARRE MENU */
@@ -530,7 +546,13 @@ textarea{
             position: absolute;
             margin-left: 87%;
         }
-    
+        
+        .parametre_supression_creation{
+            margin-top: -4%;
+            position: absolute;
+            margin-left: 87%;
+        }
+
         .divparametre{
             position: absolute;
             margin-top: -3.7%;

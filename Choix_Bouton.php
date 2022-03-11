@@ -11,16 +11,18 @@
         $utilisateur = $_SESSION["utilisateur"];
         $administrateur = $_SESSION["administrateur"];
     ?>
+    
     <div class="divlautreparametre">
-    <ul id="menu-accordeon">
-        <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
-            <ul>
-                <li><a href="Calendrier/Calendar.php">Accueil</a></li>
-                <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
-              </ul>
-        </li>
-    </ul>
-  </div>
+        <ul id="menu-accordeon">
+            <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
+                <ul>
+                    <li><a href="Calendrier/Calendar.php">Accueil</a></li>
+                    <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <body class = "body">
         <div id = "ajout" class = "troisBouton">
             <fieldset class = "Fieldset_Choix_Bouton">

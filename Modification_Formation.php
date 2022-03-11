@@ -45,7 +45,7 @@
                             
                             <?php
                                 if ($administrateur==1){
-                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                                 }
                             ?>
                         </ul>
@@ -88,6 +88,7 @@
                             $Formateur = $row["NOMFormateur"];
                             $AdresseMail = $row["EMAILFormateur"];
                             $Telephone = $row["TELFormateur"];
+                        
                         
 
                         if ($cpt == 1){
