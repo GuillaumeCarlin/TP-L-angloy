@@ -150,7 +150,7 @@ $administrateur = $_SESSION["administrateur"];
     //   })
     //  }
     var id = event.id;
-    window.location.href = "../Modification_Formation.php?id=" + id;
+    window.location.href = "../Creation_Formation.php?id=" + id;
     }
     
 
