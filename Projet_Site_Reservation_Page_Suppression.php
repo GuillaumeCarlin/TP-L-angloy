@@ -27,7 +27,11 @@
                 <input type="submit" class="boutonNvCpt_Compte" value="Supprimer le compte">
                 <?php
                 ini_set("display_errors","off");
-                
+                session_start();
+                $utilisateur = $_SESSION["utilisateur"];
+                $administrateur = $_SESSION["administrateur"];
+
+
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST si la methode est la bonne
                     $NomUtilisateur = $_POST["Utilisateur"];
                     $mdp = $_POST['mdp'];

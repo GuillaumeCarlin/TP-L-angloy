@@ -16,7 +16,9 @@
                 </br>
 
                 
-                <a href="Projet_Site_Réservation_Page_Connexion.php"><img src="image_corbeille.png" class="imagecorbeille" ></a>
+                <a href="Projet_Site_Reservation_Page_Suppression.php">
+                    <img src="image_corbeille.png" class="imagecorbeille" >
+                </a>
                 
                 
                 
@@ -45,7 +47,8 @@
 
                     if ($_POST['admin']==True){
                         $declare_admin=1;
-                    } 
+                    }
+                    
                 }
 
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
