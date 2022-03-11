@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `session_formation` (
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `UTILNomUtilisateur` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `UTILMotDePasse` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `UTILMotDePasse` varchar(257) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `UTILAdmin` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`UTILNomUtilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
