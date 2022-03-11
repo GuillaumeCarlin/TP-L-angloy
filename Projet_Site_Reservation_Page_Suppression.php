@@ -5,7 +5,18 @@
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
-    
+
+    <div class="parametre_supression_creation">
+        <ul id="menu-accordeon">
+            <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
+                <ul>
+                    <li><a href="Calendrier/Calendar.php">Accueil</a></li>
+                    <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <body class="body">
     <form method="POST">
     <!-- <form method="POST" action="Traitement_Compte.php"> -->
