@@ -24,7 +24,6 @@
 
         if (isset($ID)){
             $cpt = 1;
- 
         }
         else {
             $cpt = 0;
@@ -56,7 +55,7 @@
     </head>
 
     <body class="body">
-        <form action="Traitement_Modification_Formation.php" method="post" name ="formulaire">
+        <form action="Traitement_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -69,10 +68,18 @@
                         if (isset($_GET["id"])) {
                             $id = $_GET["id"];
                         }
-                        $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");
+
+                        $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
+                                                                   
                         $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
                         $result = mysqli_query($mysqli, $query);
 
+                        $id_formateur = "SELECT 'IDFormateur' 
+                        FROM 'events'
+                        WHERE 'id' = $id ;";
+                        $result3 = mysqli_query($mysqli, $id_formateur);
+
+                        
                         while ($row = mysqli_fetch_assoc($result)) {
                             $NomReservation = $row["title"];
                             $DateReservation = $row["start_event"];
@@ -89,8 +96,6 @@
                             $AdresseMail = $row["EMAILFormateur"];
                             $Telephone = $row["TELFormateur"];
                         
-                        
-
                         if ($cpt == 1){
                             echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
                         }

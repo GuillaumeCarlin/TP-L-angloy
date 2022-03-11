@@ -1,6 +1,5 @@
 <?php
 
-
 /* Table reservation */
 
 $Reservation_Nom = $_POST["Reservation_Nom"];
@@ -22,18 +21,11 @@ $end_event = $Reservation_Date .' '.$heure_fin.':00:00';
 $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
-
-// $suppr = "DELETE FROM events WHERE id = $id;";
-// $result2 = mysqli_query($mysqli, $suppr);
-
-// $requete_id_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
-// $result = $mysqli->query($requete_id_formateur);
-
+$id = $_GET["id"];
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
     if ($connectdb) {   
-        $modif_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = 80;";  
         
         $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
         VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
