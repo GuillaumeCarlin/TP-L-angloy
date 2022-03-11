@@ -53,9 +53,16 @@
             </div>
         </fieldset>
     </head>
+<?php
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $_SESSION["idevent"] = $id ;
+}
+
+?>
 
     <body class="body">
-        <form action="Traitement_Formation.php" method="post" name ="formulaire">
+        <form action="Traitement_Modification_Formation.php" method="post" name ="formulaire">
 
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
@@ -65,20 +72,11 @@
                 
                     
                     <?php 
-                        if (isset($_GET["id"])) {
-                            $id = $_GET["id"];
-                        }
 
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
                                                                    
                         $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
                         $result = mysqli_query($mysqli, $query);
-
-                        $id_formateur = "SELECT 'IDFormateur' 
-                        FROM 'events'
-                        WHERE 'id' = $id ;";
-                        $result3 = mysqli_query($mysqli, $id_formateur);
-
                         
                         while ($row = mysqli_fetch_assoc($result)) {
                             $NomReservation = $row["title"];
