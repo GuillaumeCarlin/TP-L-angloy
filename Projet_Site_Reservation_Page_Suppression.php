@@ -61,27 +61,22 @@
                         $resultatrequete=mysqli_fetch_array($requete);
                         $comptage=$resultatrequete['count(*)'];
                         if ($comptage == 1){
-                            $requete = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur where UTILNomUtilisateur = $utilisateur ;");
+                            $requete = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur where UTILNomUtilisateur = '".$utilisateur."' ;");
+                            $resultatrequete=mysqli_fetch_array($requete);
+                            $comptage=$resultatrequete['UTILMotDePasse'];
                             $mdp = hash('sha256',$mdp);
-                            if ($requete == $mdp){
-                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur'");
+                            if ($comptage == $mdp){
+                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
+                                header('Location: Calendrier/Calendar.php');
                             }
                             else{
-                                echo"<div class=erreur_crea_mdp><strong>Erreur dans le mot de passe</strong></div>";
-                                echo $mdpAdmin;
-                                echo $comptemdp;
-                                echo "---";
-                                echo $mdp;
-                                echo $comptemdp;
+                                echo"<div class=erreur_crea_mdp><strong>Erreur Utilisateur ou mot de passe</strong></div>";
                             }
                         }
                         else{
                             echo "L'utilisateur n'est pas Admin";
                         }
 
-
-                        
-                        /*header('Location: Calendrier/Calendar.php');*/
                     }
                 }
 
