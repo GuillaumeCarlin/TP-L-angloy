@@ -23,7 +23,7 @@
                             
                             <?php
                                 if ($administrateur==1){
-                                echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
                                 }
                             ?>
                         </ul>
@@ -100,7 +100,6 @@
         $cpt = 0;
     }
     
-        
         ?>
         
     </head>
@@ -119,15 +118,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>
+                    <texte class='Question_Creation_Base'> Date de la réservation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
+                    <texte class='Question_Creation_Base'> Heure de réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
+                    <texte class='Question_Creation_Base'>Durée de la réservation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
                     </br>
                     </br>
                     </br>
@@ -137,7 +136,10 @@
                     </br>
                     <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
                 </fieldset>
-
+                <?php
+                if (isset($_POST['formation'])) {
+                ?>
+    
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
                     </br>
@@ -154,9 +156,72 @@
                     </br>
                     <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
+            
+        <?php }
+            elseif (isset($_POST['externe'])) {
+                ?>
+                    <fieldset class="FieldsetFormation_Creation">
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Nom du client : <input type='text' class='nom' id='nom' name='NomClient' placeholder='Nom du Client'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Entreprise : <input type='text' id='entreprise' name='Entreprise' placeholder='Entreprise'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Adresse : <input type='text' id='adresse' name='Adresse' placeholder='Adresse du Client'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Code Postal : <input type='text' id='cp' name='CodePostal' placeholder='Code Postal'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Ville : <input type='text' id='ville' name='Ville' placeholder='Ville'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='email' id='email' name='Mail' placeholder='Adresse Mail'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    </br>
+                    </br>
+                </fieldset>
+
+                <?php
+            }
+            elseif (isset($_POST['interne'])) {
+                ?>
+                <fieldset class="FieldsetFormation_Creation">
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Réservant : <input type='text' class="nom" id='nom' name='Formateur' placeholder='Nom du Formateur'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='AdresseMail' placeholder='Adresse Mail'></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    </br>
+                    </br>
+                    </br>                
+                </fieldset>
+            
+            <?php
+            }
+            ?>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation" >
-        <?php } 
+            <input type="submit" value="Envoyer" class="BoutonValidation">
+            <?php
+        }
 
 
         else{

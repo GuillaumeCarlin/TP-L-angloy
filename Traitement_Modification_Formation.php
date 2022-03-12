@@ -35,10 +35,17 @@ echo ($id);
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
-    if ($connectdb) {     
-        $requete_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = (SELECT IDFormateur FROM events WHERE id=$id);";
-        $insertion_formateur = mysqli_query($con, $requete_formateur);
-        
+    if ($connectdb) { 
+
+        $requete_presence_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
+        $presence_formateur = mysqli_query($con, $requete_presence_formateur);
+        if(mysqli_num_rows($presence_formateur)) {
+            
+        } 
+        else { 
+            $requete_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = (SELECT IDFormateur FROM events WHERE id=$id);";
+            $insertion_formateur = mysqli_query($con, $requete_formateur);
+        }        
         $requete_reservation = "UPDATE `events` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE `events`.`id` = $id;";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
         

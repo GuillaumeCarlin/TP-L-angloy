@@ -43,8 +43,6 @@ if ($con) {
         VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation', (SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail'));";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
         
-        
-
     }
     else {
         echo 'Erreur de connexion à la base de donnée';
