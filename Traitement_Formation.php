@@ -27,10 +27,17 @@ $Telephone = $_POST["Telephone"];
 $con = mysqli_connect('localhost','root','');
 if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
-    if ($connectdb) {     
-        $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
-        VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
-        $insertion_formateur = mysqli_query($con, $requete_formateur);
+    if ($connectdb) {  
+        
+
+        $requete_presence_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
+        $presence_formateur = mysqli_query($con, $requete_presence_formateur);
+        if(mysqli_num_rows($presence_formateur)) {} 
+        else { 
+            $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) 
+            VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
+            $insertion_formateur = mysqli_query($con, $requete_formateur);
+        }
         
         $requete_reservation = "INSERT INTO `events` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`, `IDFormateur`) 
         VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation', (SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail'));";

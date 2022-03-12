@@ -2,7 +2,6 @@
 session_start();
 $utilisateur = $_SESSION["utilisateur"];
 $administrateur = $_SESSION["administrateur"];
-
 ?>
 <!DOCTYPE html>
 <html>
