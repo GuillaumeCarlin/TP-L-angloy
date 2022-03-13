@@ -75,7 +75,7 @@ if (isset($_GET["id"])) {
 
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
                                                                    
-                        $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
+                        $query = "SELECT * FROM reservation, formateur, session_formation WHERE id = $id AND formateur.IDFormateur = session_formation.IDFormateur AND reservation.id = session_formation.NUMReservation;";
                         $result = mysqli_query($mysqli, $query);
                         
                         while ($row = mysqli_fetch_assoc($result)) {

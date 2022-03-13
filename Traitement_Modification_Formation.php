@@ -39,13 +39,14 @@ if ($con) {
 
         $requete_presence_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
         $presence_formateur = mysqli_query($con, $requete_presence_formateur);
-        if(mysqli_num_rows($presence_formateur)) {
-            
-        } 
-        else { 
-            $requete_formateur = "UPDATE `formateur` SET `NOMFormateur` = '$Formateur', `EMAILFormateur` = '$AdresseMail', `TELFormateur` = '$Telephone' WHERE `formateur`.`IDFormateur` = (SELECT IDFormateur FROM events WHERE id=$id);";
+        if(mysqli_num_rows($presence_formateur)) {} 
+        else {
+            $requete_formateur = "INSERT INTO `formateur` (`IDFormateur`, `NOMFormateur`, `EMAILFormateur`, `TELFormateur`) VALUES (NULL, '$Formateur', '$AdresseMail', '$Telephone');";
             $insertion_formateur = mysqli_query($con, $requete_formateur);
-        }        
+        }
+        $update_formateur_reservation = "UPDATE `events` SET `IDFormateur` = (SELECT IDFormateur FROM formateur WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail') WHERE `events`.`id` = $id;";
+        $update_form_reservation = mysqli_query($con, $update_formateur_reservation);
+        
         $requete_reservation = "UPDATE `events` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE `events`.`id` = $id;";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
         

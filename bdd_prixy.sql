@@ -32,31 +32,16 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
-  `IDCLient` int(11) NOT NULL AUTO_INCREMENT,
-  `CLIRaisonSociale` int(40) NOT NULL,
+  `IDCLient` int NOT NULL AUTO_INCREMENT,
+  `CLINom` varchar(40) NOT NULL,
   `CLIAdresseComplete` varchar(100) NOT NULL,
-  `CLICodePostale` int(6) NOT NULL,
-  `CLITelFixe` int(10) DEFAULT NULL,
-  `CLITelMobile` int(10) DEFAULT NULL,
+  `CLICodePostale` varchar(16) NOT NULL,
+  `CLITelFixe` varchar(16) DEFAULT NULL,
   `CLIEmail` varchar(60) NOT NULL,
   `CLIVille` varchar(50) NOT NULL,
   PRIMARY KEY (`IDCLient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `formateur`
---
-
-DROP TABLE IF EXISTS `formateur`;
-CREATE TABLE IF NOT EXISTS `formateur` (
-  `IDFormateur` int(11) NOT NULL AUTO_INCREMENT,
-  `NOMFormateur` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `EMAILFormateur` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `TELFormateur` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`IDFormateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -81,17 +66,16 @@ CREATE TABLE IF NOT EXISTS `reservantinterne` (
 
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
-  `NUMReservation` int(11) NOT NULL AUTO_INCREMENT,
-  `RESERVDate` date NOT NULL,
-  `HeureDebut` time NOT NULL,
-  `HeureFIN` time NOT NULL,
-  `Description` text CHARACTER SET utf8 COLLATE utf8_bin,
-  `Intitule` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `NBparticipant` int(2) NOT NULL,
-  `IDSalle` int(11) NOT NULL,
-  `UTILNomUtilisateur` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`NUMReservation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `start_event` datetime NOT NULL,
+  `end_event` datetime NOT NULL,
+  `descriptionEvent` varchar(255) NOT NULL,
+  `participant` int NOT NULL,
+  `IDSalle` varchar(255) NOT NULL,
+  `UTILNomUtilisateur` varchar(255),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -180,3 +164,38 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `formateur`
+--
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `start_event` datetime NOT NULL,
+  `end_event` datetime NOT NULL,
+  `descriptionEvent` varchar(255) NOT NULL,
+  `participant` int NOT NULL,
+  `IDSalle` varchar(255) NOT NULL,
+  `UTILNomUtilisateur` varchar(255),
+  `type` varchar(32),
+  `IDFormateur` int,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `formateur`;
+CREATE TABLE IF NOT EXISTS `formateur` (
+  `IDFormateur` int(11) NOT NULL AUTO_INCREMENT,
+  `NOMFormateur` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `EMAILFormateur` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `TELFormateur` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`IDFormateur`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+

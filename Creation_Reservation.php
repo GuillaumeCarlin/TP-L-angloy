@@ -105,7 +105,7 @@
     </head>
 
     <body class="body">
-        <form action="Traitement_Formation.php" method="post" name ="formulaire">
+        <form action="Traitement_Reservation.php" method="post" name ="formulaire">
             <?php 
             if ($cpt == 0) {         
             ?>
@@ -168,10 +168,6 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Entreprise : <input type='text' id='entreprise' name='Entreprise' placeholder='Entreprise'></texte>
-                    </br>
-                    </br>
-                    </br>
                     <texte class='Question_Creation_Base'>Adresse : <input type='text' id='adresse' name='Adresse' placeholder='Adresse du Client'></texte>
                     </br>
                     </br>
@@ -201,15 +197,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Réservant : <input type='text' class="nom" id='nom' name='Formateur' placeholder='Nom du Formateur'></texte>
+                    <texte class='Question_Creation_Base'>Réservant : <input type='text' class="nom" id='nom' name='ReservantNom' placeholder='Nom du Formateur'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='AdresseMail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                     </br>                
