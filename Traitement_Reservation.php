@@ -46,12 +46,11 @@ if ($con) {
     $connectdb = mysqli_select_db($con, 'bdd_prixy');
     if ($connectdb) {  
 
-        $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`) 
-        VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin');";
-        $insertion_reservation = mysqli_query($con, $requete_reservation);
+        if(isset($_POST["Formateur"])) {
 
-
-        if($Formateur) {
+            $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation');";
+            $insertion_reservation = mysqli_query($con, $requete_reservation);
 
             $requete_presence_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
             $presence_formateur = mysqli_query($con, $requete_presence_formateur);
@@ -66,7 +65,12 @@ if ($con) {
             $insertion_session = mysqli_query($con, $requete_insertion_session);
         }
 
-        elseif($Client) {
+        elseif(isset($_POST["NomClient"])) {
+
+            $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'externe');";
+            $insertion_reservation = mysqli_query($con, $requete_reservation);
+
             $requete_presence_client = "SELECT `IDClient` FROM `client` WHERE `CLIRaisonSociale` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostale` = '$CodePostal' AND `CLITelFixe` = '$ClientTelephone' AND `CLIEmail` = '$Email' AND `CLIVille` = '$Ville';";
             $presence_client = mysqli_query($con, $requete_presence_client);
             if(mysqli_num_rows($presence_client)) {} 
@@ -81,8 +85,25 @@ if ($con) {
             $insertion_externe = mysqli_query($con, $requete_insertion_externe);
         }
 
-        elseif($ReservantNom) {
-            
+        elseif(isset($_POST["ReservantNom"])) {
+
+            $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'interne');";
+            $insertion_reservation = mysqli_query($con, $requete_reservation);
+
+            $requete_presence_reservant = "SELECT `IDResponsable` FROM `reservantinterne` WHERE `NOMReservant` = '$ReservantNom' AND `EMAILReservant` = '$ReservantAdresseMail' AND `TELReservant` = '$ReservantTelephone';";
+            $presence_reservant = mysqli_query($con, $requete_presence_reservant);
+            if(mysqli_num_rows($presence_reservant)) {} 
+            else {
+                $requete_reservant = "INSERT INTO `reservantinterne` (`IDResponsable`, `NOMReservant`, `EMAILReservant`, `TELReservant`) 
+                VALUES (NULL, '$ReservantNom', '$ReservantAdresseMail', '$ReservantTelephone');";
+                $insertion_reservant = mysqli_query($con, $requete_reservant);
+            }
+
+            $requete_insertion_interne = "INSERT INTO `reservation_interne` (`RESERVIntID`, `NUMReservation`, `IDResponsable`) 
+            VALUES (NULL, (SELECT id FROM reservation WHERE title = '$Reservation_Nom' AND start_event = '$start_event' AND descriptionEvent = '$Reservation_Descriptif'), (SELECT IDResponsable FROM reservantinterne WHERE `NOMReservant` = '$ReservantNom' AND `EMAILReservant` = '$ReservantAdresseMail' AND `TELReservant` = '$ReservantTelephone'));";
+            $insertion_interne = mysqli_query($con, $requete_insertion_interne);
+
         }
     }
 

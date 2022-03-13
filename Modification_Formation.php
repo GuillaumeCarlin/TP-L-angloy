@@ -74,8 +74,16 @@ if (isset($_GET["id"])) {
                     <?php 
 
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
-                                                                   
-                        $query = "SELECT * FROM reservation, formateur, session_formation WHERE id = $id AND formateur.IDFormateur = session_formation.IDFormateur AND reservation.id = session_formation.NUMReservation;";
+
+
+                        
+
+                        $query = "SELECT * 
+                        FROM reservation, formateur, session_formation 
+                        WHERE id = $id 
+                        AND formateur.IDFormateur = session_formation.IDFormateur 
+                        AND reservation.id = session_formation.NUMReservation;";
+                        
                         $result = mysqli_query($mysqli, $query);
                         
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -93,8 +101,8 @@ if (isset($_GET["id"])) {
                             $Formateur = $row["NOMFormateur"];
                             $AdresseMail = $row["EMAILFormateur"];
                             $Telephone = $row["TELFormateur"];
-                        
-                        
+                            $type = $row["type"];
+
                             echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
                         
                         ?>
@@ -141,7 +149,9 @@ if (isset($_GET["id"])) {
 
                     ?>
                 </fieldset>
-
+                <?php
+                if ($type == 'formation') {
+                    ?>
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
                     </br>
@@ -169,6 +179,14 @@ if (isset($_GET["id"])) {
                         echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' value='$Telephone' required></texte>";
                     
                 }
+
+                elseif($type == 'externe'){
+
+                }
+            }
+            
+        
+        
                     ?>
                 </fieldset>
             </div>
