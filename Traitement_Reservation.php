@@ -71,6 +71,8 @@ if ($con) {
             VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'externe');";
             $insertion_reservation = mysqli_query($con, $requete_reservation);
 
+
+            // La vérification ne fonctionne pas 
             $requete_presence_client = "SELECT `IDClient` FROM `client` WHERE `CLIRaisonSociale` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLITelFixe` = '$ClientTelephone' AND `CLIEmail` = '$Email' AND `CLIVille` = '$Ville';";
             $presence_client = mysqli_query($con, $requete_presence_client);
             if(mysqli_num_rows($presence_client)) {} 
@@ -80,6 +82,7 @@ if ($con) {
                 $insertion_client = mysqli_query($con, $requete_client);
             }
 
+            // Ne fonctionne pas avec `CLITelFixe` = '$ClientTelephone' dans le SELECT du VALUES
             $requete_insertion_externe = "INSERT INTO `reservation_externe` (`RESERVExtID`, `IDClient`, `NUMRESERVATION`) 
             VALUES (NULL, (SELECT `IDClient` FROM `client` WHERE `CLINom` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal'), (SELECT id FROM reservation WHERE title = '$Reservation_Nom' AND start_event = '$start_event' AND descriptionEvent = '$Reservation_Descriptif'));";
             $insertion_externe = mysqli_query($con, $requete_insertion_externe);

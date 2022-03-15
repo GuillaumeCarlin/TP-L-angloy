@@ -56,6 +56,22 @@ if ($con) {
         $Ville = $_POST["Ville"];
         $Email = $_POST["Mail"];
         $ClientTelephone = $_POST["Telephone"];
+
+        $requete_presence_client = "SELECT `IDClient` FROM `client` WHERE `CLIRaisonSociale` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLITelFixe` = '$ClientTelephone' AND `CLIEmail` = '$Email' AND `CLIVille` = '$Ville';";
+        $presence_client = mysqli_query($con, $requete_presence_client);
+        if(mysqli_num_rows($presence_client)) {} 
+        else {
+            $requete_client = "INSERT INTO `client` (`IDCLient`, `CLINom`, `CLIAdresseComplete`, `CLICodePostal`, `CLIVille`, `CLIEmail`, `CLITelFixe`) 
+            VALUES (NULL, '$Client', '$Adresse', '$CodePostal', '$ClientTelephone', '$Email', '$Ville');";
+            $insertion_client = mysqli_query($con, $requete_client);
+        }
+
+        $update_client_reservation = "UPDATE `reservation_externe` SET `IDClient` = (SELECT IDClient FROM client WHERE `CLIRaisonSociale` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLITelFixe` = '$ClientTelephone' AND `CLIEmail` = '$Email' AND `CLIVille` = '$Ville') WHERE NUMRESERVATION = $id;";
+        $update_cli_reservation = mysqli_query($con, $update_client_reservation);
+        
+        $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE id = $id;";
+        $insertion_reservation = mysqli_query($con, $requete_reservation);
+
     }
 
 }
