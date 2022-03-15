@@ -48,9 +48,6 @@
                     $mdp = $_POST['mdpC'];
                 }
 
-
-                
-
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                 if ($connexion) { 
                     $BDD = mysqli_select_db($connexion,'bdd_prixy');
@@ -61,11 +58,13 @@
                         $resultatrequete=mysqli_fetch_array($requete);
                         $comptage=$resultatrequete['count(*)'];
                         if ($comptage == 1){
+                            //Vérification du mot de passe
                             $requete = mysqli_query($connexion,"SELECT UTILMotDePasse FROM utilisateur where UTILNomUtilisateur = '".$utilisateur."' ;");
                             $resultatrequete=mysqli_fetch_array($requete);
                             $comptage=$resultatrequete['UTILMotDePasse'];
                             $mdp = hash('sha256',$mdp);
                             if ($comptage == $mdp){
+                                //Suppression du compte
                                 $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
                                 header('Location: Calendrier/Calendar.php');
                             }
