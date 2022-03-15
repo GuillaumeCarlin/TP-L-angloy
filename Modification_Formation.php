@@ -74,8 +74,16 @@ if (isset($_GET["id"])) {
                     <?php 
 
                         $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");    
-                                                                   
-                        $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
+
+
+                        
+
+                        $query = "SELECT * 
+                        FROM reservation, formateur, session_formation 
+                        WHERE id = $id 
+                        AND formateur.IDFormateur = session_formation.IDFormateur 
+                        AND reservation.id = session_formation.NUMReservation;";
+                        
                         $result = mysqli_query($mysqli, $query);
                         
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -93,111 +101,92 @@ if (isset($_GET["id"])) {
                             $Formateur = $row["NOMFormateur"];
                             $AdresseMail = $row["EMAILFormateur"];
                             $Telephone = $row["TELFormateur"];
-                        
-                        if ($cpt == 1){
+                            $type = $row["type"];
+
                             echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
-                        }
-                        else{
-                            echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  placeholder='Nom de la Réservation'  required></texte>";
-                        }
+                        
                         ?>
                         
                         </br>
                         </br>
                         </br>
                         <?php 
-                        if ($cpt == 1){
+                        
                             echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
-                        }
-                        else{
-                            echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>";
-                        }
+                        
                         ?>
                         </br>
                         </br>
                         </br>
                         <?php
-                        if ($cpt == 1){
+                        
                             echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required> heures</texte>";
-                        }
-                        else{
-                            echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' required> heures</texte>";
-                        }
+                        
+                       
                         ?>
                         </br>
                         </br>
                         </br>
                         <?php
-                        if ($cpt == 1){
+                        
                             echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'> heures</texte>";
-                        }
-                        else{
-                            echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4'> heures</texte>";
-                        }
+                        
                         ?>
                         </br>
                         </br>
                         </br>
                         <?php
-                        if ($cpt == 1){
-                            echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";
-                        }
-                        else{
-                            echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
-                        }
-                    
+                        
+                            echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";                 
                 
                     ?>
                     </br>
                     </br>
                     </br>
                     <?php
-                    if ($cpt == 1){
+                    
                         echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' required>$Description</textarea></texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder = 'Description de la Reservation' required></textarea></texte>";
-                    }
-                
+
                     ?>
                 </fieldset>
-
+                <?php
+                if ($type == 'formation') {
+                    ?>
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
                     </br>
                     </br>
                     <?php
-                    if ($cpt == 1){
+                  
                         echo "<texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' value='$Formateur' required></texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur' required></texte>";
-                    }
+                    
                     ?>
                     </br>
                     </br>
                     </br>
                     </br>
                     <?php
-                    if ($cpt == 1){
+                   
                         echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' value='$AdresseMail' required></texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail' required></texte>";
-                    }
+                   
                     ?>
                     </br>
                     </br>
                     </br>
                     </br>
                     <?php
-                    if ($cpt == 1){
+                 
                         echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' value='$Telephone' required></texte>";
-                    }
-                    else{
-                        echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>";
-                    }
+                    
                 }
+
+                elseif($type == 'externe'){
+
+                }
+            }
+            
+        
+        
                     ?>
                 </fieldset>
             </div>

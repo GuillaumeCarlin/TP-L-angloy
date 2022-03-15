@@ -12,7 +12,7 @@
     
     
 
-    <body class="body">
+    <body class="body_connexion">
     <form  method="post">
         <fieldset class="fieldset">
             <img src="logoPrixy.png" class="imageLogo">
@@ -43,7 +43,8 @@
                             $lestatutconnexion=false;
                             $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
                             $resultat=mysqli_fetch_array($requete);
-                            $compte=$resultat['count(*)'];
+                            //$compte=$resultat['count(*)'];
+                            // $compte = 1;
                             
                             // md5() --> hachage
                             if ($compte != 0){

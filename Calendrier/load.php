@@ -6,7 +6,7 @@ $connect = new PDO('mysql:host=localhost;dbname=bdd_prixy', 'root', '');
 
 $data = array();
 
-$query = "SELECT * FROM events ORDER BY id";
+$query = "SELECT * FROM reservation ORDER BY id";
 
 $statement = $connect->prepare($query);
 

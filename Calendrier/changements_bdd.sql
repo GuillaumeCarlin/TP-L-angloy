@@ -23,6 +23,20 @@ CREATE TABLE IF NOT EXISTS `events` (
   FOREIGN KEY (`IDFormateur`) REFERENCES formateur (`IDFormateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+DROP TABLE IF EXISTS `reservation`;
+CREATE TABLE IF NOT EXISTS `reservation` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `start_event` datetime NOT NULL,
+  `end_event` datetime NOT NULL,
+  `descriptionEvent` varchar(255) NOT NULL,
+  `participant` int NOT NULL,
+  `IDSalle` varchar(255) NOT NULL,
+  `UTILNomUtilisateur` varchar(255),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --

@@ -1,3 +1,9 @@
+.body{
+    background-color: white;
+}
+
+
+
 /* -------------------------------------- Page de Connexion ---------------------------------------------------*/
 
 /* Changement de place et de couleur des fieldset */
@@ -51,7 +57,7 @@
     background-color: rgb(23, 65, 97);
 }
 /* Couleur du fond */ 
-.body{
+.body_connexion{
     background-color: rgb(23, 57, 94);
 }
 
@@ -179,12 +185,12 @@ td{
 .Fieldset_Choix_Bouton{
     width: 300px;
     height: 450px;
-    border: solid 2px white;
+    border: solid 2px rgb(196, 196, 196);
     margin-left: auto;
     margin-right: auto;
     margin-top: 130px;
     margin-bottom: 50px;
-    background-color: white;
+    background-color: rgb(196, 196, 196);
     border-radius: 8%;
 } 
 /*
@@ -248,8 +254,8 @@ td{
     height: 550px;
     width: 500px;
     border-radius: 8%;
-    border: solid 3px white;
-    background-color: rgba(255, 255, 255, 0.918);
+    border: solid 3px rgb(196, 196, 196);
+    background-color: rgb(196, 196, 196);
     border-width: 3px;
 }
 
@@ -259,8 +265,8 @@ td{
     height: 320px;
     width: 450px;
     border-radius: 8%;
-    border: solid 3px white;
-    background-color: white;
+    border: solid 3px rgb(196, 196, 196);
+    background-color: rgb(196, 196, 196);
     border-width: 3px;
 }
 
@@ -271,8 +277,8 @@ td{
     height: 380px;
     width: 500px;
     border-radius: 8%;
-    border: solid 3px white;
-    background-color: white;
+    border: solid 3px rgb(196, 196, 196);
+    background-color: rgb(196, 196, 196);
     border-width: 3px;
 }
 
@@ -282,8 +288,8 @@ td{
     margin-bottom: 20px;
     height: 100px;
     width: 300px;
-    background-color: white;
-    border: solid 3px white;
+    background-color: rgb(196, 196, 196);
+    border: solid 3px rgb(196, 196, 196);
     border-width: 3px;
 }
 
@@ -297,6 +303,7 @@ td{
     margin-left: 30px;
     margin-bottom: 30px;
 }
+
 
 .test_Creation{
     margin-top: auto;
