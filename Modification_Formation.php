@@ -207,6 +207,44 @@ if (isset($_GET["id"])) {
 <?php
     }
 }
+
+elseif ($type == 'interne') {
+
+    $query_interne = "SELECT * 
+    FROM reservation, reservantinterne, reservation_interne
+    WHERE id = $id
+    AND reservation_interne.IDResponsable = reservantinterne.IDResponsable 
+    AND reservation.id = reservation_interne.NUMReservation;";
+    
+    $result_interne = mysqli_query($mysqli, $query_interne);
+
+    while ($row = mysqli_fetch_assoc($result_interne)) {
+        $NOMReservant = $row["NOMReservant"];
+        $EMAILReservant = $row["EMAILReservant"];
+        $TELReservant = $row["TELReservant"];
+
+
+
+?>
+    <fieldset class="FieldsetFormation_Creation">
+    </br></br></br>
+    <?php
+    echo "<texte class='Question_Creation_Base'>Réservant : <input type='text' class='nom' id='nom' name='ReservantNom' value = '$NOMReservant'></texte>";
+    ?>
+    </br></br></br>
+    <?php
+    echo "<texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='ReservantAdresseMail' value ='$EMAILReservant'></texte>";
+    ?>
+    </br></br></br>
+    <?php
+    echo "<texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='ReservantTelephone' value = '$TELReservant'></texte>";
+    ?>
+    </br></br></br>         
+</fieldset>
+
+<?php
+}
+}
         ?>
     </fieldset>
 </div>
