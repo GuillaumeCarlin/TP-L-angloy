@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `client` (
   `IDCLient` int NOT NULL AUTO_INCREMENT,
   `CLINom` varchar(40) NOT NULL,
   `CLIAdresseComplete` varchar(100) NOT NULL,
-  `CLICodePostale` varchar(16) NOT NULL,
-  `CLITelFixe` varchar(16) DEFAULT NULL,
-  `CLIEmail` varchar(60) NOT NULL,
+  `CLICodePostal` varchar(16) NOT NULL,
   `CLIVille` varchar(50) NOT NULL,
+  `CLIEmail` varchar(60) NOT NULL,
+  `CLITelFixe` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`IDCLient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

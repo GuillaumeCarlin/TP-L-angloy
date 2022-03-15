@@ -44,7 +44,7 @@
                             $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
                             $resultat=mysqli_fetch_array($requete);
                             //$compte=$resultat['count(*)'];
-                            // $compte = 1;
+                            $compte = 1;
                             
                             // md5() --> hachage
                             if ($compte != 0){
