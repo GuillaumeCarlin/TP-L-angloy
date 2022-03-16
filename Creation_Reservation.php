@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title> Prixy création Formation</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>
 
@@ -114,27 +114,27 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom' placeholder='Nom de la Reservation' required></texte>
+                    <texte class='Question_Creation_Base'> Nom de la réservation : <input class="creation" type='text' id='Reservation_Nom' name='Reservation_Nom' placeholder='Nom de la Reservation' required></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Date de la réservation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>
+                    <texte class='Question_Creation_Base'> Date de la réservation : <input class="creation" type='date' id='Reservation_Date' name='Reservation_Date' required></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Heure de réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
+                    <texte class='Question_Creation_Base'> Heure de réservation : <input class="creation" type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size="4" required> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Durée de la réservation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
+                    <texte class='Question_Creation_Base'>Durée de la réservation : <input class="creation" type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size="4"> heures</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" required>  / 30</texte>
+                    <texte class='Question_Creation_Base'> Nombre de Participant : <input class="creation" type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" required>  / 30</texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="creation" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
                 </fieldset>
                 <?php
                 if (isset($_POST['formation'])) {
@@ -144,17 +144,17 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class='nom' id='nom' name='Formateur' placeholder='Nom du Formateur' required></texte>
+                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class="creation" id='nom' name='Formateur' placeholder='Nom du Formateur' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='email' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class="creation" type='text' id='email' name='AdresseMail' placeholder='Adresse Mail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="creation" type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             
         <?php }
@@ -164,27 +164,27 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du client : <input type='text' class='nom' id='nom' name='NomClient' placeholder='Nom du Client'></texte>
+                    <texte class='Question_Creation_Base'>Nom du client : <input class="creation" type='text' class='nom' id='nom' name='NomClient' placeholder='Nom du Client'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse : <input type='text' id='adresse' name='Adresse' placeholder='Adresse du Client'></texte>
+                    <texte class='Question_Creation_Base'>Adresse : <input class="creation" type='text' id='adresse' name='Adresse' placeholder='Adresse du Client'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Code Postal : <input type='text' id='cp' name='CodePostal' placeholder='Code Postal'></texte>
+                    <texte class='Question_Creation_Base'>Code Postal : <input class="creation" type='text' id='cp' name='CodePostal' placeholder='Code Postal'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Ville : <input type='text' id='ville' name='Ville' placeholder='Ville'></texte>
+                    <texte class='Question_Creation_Base'>Ville : <input class="creation" type='text' id='ville' name='Ville' placeholder='Ville'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='email' id='email' name='Mail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="creation" type='email' id='email' name='Mail' placeholder='Adresse Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="creation" type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                 </fieldset>
@@ -197,15 +197,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Réservant : <input type='text' class="nom" id='nom' name='ReservantNom' placeholder='Nom du Formateur'></texte>
+                    <texte class='Question_Creation_Base'>Réservant : <input class="creation" type='text' class="nom" id='nom' name='ReservantNom' placeholder='Nom du Formateur'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="creation" type='text' id='email' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="creation" type='text' id='telephone' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                     </br>                
@@ -216,157 +216,13 @@
             ?>
             </div>
             <input type="submit" value="Envoyer" class="BoutonValidation">
-            <?php
+    <?php
         }
 
-
-        else{
-            if (isset($_GET["id"])) {
-                $id = $_GET["id"];
-            }
-    
-            $mysqli = mysqli_connect("localhost", "root", "", "bdd_prixy");   
-            
-            $query = "SELECT * FROM events, formateur WHERE id = $id AND formateur.IDFormateur = events.IDFormateur;";
-            $result = mysqli_query($mysqli, $query);
-            
-            while ($row = mysqli_fetch_assoc($result)) {
-                $NomReservation = $row["title"];
-                $DateReservation = $row["start_event"];
-                $DateReservation = substr($DateReservation,0,-9);
-                $HeureReservation = $row["start_event"];
-                $HeureReservation = substr($HeureReservation,11,-6);
-                
-                $DureeReservation = $row["end_event"];
-                $DureeReservation = substr($DureeReservation,11,-6);
-                $DureeReservation = $DureeReservation - $HeureReservation;
-                $NbParticipant = $row["participant"];
-                $Description = $row["descriptionEvent"];
-                $Formateur = $row["NOMFormateur"];
-                $AdresseMail = $row["EMAILFormateur"];
-                $Telephone = $row["TELFormateur"];
-
-            echo "<div class='colonne'>
-            <fieldset class='FieldsetFormation_Creation'>
-                </br>
-                </br>
-                </br>";
-            if ($cpt == 1){
-                echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
-            }
-            else{
-                echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  placeholder='Nom de la Réservation'  required></texte>";
-            }
-            ?>
-            
-            </br>
-            </br>
-            </br>
-            <?php 
-            if ($cpt == 1){
-                echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
-            }
-            else{
-                echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' required></texte>";
-            }
-            ?>
-            </br>
-            </br>
-            </br>
-            <?php
-            if ($cpt == 1){
-                echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required> heures</texte>";
-            }
-            else{
-                echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' required> heures</texte>";
-            }
-            ?>
-            </br>
-            </br>
-            </br>
-            <?php
-            if ($cpt == 1){
-                echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'> heures</texte>";
-            }
-            else{
-                echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4'> heures</texte>";
-            }
-            ?>
-            </br>
-            </br>
-            </br>
-            <?php
-            if ($cpt == 1){
-                echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";
-            }
-            else{
-                echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' required>  / 30</texte>";
-            }
-        
-    
-        ?>
-        </br>
-        </br>
-        </br>
-        <?php
-        if ($cpt == 1){
-            echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' required>$Description</textarea></texte>";
-        }
-        else{
-            echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder = 'Description de la Reservation' required></textarea></texte>";
-        }
-    
-        ?>
-    </fieldset>
-
-    <fieldset class="FieldsetFormation_Creation">
-        </br>
-        </br>
-        </br>
-        <?php
-        if ($cpt == 1){
-            echo "<texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' value='$Formateur' required></texte>";
-        }
-        else{
-            echo "<texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' placeholder='Nom du Formateur' required></texte>";
-        }
-        ?>
-        </br>
-        </br>
-        </br>
-        </br>
-        <?php
-        if ($cpt == 1){
-            echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' value='$AdresseMail' required></texte>";
-        }
-        else{
-            echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' placeholder='Adresse Mail' required></texte>";
-        }
-        ?>
-        </br>
-        </br>
-        </br>
-        </br>
-        <?php
-        if ($cpt == 1){
-            echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' value='$Telephone' required></texte>";
-        }
-        else{
-            echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>";
-        }
-    }
-    // $suppr_formateur = "DELETE FROM formateur WHERE IDFormateur = (SELECT IDFormateur FROM events WHERE id=$id;);";
-    // $result4 = mysqli_query($mysqli, $suppr_formateur);
-
-    // $suppr = "DELETE FROM events WHERE id = $id;";
-    // $result2 = mysqli_query($mysqli, $suppr);
-        ?>
+    ?>
     </fieldset>
 </div>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
-<?php
-        }
-        ?>
         </form>
     </body>
     

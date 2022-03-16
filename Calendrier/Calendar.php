@@ -2,7 +2,6 @@
 
 // A Améliorer : 
 // - CSS du site en général
-// - Lors de la création d'une reserv externe, pouvoir mettre des majuscules
 
 session_start();
 $utilisateur = $_SESSION["utilisateur"];
@@ -19,16 +18,14 @@ $administrateur = $_SESSION["administrateur"];
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
   <script>
-   
 
-
-
-   
   $(document).ready(function() {
    var calendar = $('#calendar').fullCalendar({
     editable:true,
@@ -119,42 +116,9 @@ $administrateur = $_SESSION["administrateur"];
       }
      });
     },
-    // eventClick:function(event)
-    // {
-    //  if(confirm("Are you sure you want to remove it?"))
-    //  {
-    //   var id = event.id;
-    //   $.ajax({
-    //    url:"delete.php",
-    //    type:"POST",
-    //    data:{id:id},
-    //    success:function()
-    //    {
-    //     calendar.fullCalendar('refetchEvents');
-    //     alert("Event Removed");
-    //    }
-    //   })
-    //  }
-    // },
     eventClick:function(event)
     {
 
-    //  if(confirm("Etes vous sur de vouloir supprimer cet évenement ?"))
-    //  {
-    //   var id = event.id;
-    //   $.ajax({
-    //    url:"delete.php",
-    //    type:"POST",
-    //    data:{id:id},
-    //    success:function()
-    //    {
-    //     calendar.fullCalendar('refetchEvents');
-    //     alert("Evenement supprimé");
-    //    }
-    //   })
-    //  }
-    var id = event.id;
-    window.location.href = "../Modification_Formation.php?id=" + id;
     }
     
 
