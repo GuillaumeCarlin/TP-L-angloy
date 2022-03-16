@@ -73,16 +73,15 @@ if ($con) {
 
 
             // La vérification ne fonctionne pas 
-            $requete_presence_client = "SELECT `IDClient` FROM `client` WHERE `CLIRaisonSociale` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLITelFixe` = '$ClientTelephone' AND `CLIEmail` = '$Email' AND `CLIVille` = '$Ville';";
+            $requete_presence_client = "SELECT `IDClient` FROM `client` WHERE `CLINom` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLIVille` = '$Ville' AND `CLIEmail` = '$Email';";
             $presence_client = mysqli_query($con, $requete_presence_client);
             if(mysqli_num_rows($presence_client)) {} 
             else {
                 $requete_client = "INSERT INTO `client` (`IDCLient`, `CLINom`, `CLIAdresseComplete`, `CLICodePostal`, `CLIVille`, `CLIEmail`, `CLITelFixe`) 
-                VALUES (NULL, '$Client', '$Adresse', '$CodePostal', '$ClientTelephone', '$Email', '$Ville');";
+                VALUES (NULL, '$Client', '$Adresse', '$CodePostal', '$Ville', '$Email', '$ClientTelephone');";
                 $insertion_client = mysqli_query($con, $requete_client);
             }
-
-            // Ne fonctionne pas avec `CLITelFixe` = '$ClientTelephone' dans le SELECT du VALUES
+            
             $requete_insertion_externe = "INSERT INTO `reservation_externe` (`RESERVExtID`, `IDClient`, `NUMRESERVATION`) 
             VALUES (NULL, (SELECT `IDClient` FROM `client` WHERE `CLINom` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal'), (SELECT id FROM reservation WHERE title = '$Reservation_Nom' AND start_event = '$start_event' AND descriptionEvent = '$Reservation_Descriptif'));";
             $insertion_externe = mysqli_query($con, $requete_insertion_externe);

@@ -1,4 +1,9 @@
 <?php
+
+// A Améliorer : 
+// - CSS du site en général
+// - Lors de la création d'une reserv externe, pouvoir mettre des majuscules
+
 session_start();
 $utilisateur = $_SESSION["utilisateur"];
 $administrateur = $_SESSION["administrateur"];
