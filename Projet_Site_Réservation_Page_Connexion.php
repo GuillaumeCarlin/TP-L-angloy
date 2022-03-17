@@ -16,9 +16,9 @@
     <form  method="post">
         <fieldset class="fieldset">
             <img src="logoPrixy.png" class="imageLogo">
-            <input class="bouton" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
+            <input class="input_connexion" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
             </br>
-            <input class="bouton" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
+            <input class="input_connexion" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
             </br>
             
             <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
@@ -43,8 +43,8 @@
                             $lestatutconnexion=false;
                             $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILMotDePasse = '".$mdp."';");
                             $resultat=mysqli_fetch_array($requete);
-                            //$compte=$resultat['count(*)'];
-                            $compte = 1;
+                            $compte=$resultat['count(*)'];
+                            // $compte = 1;
                             
                             // md5() --> hachage
                             if ($compte != 0){
