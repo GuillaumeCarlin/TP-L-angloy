@@ -119,6 +119,8 @@ $administrateur = $_SESSION["administrateur"];
     eventClick:function(event)
     {
 
+      var id = event.id;
+      window.location.href = "../Modification_Formation.php?id=" + id;
     }
     
 

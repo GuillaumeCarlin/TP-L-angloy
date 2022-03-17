@@ -149,12 +149,12 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class="z" type='text' id='email' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class="z" type='email' id='email' name='AdresseMail' placeholder='Adresse Mail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="z" type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="z" type='tel' id='telephone' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
                 </fieldset>
             
         <?php }
@@ -184,7 +184,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input class="z" type='text' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="z" type='tel' id='telephone' name='Telephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                 </fieldset>
@@ -201,11 +201,11 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="z" type='text' id='email' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="z" type='email' id='email' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input class="z" type='text' id='telephone' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="z" type='tel' id='telephone' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
                     </br>
                     </br>
                     </br>                
