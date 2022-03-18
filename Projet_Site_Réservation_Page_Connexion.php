@@ -20,6 +20,7 @@
             </br>
             <input class="input_connexion" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
             </br>
+            </br>
             
             <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
             
