@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title> Prixy création Formation </title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>
 
@@ -96,25 +96,25 @@ if (isset($_GET["id"])) {
         $type = $row["type"];
         
 
-        echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
+        echo "<texte class='Question_Creation_Base'> Nom de la réservation : <input class ='champ_input' type='text' id='Reservation_Nom' name='Reservation_Nom'  value='$NomReservation'  required></texte>";
     ?>
     
     </br></br></br>
     <?php 
-        echo "<texte class='Question_Creation_Base'> Date de la formation : <input type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
+        echo "<texte class='Question_Creation_Base'> Date de la formation : <input class ='champ_input' type='date' id='Reservation_Date' name='Reservation_Date' value = '$DateReservation' required></texte>";
     ?>
     </br></br></br>
     <?php
-        echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required> heures</texte>";
+        echo "<texte class='Question_Creation_Base'> Heure de Réservation : <input class ='champ_input' type='number' id='Reservation_Heure' name='Reservation_Heure' min='8' max='18' step='1' size='4' value = '$HeureReservation' required></texte>";
     ?>
     </br></br></br>
     <?php
-        echo "<texte class='Question_Creation_Base'>Durée de la formation : <input type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'> heures</texte>";
+        echo "<texte class='Question_Creation_Base'>Durée de la formation : <input class ='champ_input' type='number' id='Reservation_Duree' name='Reservation_Duree' min='1' step='1' max='5' size='4' value = '$DureeReservation'></texte>";
     ?>
     </br></br></br>
 
     <?php
-        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";                 
+        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input class ='champ_input' type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";                 
     ?>
     </br></br></br>
     <?php
@@ -144,15 +144,15 @@ if (isset($_GET["id"])) {
         <fieldset class="FieldsetFormation_Creation">
         </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Formateur : <input type='text' id='Formateur' name='Formateur' value='$Formateur' required></texte>";
+            echo "<texte class='Question_Creation_Base'>Formateur : <input class ='champ_input' type='text' id='Formateur' name='Formateur' value='$Formateur' required></texte>";
         ?>
         </br></br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input type='text' id='AdresseMail' name='AdresseMail' value='$AdresseMail' required></texte>";
+            echo "<texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class ='champ_input' type='text' id='AdresseMail' name='AdresseMail' value='$AdresseMail' required></texte>";
         ?>
         </br></br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input type='text' id='Telephone' name='Telephone' value='$Telephone' required></texte>";
+            echo "<texte class='Question_Creation_Base'>Téléphone du Formateur : <input class ='champ_input' type='text' id='Telephone' name='Telephone' value='$Telephone' required></texte>";
         }
     }
 
@@ -178,27 +178,27 @@ if (isset($_GET["id"])) {
     <fieldset class="FieldsetFormation_Creation">
         </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Nom du client : <input type='text' class='nom' id='nom' name='NomClient' value='$client'></texte>";
+            echo "<texte class='Question_Creation_Base'>Nom du client : <input class ='champ_input' type='text' class='nom' id='nom' name='NomClient' value='$client'></texte>";
         ?>
             </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Adresse : <input type='text' id='adresse' name='Adresse' value='$clientAdresse'></texte>";
+            echo "<texte class='Question_Creation_Base'>Adresse : <input class ='champ_input' type='text' id='adresse' name='Adresse' value='$clientAdresse'></texte>";
         ?>
             </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Code Postal : <input type='text' id='cp' name='CodePostal' value='$clientCP'></texte>";
+            echo "<texte class='Question_Creation_Base'>Code Postal : <input class ='champ_input' type='text' id='cp' name='CodePostal' value='$clientCP'></texte>";
         ?>
             </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Ville : <input type='text' id='ville' name='Ville' value='$clientVille'></texte>";
+            echo "<texte class='Question_Creation_Base'>Ville : <input class ='champ_input' type='text' id='ville' name='Ville' value='$clientVille'></texte>";
         ?>
             </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Adresse Mail : <input type='email' id='email' name='Mail' value='$clientMail'></texte>";
+            echo "<texte class='Question_Creation_Base'>Adresse Mail : <input class ='champ_input' type='email' id='email' name='Mail' value='$clientMail'></texte>";
         ?>
             </br></br></br>
         <?php
-            echo "<texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='Telephone' value='$clientTelephone'></texte>";
+            echo "<texte class='Question_Creation_Base'>Téléphone : <input class ='champ_input' type='text' id='telephone' name='Telephone' value='$clientTelephone'></texte>";
         ?>
             </br></br>
     </fieldset>
@@ -229,15 +229,15 @@ elseif ($type == 'interne') {
     <fieldset class="FieldsetFormation_Creation">
     </br></br></br>
     <?php
-    echo "<texte class='Question_Creation_Base'>Réservant : <input type='text' class='nom' id='nom' name='ReservantNom' value = '$NOMReservant'></texte>";
+    echo "<texte class='Question_Creation_Base'>Réservant : <input class ='champ_input' type='text' class='nom' id='nom' name='ReservantNom' value = '$NOMReservant'></texte>";
     ?>
     </br></br></br>
     <?php
-    echo "<texte class='Question_Creation_Base'>Adresse Mail : <input type='text' id='email' name='ReservantAdresseMail' value ='$EMAILReservant'></texte>";
+    echo "<texte class='Question_Creation_Base'>Adresse Mail : <input class ='champ_input' type='text' id='email' name='ReservantAdresseMail' value ='$EMAILReservant'></texte>";
     ?>
     </br></br></br>
     <?php
-    echo "<texte class='Question_Creation_Base'>Téléphone : <input type='text' id='telephone' name='ReservantTelephone' value = '$TELReservant'></texte>";
+    echo "<texte class='Question_Creation_Base'>Téléphone : <input class ='champ_input' type='text' id='telephone' name='ReservantTelephone' value = '$TELReservant'></texte>";
     ?>
     </br></br></br>         
 </fieldset>
