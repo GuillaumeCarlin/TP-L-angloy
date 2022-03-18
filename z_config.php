@@ -5,7 +5,7 @@ $password = ""; /* Password */
 $dbname = "bdd_prixy"; /* Database name */
 
 $con = mysqli_connect($host, $user, $password,$dbname);
-// Check connection
+// Check connection;
 if (!$con) {
  die("Connection failed: " . mysqli_connect_error());
 }
