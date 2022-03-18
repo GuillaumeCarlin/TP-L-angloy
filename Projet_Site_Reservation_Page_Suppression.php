@@ -52,6 +52,7 @@
                     $NomUtilisateur = $_POST["Utilisateur"];
                     $mdp = $_POST['mdpC'];
                     $check = $_POST['test'];
+                    
                 }
 
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
