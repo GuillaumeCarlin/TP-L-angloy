@@ -3,7 +3,9 @@ session_start();
 $utilisateur = $_SESSION["utilisateur"];
 $administrateur = $_SESSION["administrateur"];
 $id = $_SESSION["idevent"];
-
+if($_SESSION["connexion"]==FALSE){
+    header("Location:Projet_Site_Réservation_Page_Connexion.php");
+}
 /* Table reservation */
 
 $Reservation_Nom = $_POST["Reservation_Nom"];

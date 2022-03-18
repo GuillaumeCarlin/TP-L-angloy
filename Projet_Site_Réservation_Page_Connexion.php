@@ -1,7 +1,13 @@
 <html>
     <?php 
-        
+        session_start();
+        $_SESSION["connexion"]=FALSE;
+
         include("Fonction.php");
+
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+          }
     ?>
     <head> 
         <meta charset="utf-8">
@@ -19,6 +25,7 @@
             <input class="input_connexion" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
             </br>
             <input class="input_connexion" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
+            </br>
             </br>
             
             <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
@@ -62,6 +69,7 @@
                                 else{
                                     $_SESSION["administrateur"]=0;
                                 }
+                                $_SESSION["connexion"]=TRUE;
                                 header('Location: Calendrier/Calendar.php');
                             }
                             else{

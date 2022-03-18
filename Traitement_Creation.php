@@ -22,7 +22,12 @@ if($choix=="Reservation_externe"){
 </script>
 <html>
     <body>
-        <?php 
+        <?php
+        
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+        }
+
         if($choix=="Formation"){
             echo " 
                 <div id='Colonne'>

@@ -2,10 +2,14 @@
     <head> 
         <meta charset="utf-8">
         <title>Prixy compte</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion"/>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
-
+    <?php
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+        }
+    ?>
     <div class="parametre_supression_creation">
         <ul id="menu-accordeon">
             <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
@@ -23,6 +27,7 @@
                     </br>
                     </br>
                     <texte class="titre_Compte">Nouveau compte</texte>
+                    </br>
                     </br>
 
                     

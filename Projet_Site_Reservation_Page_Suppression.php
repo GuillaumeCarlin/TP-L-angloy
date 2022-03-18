@@ -17,10 +17,20 @@
         </ul>
     </div>
 
-    <body class="body">
+    <?php
+    session_start();
+    if($_SESSION["connexion"]==FALSE){
+        header("Location:Projet_Site_Réservation_Page_Connexion.php");
+      }
+    ?>
+
+    <body class="bodygestion_compte">
     <form method="POST">
     <!-- <form method="POST" action="Traitement_Compte.php"> -->
             <fieldset class="fieldset">
+                </br>
+                </br>
+                </br>
                 </br>
                 </br>
                 <texte class="titre_Compte">Suppression de compte</texte>
@@ -35,6 +45,7 @@
                 </br>
                 </br>
                 </br>
+                <input type="hidden" name="test" id="test" value="True">
                 <input type="submit" class="boutonNvCpt_Compte" value="Supprimer le compte">
                 <?php
                 ini_set("display_errors","off");
@@ -43,9 +54,12 @@
                 $administrateur = $_SESSION["administrateur"];
 
 
+
                 if ($_SERVER["REQUEST_METHOD"] == "POST") { // implemente les valeurs dans $_POST si la methode est la bonne
                     $NomUtilisateur = $_POST["Utilisateur"];
                     $mdp = $_POST['mdpC'];
+                    $check = $_POST['test'];
+                    
                 }
 
                 $connexion = mysqli_connect("localhost","root","","bdd_prixy");
@@ -63,13 +77,17 @@
                             $resultatrequete=mysqli_fetch_array($requete);
                             $comptage=$resultatrequete['UTILMotDePasse'];
                             $mdp = hash('sha256',$mdp);
-                            if ($comptage == $mdp){
-                                //Suppression du compte
-                                $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
-                                header('Location: Calendrier/Calendar.php');
+                            if ($comptage == $mdp ){
+                                if (isset($mdp)){
+                                    //Suppression du compte
+                                    $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
+                                    header('Location: Calendrier/Calendar.php');
+                                }
                             }
                             else{
-                                echo"<div class=erreur_crea_mdp><strong>Erreur Utilisateur ou mot de passe</strong></div>";
+                                if($check=="True"){
+                                    echo"<div class=erreur_crea_mdp><strong>Erreur Utilisateur ou mot de passe</strong></div>";
+                                }
                             }
                         }
                         else{

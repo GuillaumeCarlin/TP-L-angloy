@@ -11,6 +11,10 @@
         $utilisateur = $_SESSION["utilisateur"];
         $administrateur = $_SESSION["administrateur"];
 
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+          }
+
         $ID = isset($_POST['']);
         $NomReservation = "";
         $DateReservation = "2018-01-01";
