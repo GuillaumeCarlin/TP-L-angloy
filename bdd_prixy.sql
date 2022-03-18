@@ -152,15 +152,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 INSERT INTO `utilisateur` (`UTILNomUtilisateur`, `UTILMotDePasse`, `UTILAdmin`) VALUES
-('admin', 'admin', NULL),
-('root', 'root', NULL);
-
--- INSERT INTO `utilisateur` (`UTILNomUtilisateur`, `UTILMotDePasse`) VALUES
--- ('', ''),
--- ('admin', 'admin'),
--- ('root', 'root');
-
+('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 1),
+('user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', NULL);
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
