@@ -31,17 +31,31 @@
                 </ul>
             </div>
         </fieldset>
-    
+
+        <?php  
+
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+            $cpt = 1;
+        }
+        else {
+            $cpt = 0;
+        }
+        ?>
+
         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+        <?php
+            if (isset($_POST['formation'])) {
+        ?>
+
         <script>
             $(document).ready(function(){
-                $(document).on('keydown', '.nom', function() {
+                $(document).on('keydown', '.nomF', function() {
                     var id = this.id;
-                    var splitid = id.split('_');
-                    var index = splitid[1];
 
                     // Initialize jQuery UI autocomplete
                     $( '#'+id ).autocomplete({
@@ -76,9 +90,9 @@
                                         var telephone = response[0]['telephone'];
                 
                                         // Set value to textboxes
-                                        document.getElementById('nom').value = nom;
-                                        document.getElementById('telephone').value = telephone;
-                                        document.getElementById('email').value = email;
+                                        document.getElementById('nomF').value = nom;
+                                        document.getElementById('telephoneF').value = telephone;
+                                        document.getElementById('emailF').value = email;
                                     }
                                 }
                             });
@@ -90,25 +104,150 @@
             });
         </script>
 
-        <?php  
-
-    if (isset($_GET["id"])) {
-        $id = $_GET["id"];
-        $cpt = 1;
-    }
-    else {
-        $cpt = 0;
-    }
-    
+        <?php 
+            }
+            elseif (isset($_POST['externe'])) {
         ?>
+        <script>
+            $(document).ready(function(){
+                $(document).on('keydown', '.nomRe', function() {
+                    var id = this.id;
+
+                    // Initialize jQuery UI autocomplete
+                    $( '#'+id ).autocomplete({
+                        source: function( request, response ) {
+                            $.ajax({
+                                url: "z_getDetails.php",
+                                type: 'post',
+                                dataType: "json",
+                                data: {
+                                    search: request.term,request:'re1'
+                                },
+                                success: function( data ) {response( data );}
+                            });
+                        },
+                        select: function (event, ui) {
+                            $(this).val(ui.item.label); // display the selected text
+                            var userid = ui.item.value; // selected value
+
+                            // AJAX
+                            $.ajax({
+                                url: 'z_getDetails.php',
+                                type: 'post',
+                                data: {userid:userid,request:'re2'},
+                                dataType: 'json',
+                                success:function(response){
+
+                                    var len = response.length;
+
+                                    if(len > 0){
+                                        var id = response[0]['id'];
+                                        var nom = response[0]['nom'];
+                                        var entreprise = response[0]['entreprise']
+                                        var email = response[0]['email'];
+                                        var telephone = response[0]['telephone'];
+                                        var adresse = response[0]['adresse'];
+                                        var cp = response[0]['cp'];
+                                        var ville = response[0]['ville'];
+                                        
+                                        // Set value to textboxes
+                                        document.getElementById('nomRe').value = nom;
+                                        document.getElementById('telephoneRe').value = telephone;
+                                        document.getElementById('entrepriseRe').value = entreprise;
+                                        document.getElementById('emailRe').value = email;
+                                        document.getElementById('adresseRe').value = adresse;
+                                        document.getElementById('cpRe').value = cp;
+                                        document.getElementById('villeRe').value = ville;
+                                    }
+                                }
+                            });
+
+                        return false;
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <?php
+            }
+            elseif (isset($_POST['interne'])) {
+        ?>
+
+        <script>
+            $(document).ready(function(){
+                $(document).on('keydown', '.nomRi', function() {
+                    var id = this.id;
+
+                    // Initialize jQuery UI autocomplete
+                    $( '#'+id ).autocomplete({
+                        source: function( request, response ) {
+                            $.ajax({
+                                url: "z_getDetails.php",
+                                type: 'post',
+                                dataType: "json",
+                                data: {
+                                search: request.term,request:'ri1'
+                                },
+                                success: function( data ) {
+                                response( data );
+                                }
+                            });
+                        },
+                    select: function (event, ui) {
+                        $(this).val(ui.item.label); // display the selected text
+                        var userid = ui.item.value; // selected value
+
+                        // AJAX
+                        $.ajax({
+                            url: 'z_getDetails.php',
+                            type: 'post',
+                            data: {userid:userid,request:'ri2'},
+                            dataType: 'json',
+                            success:function(response){
+
+                                var len = response.length;
+
+                                if(len > 0){
+                                var id = response[0]['id'];
+                                var nom = response[0]['nom'];
+                                var email = response[0]['email'];
+                                var telephone = response[0]['telephone'];
+                                
+                                // Set value to textboxes
+                                document.getElementById('nomRi').value = nom;
+                                document.getElementById('telephoneRi').value = telephone;
+                                document.getElementById('emailRi').value = email;
+
+
+                            }
+
+                    }
+                });
+
+                return false;
+                }
+                });
+                });
+            });
+        </script>
+
+
+        <?php
+            }
+        ?>
+
+<!-- J'ai déplacé le code en arrière pour changer le script-->
         
     </head>
 
     <body class="body">
         <form action="Traitement_Reservation.php" method="post" name ="formulaire">
+
             <?php 
             if ($cpt == 0) {         
             ?>
+
             <div class="colonne">
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
@@ -136,6 +275,7 @@
                     </br>
                     <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' required></textarea></texte>
                 </fieldset>
+
                 <?php
                 if (isset($_POST['formation'])) {
                 ?>
@@ -157,10 +297,15 @@
                     <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="champ_input" type='tel' id='telephone' name='Telephone' required></texte>
                 </fieldset>
             
-        <?php }
-            elseif (isset($_POST['externe'])) {
+                <?php }
+                elseif (isset($_POST['externe'])) {
                 ?>
+
                     <fieldset class="FieldsetFormation_Creation">
+                    </br>u
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'>Nom du client : <input class="z" type='text' class='nomRe' id='nomRe' name='NomClient' placeholder='Nom du Client'></texte>
                     </br>
                     </br>
                     </br>
@@ -190,9 +335,10 @@
                 </fieldset>
 
                 <?php
-            }
-            elseif (isset($_POST['interne'])) {
+                }
+                elseif (isset($_POST['interne'])) {
                 ?>
+
                 <fieldset class="FieldsetFormation_Creation">
                     </br>
                     </br>
@@ -216,10 +362,9 @@
             ?>
             </div>
             <input type="submit" value="Envoyer" class="BoutonValidation">
-    <?php
+        <?php
         }
-
-    ?>
+        ?>
     </fieldset>
 </div>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
