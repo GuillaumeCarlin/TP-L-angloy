@@ -8,6 +8,7 @@
         $search = $_POST['search'];
         $query = "SELECT * FROM formateur WHERE NOMFormateur like'%".$search."%'";
         $result = mysqli_query($con,$query);
+        $response=null;
         while($row = mysqli_fetch_array($result) ){
             $response[] = array("value"=>$row['IDFormateur'],"label"=>$row['NOMFormateur']);
         }
@@ -70,15 +71,14 @@
         while( $row = mysqli_fetch_array($result) ){
             $clientid = $row['IDCLient'];
             $clientnom = $row['CLINom'];
-            $cliententreprise = $row['CLIEntreprise'];
             $clientadresse = $row['CLIAdresseComplete'];
-            $clientcodepostal = $row['CLICodePostale'];
+            $clientcodepostal = $row['CLICodePostal'];
             $clientville = $row['CLIVille'];
             $clientemail = $row['CLIEmail'];
-            $clienttelephone = $row['CLITelMobile'];
+            $clienttelephone = $row['CLITelFixe'];
             
 
-        $client_arr[] = array("id" => $clientid, "nom" => $clientnom, "entreprise" => $cliententreprise, "email" => $clientemail, "telephone" => $clienttelephone, "adresse" => $clientadresse, "cp" => $clientcodepostal, "ville" => $clientville);
+        $client_arr[] = array("id" => $clientid, "nom" => $clientnom, "email" => $clientemail, "telephone" => $clienttelephone, "adresse" => $clientadresse, "cp" => $clientcodepostal, "ville" => $clientville);
         }
 
         // encoding array to json format
