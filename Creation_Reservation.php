@@ -282,17 +282,17 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class="nomF champ_input" id='nomF' name='Formateur' placeholder='Nom du Formateur' required></texte>
+                    <texte class='Question_Creation_Base'>Nom du Formateur : <input type='text' class="nomF champ_input" id='nomF' name='Formateur' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class="champ_input" type='email' id='emailF' name='AdresseMail' placeholder='Adresse Mail' required></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail du Formateur : <input class="champ_input" type='email' id='emailF' name='AdresseMail' required></texte>
                     </br>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="champ_input" type='tel' id='telephoneF' name='Telephone' placeholder='Numéros de Téléphone' required></texte>
+                    <texte class='Question_Creation_Base'>Téléphone du Formateur : <input class="champ_input" type='tel' id='telephoneF' name='Telephone' required></texte>
                 </fieldset>
             
                 <?php }
@@ -303,27 +303,27 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Nom du client : <input class="nomRe champ_input" type='text' id='nomRe' name='NomClient' placeholder='Nom du Client'></texte>
+                    <texte class='Question_Creation_Base'>Nom du client : <input class="nomRe champ_input" type='text' id='nomRe' name='NomClient'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse : <input class="champ_input" type='text' id='adresseRe' name='Adresse' placeholder='Adresse du Client'></texte>
+                    <texte class='Question_Creation_Base'>Adresse : <input class="champ_input" type='text' id='adresseRe' name='Adresse'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Code Postal : <input class="champ_input" type='text' id='cpRe' name='CodePostal' placeholder='Code Postal'></texte>
+                    <texte class='Question_Creation_Base'>Code Postal : <input class="champ_input" type='text' id='cpRe' name='CodePostal'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Ville : <input class="champ_input" type='text' id='villeRe' name='Ville' placeholder='Ville'></texte>
+                    <texte class='Question_Creation_Base'>Ville : <input class="champ_input" type='text' id='villeRe' name='Ville'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="champ_input" type='email' id='emailRe' name='Mail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="champ_input" type='email' id='emailRe' name='Mail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input class="champ_input" type='tel' id='telephoneRe' name='Telephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="champ_input" type='tel' id='telephoneRe' name='Telephone'></texte>
                     </br>
                     </br>
                 </fieldset>
@@ -337,15 +337,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Réservant : <input class="nomRi champ_input" type='text' id='nomRi' name='ReservantNom' placeholder='Nom du Formateur'></texte>
+                    <texte class='Question_Creation_Base'>Réservant : <input class="nomRi champ_input" type='text' id='nomRi' name='ReservantNom'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="champ_input" type='email' id='emailRi' name='ReservantAdresseMail' placeholder='Adresse Mail'></texte>
+                    <texte class='Question_Creation_Base'>Adresse Mail : <input class="champ_input" type='email' id='emailRi' name='ReservantAdresseMail'></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'>Téléphone : <input class="champ_input" type='tel' id='telephoneRi' name='ReservantTelephone' placeholder='Numéros de Téléphone'></texte>
+                    <texte class='Question_Creation_Base'>Téléphone : <input class="champ_input" type='tel' id='telephoneRi' name='ReservantTelephone'></texte>
                     </br>
                     </br>
                     </br>                
