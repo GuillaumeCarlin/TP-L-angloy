@@ -9,6 +9,7 @@
 }
 
 
+
 /* -------------------------------------- Page de Connexion ---------------------------------------------------*/
 
 /* Changement de place et de couleur des fieldset */
@@ -55,18 +56,17 @@
     height: 30px;
 	float: right;
     border-radius: 5px;
-    border-color: rgb(196, 196, 196);
-    border: solid 1px;
+    border: 1px;
 }
 
 .Descriptif{
     margin-left: 30px;
     height: 100px;
-    width: 480px;
+    width: 470px;
     float: right;
     border-radius: 5px;
     border-color: rgb(196, 196, 196);
-    border: solid 1px;
+    border: 1px;
 }
 
 
@@ -281,13 +281,14 @@ td{
 }
 
 .FieldsetFormation_Creation{
-    margin-left: 70px;
+    margin-left: 10%;
     height: 550px;
     width: 500px;
     border-radius: 8%;
     border: solid 3px rgb(196, 196, 196);
     background-color: rgb(196, 196, 196);
     border-width: 3px;
+    
 }
 
 .FieldsetFormation_Creation_Reservation_Externe{
@@ -329,10 +330,11 @@ td{
 }
 
 .Question_Creation_Base{
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 30px;
     margin-left: 30px;
     margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* input{
@@ -351,7 +353,7 @@ td{
 
 .BoutonValidation{
     position: absolute;
-    right: 310px;
+    right: 205px;
     top: 80%;
     background-color: rgb(23, 57, 94);
     height: 50px;
@@ -359,10 +361,29 @@ td{
     color: white;
     font-size: 20px;
     border-radius: 12px;
+    border: 1px;
 }
 .BoutonValidation:hover {
-    background-color: rgb(23, 65, 97);
+    background-color: rgb(10, 29, 44);
 }
+
+
+.BoutonSuppression{
+    position: absolute;
+    right: 440px;
+    top: 80%;
+    background-color: rgb(204, 31, 31);
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 1px;
+}
+.BoutonSuppression:hover {
+    background-color: rgb(161, 25, 25);
+}
+
 
 
 textarea{
