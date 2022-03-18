@@ -359,12 +359,12 @@
             }
             ?>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation">
         <?php
         }
         ?>
     </fieldset>
 </div>
+<a href="Calendrier/calendar.php" class="BoutonSuppression">Annuler</button></a>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
         </form>
     </body>
