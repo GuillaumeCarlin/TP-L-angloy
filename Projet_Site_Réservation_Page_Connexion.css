@@ -86,7 +86,7 @@
 }
 /* La couleur du bouton de connexion change de couleur quands on passe la souris dessus */ 
 .boutonConnexion:hover {
-    background-color: rgb(23, 65, 97);
+    background-color: rgb(41, 103, 151);
 }
 /* Couleur du fond */ 
 .body_connexion{
