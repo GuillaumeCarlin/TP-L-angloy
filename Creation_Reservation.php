@@ -302,10 +302,6 @@
                 ?>
 
                     <fieldset class="FieldsetFormation_Creation">
-                    </br>u
-                    </br>
-                    </br>
-                    <texte class='Question_Creation_Base'>Nom du client : <input class="z" type='text' class='nomRe' id='nomRe' name='NomClient' placeholder='Nom du Client'></texte>
                     </br>
                     </br>
                     </br>
@@ -361,12 +357,12 @@
             }
             ?>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation">
         <?php
         }
         ?>
     </fieldset>
 </div>
+<a href="Calendrier/calendar.php" class="BoutonSuppression">Annuler</button></a>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
         </form>
     </body>

@@ -82,6 +82,7 @@
     font-size: 20px;
     border-radius: 12px;
     margin-bottom: 30px;
+    border: 1px;
 }
 /* La couleur du bouton de connexion change de couleur quands on passe la souris dessus */ 
 .boutonConnexion:hover {
@@ -372,11 +373,12 @@ td{
     position: absolute;
     right: 440px;
     top: 80%;
-    background-color: rgb(204, 31, 31);
-    height: 50px;
-    width: 200px;
+    background-color: rgb(29, 139, 66);
+    padding: 14px 50px;
     color: white;
     font-size: 20px;
+    text-align: center;
+    text-decoration: none;
     border-radius: 12px;
     border: 1px;
 }

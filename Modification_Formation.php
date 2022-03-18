@@ -56,7 +56,7 @@
 <?php
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    $_SESSION["idevent"] = $id ;
+   
 }
 
 ?>
@@ -245,12 +245,15 @@ elseif ($type == 'interne') {
 <?php
 }
 }
+$_SESSION["idevent"] = $id ;
+
         ?>
     </fieldset>
 </div>
-<button name="button" class="BoutonSuppression" onclick="self.location.href='Choix_Bouton.php'">Supprimer</button>
+<a href="Calendrier/delete.php" class="BoutonSuppression">Supprimer</button></a>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
 </form>
+<!-- <button name="button" class="BoutonSuppression"> -->
 
 </body>
 
