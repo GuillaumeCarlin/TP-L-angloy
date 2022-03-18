@@ -23,6 +23,9 @@
             <fieldset class="fieldset">
                 </br>
                 </br>
+                </br>
+                </br>
+                </br>
                 <texte class="titre_Compte">Suppression de compte</texte>
                 </br>
                 </br>
