@@ -17,7 +17,7 @@
         </ul>
     </div>
 
-    <body class="body">
+    <body class="bodygestion_compte">
     <form method="POST">
     <!-- <form method="POST" action="Traitement_Compte.php"> -->
             <fieldset class="fieldset">
