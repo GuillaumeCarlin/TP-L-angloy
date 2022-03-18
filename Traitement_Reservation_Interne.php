@@ -20,7 +20,9 @@ $end_event = $Reservation_Date .' '.$heure_fin.':00:00';
 $Formateur = $_POST["Formateur"];
 $AdresseMail = $_POST["AdresseMail"];
 $Telephone = $_POST["Telephone"];
-
+if($_SESSION["connexion"]==FALSE){
+    header("Location:Projet_Site_Réservation_Page_Connexion.php");
+}
 
 $con = mysqli_connect('localhost','root','');
 if ($con) {

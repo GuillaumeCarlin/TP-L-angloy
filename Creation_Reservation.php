@@ -10,6 +10,10 @@
         session_start();
         $utilisateur = $_SESSION["utilisateur"];
         $administrateur = $_SESSION["administrateur"];
+        
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+        }
         ?>
 
         <fieldset class="fieldsetHead">   
@@ -355,12 +359,12 @@
             }
             ?>
             </div>
-            <input type="submit" value="Envoyer" class="BoutonValidation">
         <?php
         }
         ?>
     </fieldset>
 </div>
+<a href="Calendrier/calendar.php" class="BoutonSuppression">Annuler</button></a>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
         </form>
     </body>

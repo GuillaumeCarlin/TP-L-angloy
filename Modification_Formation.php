@@ -11,6 +11,10 @@
         $utilisateur = $_SESSION["utilisateur"];
         $administrateur = $_SESSION["administrateur"];
 
+        if($_SESSION["connexion"]==FALSE){
+            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+          }
+
         $ID = isset($_POST['']);
         $NomReservation = "";
         $DateReservation = "2018-01-01";
@@ -56,7 +60,7 @@
 <?php
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    $_SESSION["idevent"] = $id ;
+   
 }
 
 ?>
@@ -245,12 +249,15 @@ elseif ($type == 'interne') {
 <?php
 }
 }
+$_SESSION["idevent"] = $id ;
+
         ?>
     </fieldset>
 </div>
-<button name="button" class="BoutonSuppression" onclick="self.location.href='Choix_Bouton.php'">Supprimer</button>
+<a href="Calendrier/delete.php" class="BoutonSuppression">Supprimer</button></a>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
 </form>
+<!-- <button name="button" class="BoutonSuppression"> -->
 
 </body>
 

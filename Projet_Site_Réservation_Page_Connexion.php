@@ -1,7 +1,11 @@
 <html>
     <?php 
-        
+        session_start();
+        $_SESSION["connexion"]=FALSE;
+
         include("Fonction.php");
+
+        
     ?>
     <head>
         <meta charset="utf-8">
@@ -63,6 +67,7 @@
                                 else{
                                     $_SESSION["administrateur"]=0;
                                 }
+                                $_SESSION["connexion"]=TRUE;
                                 header('Location: Calendrier/Calendar.php');
                             }
                             else{

@@ -17,6 +17,13 @@
         </ul>
     </div>
 
+    <?php
+    session_start();
+    if($_SESSION["connexion"]==FALSE){
+        header("Location:Projet_Site_Réservation_Page_Connexion.php");
+      }
+    ?>
+
     <body class="bodygestion_compte">
     <form method="POST">
     <!-- <form method="POST" action="Traitement_Compte.php"> -->

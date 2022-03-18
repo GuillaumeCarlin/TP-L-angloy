@@ -25,6 +25,9 @@ $Ville = $_POST["Ville"];
 $Email = $_POST["Mail"];
 $Telephone = $_POST["Telephone"];
 
+if($_SESSION["connexion"]==FALSE){
+    header("Location:Projet_Site_Réservation_Page_Connexion.php");
+}
 
 $con = mysqli_connect('localhost','root','');
 if ($con) {
