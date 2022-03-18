@@ -16,7 +16,7 @@
 .fieldset{
     text-align: center;
     width: 300px;
-    height: 500px;
+    height: 550px;
     border:solid 2px white;
     margin-left: auto;
     margin-right: auto;
@@ -498,8 +498,7 @@ textarea{
 
   .titre_Compte{
     
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-family: arial,black, sans-serif;
     font-size: 30px;
 
   }

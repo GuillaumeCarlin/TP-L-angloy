@@ -24,6 +24,7 @@
                     </br>
                     <texte class="titre_Compte">Nouveau compte</texte>
                     </br>
+                    </br>
 
                     
                     <a href="Projet_Site_Reservation_Page_Suppression.php">
