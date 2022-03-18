@@ -251,7 +251,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nom de la réservation : <input class="champ_input" type='text' id='Reservation_Nom' name='Reservation_Nom' placeholder='Nom de la Reservation' required></texte>
+                    <texte class='Question_Creation_Base'> Nom de la réservation : <input class="champ_input" type='text' id='Reservation_Nom' name='Reservation_Nom' required></texte>
                     </br>
                     </br>
                     </br>
@@ -271,7 +271,7 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder='Description de la Reservation' required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' required></textarea></texte>
                 </fieldset>
 
                 <?php

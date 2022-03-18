@@ -248,8 +248,10 @@ elseif ($type == 'interne') {
         ?>
     </fieldset>
 </div>
+<button name="button" class="BoutonSuppression" onclick="self.location.href='Choix_Bouton.php'">Supprimer</button>
 <input type="submit" value="Enregistrer" class="BoutonValidation" >
 </form>
+
 </body>
 
 </html>
