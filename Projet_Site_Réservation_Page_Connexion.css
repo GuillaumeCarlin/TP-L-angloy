@@ -498,9 +498,8 @@ textarea{
 
   .titre_Compte{
     
-    /* margin-left: 27%;
     margin-top: 20px;
-    margin-bottom: 20px; */
+    margin-bottom: 20px;
     font-size: 30px;
 
   }
@@ -556,6 +555,7 @@ textarea{
     margin-top: -4%;
     position: absolute;
     margin-left: 35%;
+    transition: all 0.3s ease;
 }
 
 .imagecorbeille:hover {
