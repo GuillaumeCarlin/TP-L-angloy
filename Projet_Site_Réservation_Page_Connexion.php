@@ -5,9 +5,7 @@
 
         include("Fonction.php");
 
-        if($_SESSION["connexion"]==FALSE){
-            header("Location:Projet_Site_Réservation_Page_Connexion.php");
-          }
+        
     ?>
     <head> 
         <meta charset="utf-8">

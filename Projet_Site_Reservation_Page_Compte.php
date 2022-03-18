@@ -6,6 +6,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
     </head>
     <?php
+        session_start();
         if($_SESSION["connexion"]==FALSE){
             header("Location:Projet_Site_Réservation_Page_Connexion.php");
         }
