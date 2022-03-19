@@ -3,7 +3,7 @@
         session_start();
         $_SESSION["connexion"]=FALSE;
 
-        include("Fonction.php");
+        include("Programmes/Fonction.php");
 
         
     ?>
@@ -68,7 +68,7 @@
                                     $_SESSION["administrateur"]=0;
                                 }
                                 $_SESSION["connexion"]=TRUE;
-                                header('Location: Calendrier/Calendar.php');
+                                header('Location: Programmes/Calendrier/Calendar.php');
                             }
                             else{
                                 echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";
