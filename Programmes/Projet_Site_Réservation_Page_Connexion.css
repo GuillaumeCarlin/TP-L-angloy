@@ -559,10 +559,11 @@ textarea{
     font-size: 20px;
     border-radius: 12px;
     margin-bottom: 30px;
+    border: 1px;
 }
 
 .boutonNvCpt_Compte:hover {
-    background-color: rgb(23, 65, 97);
+    background-color:  rgb(41, 103, 151);
 }
 
 

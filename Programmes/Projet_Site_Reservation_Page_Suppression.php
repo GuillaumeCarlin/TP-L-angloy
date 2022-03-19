@@ -36,6 +36,7 @@
                 <texte class="titre_Compte">Suppression de compte</texte>
                 </br>
                 </br>
+                Veuillez entrer le nom d'utilisateur du compte à supprimer ainsi que le mot de passe administrateur
                 </br>
                 <label for="Utilisateur">
                 <input type="texte" class="bouton_Compte" placeholder="Utilisateur" id="Utilisateur" name="Utilisateur" required></label>
@@ -67,6 +68,12 @@
                     $BDD = mysqli_select_db($connexion,'bdd_prixy');
                     if ($BDD) {
 
+                        // Vérification si l'utilisateur existe
+                        $utilrequete = mysqli_query($connexion,"SELECT UTILAdmin FROM utilisateur where UTILNomUtilisateur ='".$NomUtilisateur."';");
+                        $resultatrequete=mysqli_fetch_array($utilrequete);
+                        $comptage=$resultatrequete['count(*)'];
+
+
                         //Vérification si l'utilisateur est un admin
                         $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");
                         $resultatrequete=mysqli_fetch_array($requete);
@@ -81,7 +88,13 @@
                                 if (isset($mdp)){
                                     //Suppression du compte
                                     $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
-                                    header('Location: Calendrier/Calendar.php');
+                                    echo "
+                                    <script>var confirme = confirm('Le compte à bien été supprimé');
+                                    if (confirm) {
+                                        document.location.href='Calendrier/Calendar.php';
+                                    }
+                                    
+                                    </script>";
                                 }
                             }
                             else{
