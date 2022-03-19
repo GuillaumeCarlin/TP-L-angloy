@@ -69,10 +69,12 @@
                     if ($BDD) {
 
                         // Vérification si l'utilisateur existe
-                        $utilrequete = mysqli_query($connexion,"SELECT UTILAdmin FROM utilisateur where UTILNomUtilisateur ='".$NomUtilisateur."';");
-                        $resultatrequete=mysqli_fetch_array($utilrequete);
-                        $comptage=$resultatrequete['count(*)'];
+                        // $utilrequete = mysqli_query($connexion,"SELECT * FROM utilisateur where UTILNomUtilisateur ='".$NomUtilisateur."';");
+                        // while ($row = mysqli_fetch_assoc($result)) {
+                        //     $util = $row["UTILNomUtilisateur"];
+                        // }
 
+                        // if ($util == )
 
                         //Vérification si l'utilisateur est un admin
                         $requete = mysqli_query($connexion,"SELECT count(*) FROM utilisateur where UTILNomUtilisateur ='".$utilisateur."' and UTILAdmin = 1;");

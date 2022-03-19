@@ -2,6 +2,9 @@
 
 // A Améliorer : 
 // - CSS du site en général
+// - Message de validation quand on créer un compte
+// - tester si le champ telephone est bien un numéro de telephone
+// - ne pas pouvoir reserver une session si une session a deja lieu dans la meme salle au meme moment
 
 session_start();
 $utilisateur = $_SESSION["utilisateur"];
