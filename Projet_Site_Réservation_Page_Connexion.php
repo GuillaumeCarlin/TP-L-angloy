@@ -7,7 +7,7 @@
 
         
     ?>
-    <head> 
+    <head>
         <meta charset="utf-8">
         <title>Prixy connexion</title>
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
@@ -79,9 +79,10 @@
                     }    
                 }
                 ?>
-            
+           
         </fieldset>
         </form>
+        
         
     </body>
 </html>
