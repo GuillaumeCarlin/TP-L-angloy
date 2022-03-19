@@ -14,6 +14,7 @@ $Reservation_Heure = $_POST["Reservation_Heure"];
 $Reservation_Duree = $_POST["Reservation_Duree"];
 $Reservation_Participant = $_POST["Reservation_Participant"];
 $Reservation_Descriptif = $_POST["Reservation_Descriptif"];
+$Reservation_Salle = $_POST["Reservation_Salle"];
 
 $Reservation_Fin = $_POST["Reservation_Heure"] + $_POST["Reservation_Duree"];
 $start_event = $Reservation_Date .' '.$Reservation_Heure.':00:00';
@@ -39,7 +40,7 @@ if ($con) {
     $update_formateur_reservation = "UPDATE `session_formation` SET `IDFormateur` = (SELECT IDFormateur FROM formateur WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail') WHERE NUMReservation = $id;";
     $update_form_reservation = mysqli_query($con, $update_formateur_reservation);
     
-    $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE id = $id;";
+    $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant', `IDSalle` = '$Reservation_Salle' WHERE id = $id;";
     $insertion_reservation = mysqli_query($con, $requete_reservation);
     }
 
@@ -63,7 +64,7 @@ if ($con) {
         $update_client_reservation = "UPDATE `reservation_externe` SET `IDClient` = (SELECT `IDClient` FROM `client` WHERE `CLINom` = '$Client' AND `CLIAdresseComplete` = '$Adresse' AND `CLICodePostal` = '$CodePostal' AND `CLIVille` = '$Ville' AND `CLIEmail` = '$Email' AND `CLITelFixe` = '$ClientTelephone') WHERE `reservation_externe`.`NUMRESERVATION` = $id;";
         $update_cli_reservation = mysqli_query($con, $update_client_reservation);
         
-        $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE id = $id;";
+        $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant', `IDSalle` = '$Reservation_Salle' WHERE id = $id;";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
 
     }
@@ -87,7 +88,7 @@ if ($con) {
         $update_reservation_interne = "UPDATE `reservation_interne` SET `IDResponsable` = (SELECT `IDResponsable` FROM `reservantinterne` WHERE `NOMReservant` = '$ReservantNom' AND `EMAILReservant` = '$ReservantAdresseMail' AND `TELReservant` = '$ReservantTelephone') WHERE `reservation_interne`.`NUMReservation` = $id;";
         $reponse_update_reservation_interne = mysqli_query($con, $update_reservation_interne);
 
-        $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant' WHERE id = $id;";
+        $requete_reservation = "UPDATE `reservation` SET `title` = '$Reservation_Nom', `start_event` = '$start_event', `end_event` = '$end_event', `descriptionEvent` = '$Reservation_Descriptif', `participant` = '$Reservation_Participant', `IDSalle` = '$Reservation_Salle' WHERE id = $id;";
         $insertion_reservation = mysqli_query($con, $requete_reservation);
     }
 

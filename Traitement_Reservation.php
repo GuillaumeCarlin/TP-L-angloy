@@ -14,6 +14,7 @@ if (isset($_POST["Reservation_Nom"])) {
     $Reservation_Duree = $_POST["Reservation_Duree"];
     $Reservation_Participant = $_POST["Reservation_Participant"];
     $Reservation_Descriptif = $_POST["Reservation_Descriptif"];
+    $Reservation_Salle = $_POST["Reservation_Salle"];
 
     $Reservation_Fin = $_POST["Reservation_Heure"] + $_POST["Reservation_Duree"];
     $start_event = $Reservation_Date .' '.$Reservation_Heure.':00:00';
@@ -53,7 +54,7 @@ if ($con) {
         if(isset($_POST["Formateur"])) {
 
             $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
-            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'formation');";
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '$Reservation_Salle', 'Admin', 'formation');";
             $insertion_reservation = mysqli_query($con, $requete_reservation);
 
             $requete_presence_formateur = "SELECT `IDFormateur` FROM `formateur` WHERE `NOMFormateur` = '$Formateur' AND `TELFormateur` = '$Telephone' AND `EMAILFormateur` = '$AdresseMail';";
@@ -72,7 +73,7 @@ if ($con) {
         elseif(isset($_POST["NomClient"])) {
 
             $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
-            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'externe');";
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '$Reservation_Salle', 'Admin', 'externe');";
             $insertion_reservation = mysqli_query($con, $requete_reservation);
 
 
@@ -94,7 +95,7 @@ if ($con) {
         elseif(isset($_POST["ReservantNom"])) {
 
             $requete_reservation = "INSERT INTO `reservation` (`id`, `title`, `start_event`, `end_event`, `descriptionEvent`, `participant`, `IDSalle`, `UTILNomUtilisateur`, `type`) 
-            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '205', 'Admin', 'interne');";
+            VALUES (NULL, '$Reservation_Nom', '$start_event', '$end_event', '$Reservation_Descriptif', '$Reservation_Participant', '$Reservation_Salle', 'Admin', 'interne');";
             $insertion_reservation = mysqli_query($con, $requete_reservation);
 
             $requete_presence_reservant = "SELECT `IDResponsable` FROM `reservantinterne` WHERE `NOMReservant` = '$ReservantNom' AND `EMAILReservant` = '$ReservantAdresseMail' AND `TELReservant` = '$ReservantTelephone';";

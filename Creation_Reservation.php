@@ -271,11 +271,15 @@
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Nombre de Participant : <input class="champ_input" type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" placeholder="Nombre de participant" required>  / 30</texte>
+                    <texte class='Question_Creation_Base'> Nombre de Participant : <input class="champ_input" type='number' id='Reservation_Participant' name='Reservation_Participant' min="0" max="30" placeholder="Nombre de participant" required></texte>
                     </br>
                     </br>
                     </br>
-                    <texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder="Description" required></textarea></texte>
+                    <texte class='Question_Creation_Base'> Réference de salle : <input class="champ_input" type='text' id='Reservation_Salle' name='Reservation_Salle' placeholder="Réference de salle" required></texte>
+                    </br>
+                    </br>
+                    </br>
+                    <texte class='Question_Creation_Base'> Description : </br></br> <textarea class="Descriptif" id='Reservation_Descriptif' name='Reservation_Descriptif' placeholder="Description" required></textarea></texte>
                 </fieldset>
 
                 <?php
@@ -364,8 +368,8 @@
         ?>
     </fieldset>
 </div>
-<a href="Calendrier/calendar.php" class="BoutonSuppression">Annuler</button></a>
-<input type="submit" value="Enregistrer" class="BoutonValidation" >
+<a href="Calendrier/calendar.php" class="BoutonAnnuler">Annuler</button></a>
+<input type="submit" value="Valider" class="BoutonValidation" >
         </form>
     </body>
     

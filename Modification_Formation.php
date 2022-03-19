@@ -96,6 +96,7 @@ if (isset($_GET["id"])) {
         $DureeReservation = substr($DureeReservation,11,-6);
         $DureeReservation = $DureeReservation - $HeureReservation;
         $NbParticipant = $row["participant"];
+        $Salle = $row["IDSalle"];
         $Description = $row["descriptionEvent"];
         $type = $row["type"];
         
@@ -118,11 +119,15 @@ if (isset($_GET["id"])) {
     </br></br></br>
 
     <?php
-        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input class ='champ_input' type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required>  / 30</texte>";                 
+        echo "<texte class='Question_Creation_Base'> Nombre de Participant : <input class ='champ_input' type='number' id='Reservation_Participant' name='Reservation_Participant' min='0' max='30' value='$NbParticipant' required></texte>";                 
     ?>
     </br></br></br>
     <?php
-        echo "<texte class='Question_Creation_Base'> Descriptif : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' required>$Description</textarea></texte>";
+        echo "<texte class='Question_Creation_Base'> Réference de salle : <input class ='champ_input' type='text' id='Reservation_Salle' name='Reservation_Salle' min='0' max='30' value='$Salle' required></texte>";                 
+    ?>
+    </br></br></br>
+    <?php
+        echo "<texte class='Question_Creation_Base'> Description : </br></br> <textarea class='Descriptif' id='Reservation_Descriptif' name='Reservation_Descriptif' required>$Description</textarea></texte>";
     ?>
     </fieldset>
     <?php

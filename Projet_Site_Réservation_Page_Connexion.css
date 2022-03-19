@@ -366,27 +366,50 @@ td{
     border: 1px;
 }
 .BoutonValidation:hover {
-    background-color: rgb(10, 29, 44);
+    background-color: rgb(41, 103, 151);
 }
 
 
 .BoutonSuppression{
     position: absolute;
-    right: 440px;
+    right: 450px;
     top: 80%;
-    background-color: rgb(29, 139, 66);
+    height: 23px;
+    width:90px;
+    background-color: rgb(160, 10, 10);
     padding: 14px 50px;
     color: white;
-    font-size: 20px;
+    font-size: 19px;
+    font-family: arial, sans-serif;
     text-align: center;
     text-decoration: none;
     border-radius: 12px;
     border: 1px;
 }
 .BoutonSuppression:hover {
-    background-color: rgb(161, 25, 25);
+    background-color: rgb(206, 41, 41);
 }
 
+
+.BoutonAnnuler{
+    position: absolute;
+    right: 450px;
+    top: 80%;
+    height: 23px;
+    width:90px;
+    background-color: rgb(23, 57, 94);
+    padding: 14px 50px;
+    color: white;
+    font-size: 19px;
+    font-family: arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px;
+}
+.BoutonAnnuler:hover {
+    background-color: rgb(41, 103, 151);
+}
 
 
 textarea{
