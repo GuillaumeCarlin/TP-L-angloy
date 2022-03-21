@@ -8,7 +8,7 @@
     <?php
         session_start();
         if($_SESSION["connexion"]==FALSE){
-            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+            header("Location:../Projet_Site_Réservation_Page_Connexion.php");
         }
     ?>
     <div class="parametre_supression_creation">
@@ -16,12 +16,12 @@
             <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                 <ul>
                     <li><a href="Calendrier/Calendar.php">Accueil</a></li>
-                    <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                    <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                 </ul>
             </li>
         </ul>
     </div>
-    
+
     <body class="bodygestion_compte">
         <form method="POST">
                 <fieldset class="fieldset">

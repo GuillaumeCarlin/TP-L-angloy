@@ -12,7 +12,7 @@
         $administrateur = $_SESSION["administrateur"];
         
         if($_SESSION["connexion"]==FALSE){
-            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+            header("Location:../Projet_Site_Réservation_Page_Connexion.php");
         }
         ?>
 
@@ -23,11 +23,11 @@
                     <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                         <ul>
                             <li><a href="Calendrier/Calendar.php">Accueil</a></li>
-                            <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                            <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                             
                             <?php
                                 if ($administrateur==1){
-                                    echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Création de compte</a></li>';
+                                    echo'<li><a href="../Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                                 }
                             ?>
                         </ul>

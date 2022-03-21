@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title> Prixy création Formation </title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion"/>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>
 
@@ -12,7 +12,7 @@
         $administrateur = $_SESSION["administrateur"];
 
         if($_SESSION["connexion"]==FALSE){
-            header("Location:Projet_Site_Réservation_Page_Connexion.php");
+            header("Location:../Projet_Site_Réservation_Page_Connexion.php");
           }
 
         $ID = isset($_POST['']);
@@ -44,7 +44,7 @@
                     <li><a href="#"><img src="parametre.png" class="imageParametre" ></a>
                         <ul>
                             <li><a href="Calendrier/Calendar.php">Accueil</a></li>
-                            <li><a href="Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
+                            <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                             
                             <?php
                                 if ($administrateur==1){
