@@ -10,8 +10,8 @@
     <head>
         <meta charset="utf-8">
         <title>Prixy connexion</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+        <link rel="stylesheet" href="Programmes/Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="Programmes/logoPrixy.png">
     </head>
     
     
@@ -19,7 +19,7 @@
     <body class="body_connexion">
     <form  method="post">
         <fieldset class="fieldset">
-            <img src="logoPrixy.png" class="imageLogo">
+            <img src="Programmes/logoPrixy.png" class="imageLogo">
             <input class="input_connexion" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
             </br>
             <input class="input_connexion" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
