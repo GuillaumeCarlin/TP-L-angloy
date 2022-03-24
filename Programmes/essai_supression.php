@@ -18,7 +18,7 @@
                         $administrateur = $_SESSION["administrateur"];
 
                         if ($administrateur==1){
-                            echo'<li><a href="Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
+                            echo'<li><a href="../Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                         }
                     ?>
                 </ul>
@@ -47,7 +47,7 @@
                 </br>
                 <texte style="font-family: arial,sans-serif; margin:auto;" >Veuillez entrer le nom d'utilisateur du compte à supprimer ainsi que le mot de passe administrateur</texte>
                 </br>
-                
+                <label for="Utilisateur">
                 <?php
                     $connexion = mysqli_connect("localhost","root","","bdd_prixy");
                     
@@ -69,6 +69,9 @@
                         }
                     }
                 ?>
+                <!-- <input type="texte" class="bouton_Compte" placeholder="Utilisateur" id="Utilisateur" name="Utilisateur" required></label> -->
+                
+                
                 </br>
                 </br>
                 <input type="password" class="bouton_Compte" placeholder="Mot de passe Administrateur" id="mdpC" name="mdpC" required>

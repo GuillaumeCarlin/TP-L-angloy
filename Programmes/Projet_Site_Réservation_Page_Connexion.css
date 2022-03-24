@@ -536,6 +536,18 @@ textarea{
     font-size: 20px;
     text-align: center;
 }
+
+.bouton_select{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
 .check{
     margin-top: 20px;
     text-align: center;
