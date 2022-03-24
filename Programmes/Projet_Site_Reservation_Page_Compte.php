@@ -83,14 +83,19 @@
                                         
                                         $requete="INSERT INTO utilisateur (UTILNomUtilisateur, UTILMotDePasse, UTILAdmin) VALUES ('$NomUtilisateur', '$mdp', '$declare_admin');";
                                         $larequete = mysqli_query($connexion,$requete);
-                                        echo"utilisateur crée";
                                     }
                                     else{
                                         $requete = "INSERT INTO utilisateur(UTILNomUtilisateur, UTILMotDePasse) VALUES('$NomUtilisateur', '$mdp')";
                                         $larequete = mysqli_query($connexion,$requete);
-                                        echo"utilisateur crée";
                                     }
-                                    header('Location: Calendrier/Calendar.php');
+                                    echo "
+                                    <script>
+                                        var confirme = confirm('Le compte a bien été créé');
+                                        if (confirm) {
+                                            document.location.href='Calendrier/Calendar.php';
+                                        }
+                                    </script>";
+                                    //header('Location: Calendrier/Calendar.php');
                                     
                                 } 
                                 else{

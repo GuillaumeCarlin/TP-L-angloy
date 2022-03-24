@@ -13,6 +13,10 @@
                     <li><a href="Calendrier/Calendar.php">Accueil</a></li>
                     <li><a href="../Projet_Site_Réservation_Page_Connexion.php">Déconnexion</a></li>
                     <?php
+                        session_start();
+                        $utilisateur = $_SESSION["utilisateur"];
+                        $administrateur = $_SESSION["administrateur"];
+
                         if ($administrateur==1){
                             echo'<li><a href="../Projet_Site_Reservation_Page_Compte.php">Gestion de compte</a></li>';
                         }
@@ -23,7 +27,7 @@
     </div>
 
     <?php
-    session_start();
+    
     if($_SESSION["connexion"]==FALSE){
         header("Location:../Projet_Site_Réservation_Page_Connexion.php");
       }
@@ -96,7 +100,7 @@
                                     //Suppression du compte
                                     $larequete = mysqli_query($connexion,"DELETE FROM utilisateur WHERE UTILNomUtilisateur = '$NomUtilisateur';");
                                     echo "
-                                    <script>var confirme = confirm('Le compte à bien été supprimé');
+                                    <script>var confirme = confirm('Le compte a bien été supprimé');
                                     if (confirm) {
                                         document.location.href='Calendrier/Calendar.php';
                                     }
