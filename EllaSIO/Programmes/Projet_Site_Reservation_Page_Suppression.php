@@ -62,12 +62,13 @@
                     }
                     
 
-                    echo '<select name="nation" id="Utilisateur" class="bouton_select" placeholder="Nom utilisateur"required>';
+                    echo '<select id="Utilisateur" name="Utilisateur" class="bouton_select" placeholder="Nom utilisateur"required>';
                     foreach ($lesnomsutilisateur as $valeur) {
                         if($valeur != $utilisateur){
                             echo'<option value="AX">'.$valeur.'</option>';
                         }
                     }
+                    echo"</select>";
                 ?>
                 </br>
                 </br>
@@ -126,6 +127,7 @@
                                     }
                                     
                                     </script>";
+                                    
                                 }
                             }
                             else{
