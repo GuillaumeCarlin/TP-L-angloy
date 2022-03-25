@@ -9,7 +9,7 @@
     ?>
     <head>
         <meta charset="utf-8">
-        <title>Prixy connexion</title>
+        <title>EllaSIO connexion</title>
         <link rel="stylesheet" href="Programmes/Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="Programmes/logoPrixy.png">
     </head>

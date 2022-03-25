@@ -19,7 +19,7 @@ if($_SESSION["connexion"]==FALSE){
 
 <head>
   <meta charset="utf-8">
-  <title>Prixy calendrier</title>
+  <title>EllaSIO calendrier</title>
   <link rel="stylesheet" href="lelogoparametre.css"/>
   <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
 

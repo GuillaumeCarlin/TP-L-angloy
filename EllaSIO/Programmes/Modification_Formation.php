@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Prixy création Formation </title>
+        <title> EllaSIO modification </title>
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>

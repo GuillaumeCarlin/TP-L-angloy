@@ -1,7 +1,7 @@
 <html>
     
     <head>
-        <title>Détails de la réservation</title>
+        <title>EllaSIO détails</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
