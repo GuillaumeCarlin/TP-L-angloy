@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title> EllaSIO nouvelle reservation</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion"/>
+        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
         <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
         <script src = 'lib/main.js'></script>
 
@@ -244,7 +244,7 @@
     </head>
 
     <body class="body">
-        <form action="Traitement_Reservation.php" method="post" name ="formulaire">
+        <form action="Calendrier/Calendar.php" method="post" name ="formulaire">
 
             <?php 
             if ($cpt == 0) {         

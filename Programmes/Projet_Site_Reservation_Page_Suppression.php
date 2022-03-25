@@ -48,27 +48,8 @@
                 <texte style="font-family: arial,sans-serif; margin:auto;" >Veuillez entrer le nom d'utilisateur du compte à supprimer ainsi que le mot de passe administrateur</texte>
                 </br>
                 
-                <?php
-                    $connexion = mysqli_connect("localhost","root","","bdd_prixy");
-                    
-                    $query = "SELECT * 
-                                FROM utilisateur";
-                    
-                    $result = mysqli_query($connexion, $query);
-                    $lesnomsutilisateur=array();
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $nomsutilisateur = $row["UTILNomUtilisateur"];
-                        array_push($lesnomsutilisateur,$nomsutilisateur);
-                    }
-                    
-
-                    echo '<select name="nation" id="Utilisateur" class="bouton_select" placeholder="Nom utilisateur"required>';
-                    foreach ($lesnomsutilisateur as $valeur) {
-                        if($valeur != $utilisateur){
-                            echo'<option value="AX">'.$valeur.'</option>';
-                        }
-                    }
-                ?>
+                <label for="Utilisateur">
+                <input type="texte" class="bouton_Compte" placeholder="Utilisateur" id="Utilisateur" name="Utilisateur" required></label>
                 </br>
                 </br>
                 <input type="password" class="bouton_Compte" placeholder="Mot de passe Administrateur" id="mdpC" name="mdpC" required>
