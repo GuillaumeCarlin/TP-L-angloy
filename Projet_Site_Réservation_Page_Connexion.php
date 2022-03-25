@@ -1,13 +1,17 @@
 <html>
     <?php 
+        session_start();
+        $_SESSION["connexion"]=FALSE;
+
+        include("Programmes/Fonction.php");
+
         
-        include("Fonction.php");
     ?>
-    <head> 
+    <head>
         <meta charset="utf-8">
         <title>Prixy connexion</title>
-        <link rel="stylesheet" href="Projet_Site_Réservation_Page_Connexion.css"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="logoPrixy.png">
+        <link rel="stylesheet" href="Programmes/Projet_Site_Réservation_Page_Connexion.css"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="Programmes/logoPrixy.png">
     </head>
     
     
@@ -15,10 +19,11 @@
     <body class="body_connexion">
     <form  method="post">
         <fieldset class="fieldset">
-            <img src="logoPrixy.png" class="imageLogo">
+            <img src="Programmes/logoPrixy.png" class="imageLogo">
             <input class="input_connexion" type="texte" id="Utilisateur" name="Utilisateur" placeholder="Utilisateurs" required>
             </br>
             <input class="input_connexion" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
+            </br>
             </br>
             
             <input class="boutonConnexion" type="submit"  value="Connexion" href="Projet_Site_Réservation_Calendrier.php">
@@ -62,7 +67,8 @@
                                 else{
                                     $_SESSION["administrateur"]=0;
                                 }
-                                header('Location: Calendrier/Calendar.php');
+                                $_SESSION["connexion"]=TRUE;
+                                header('Location: Programmes/Calendrier/Calendar.php');
                             }
                             else{
                                 echo"<div class=erreurconnexion><strong> Nom d'utilisateur ou mot de passe incorrecte </strong></div>";
@@ -73,9 +79,10 @@
                     }    
                 }
                 ?>
-            
+           
         </fieldset>
         </form>
+        
         
     </body>
 </html>
